@@ -1,0 +1,15 @@
+name: Feature or extension request
+description: Propose a feature, hook or REST change.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What do you want to achieve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: For hooks or REST routes, the name, arguments and return value you need.

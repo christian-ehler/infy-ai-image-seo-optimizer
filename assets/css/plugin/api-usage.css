@@ -1,0 +1,291 @@
+.wrap h1 {
+    margin-bottom: 0.8rem;
+}
+
+.infyp-api-usage-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--infyp-spacing-lg);
+}
+
+.infyp-usage-card {
+    background: var(--infyp-bg-white);
+    border: 1px solid var(--infyp-border-primary);
+    padding: var(--infyp-spacing-lg);
+    box-shadow: var(--infyp-shadow-sm);
+}
+
+.infyp-usage-card h3 {
+    margin: 0 0 var(--infyp-spacing-sm) 0;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-base);
+    font-weight: var(--infyp-font-weight-semibold);
+}
+
+.infyp-usage-number {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--infyp-primary);
+    margin: var(--infyp-spacing-sm) 0;
+}
+
+.infyp-usage-detail {
+    color: var(--infyp-text-secondary);
+    font-size: var(--infyp-font-size-md);
+}
+
+.infyp-usage-by-provider {
+    background: var(--infyp-bg-white);
+    border: 1px solid var(--infyp-border-primary);
+    padding: var(--infyp-spacing-lg);
+    margin: var(--infyp-spacing-lg) 0;
+    box-shadow: var(--infyp-shadow-sm);
+}
+
+.infyp-usage-by-provider h2 {
+    margin-top: 0;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-lg);
+    font-weight: var(--infyp-font-weight-semibold);
+}
+
+.infyp-usage-chart-container {
+    background: var(--infyp-bg-white);
+    border: 1px solid var(--infyp-border-primary);
+    padding: var(--infyp-spacing-lg);
+    margin: var(--infyp-spacing-lg) 0;
+    box-shadow: var(--infyp-shadow-sm);
+}
+
+.infyp-usage-chart-container h2 {
+    margin-top: 0;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-lg);
+    font-weight: var(--infyp-font-weight-semibold);
+}
+
+.infyp-status {
+    display: inline-block;
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    border-radius: var(--infyp-radius-sm);
+    font-size: var(--infyp-font-size-sm);
+    font-weight: var(--infyp-font-weight-medium);
+}
+
+.infyp-status.notice-success {
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+}
+
+.infyp-status.notice-error {
+    background: var(--infyp-error-bg);
+    color: var(--infyp-error-text);
+}
+
+.infyp-status.notice-warning {
+    background: var(--infyp-warning-bg);
+    color: var(--infyp-warning-text);
+}
+
+.infyp-status.notice-info {
+    background: var(--infyp-info-bg);
+    color: var(--infyp-info-text);
+}
+
+.infyp-error-message {
+    color: var(--infyp-error-hover);
+    font-size: var(--infyp-font-size-sm);
+    font-style: italic;
+    cursor: help;
+}
+
+/* Table styling improvements */
+.infyp-usage-by-provider table {
+    margin-top: var(--infyp-spacing-md);
+}
+
+.infyp-usage-by-provider table th {
+    font-weight: var(--infyp-font-weight-semibold);
+    color: var(--infyp-text-primary);
+}
+
+.infyp-usage-by-provider table td {
+    color: var(--infyp-text-secondary);
+}
+
+.infyp-usage-by-provider table code {
+    background: var(--infyp-bg-lighter);
+    padding: var(--infyp-spacing-xs);
+    border-radius: var(--infyp-radius-sm);
+    font-size: var(--infyp-font-size-sm);
+}
+
+/* Responsive adjustments */
+@media (max-width: 782px) {
+    .infyp-api-usage-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .infyp-usage-number {
+        font-size: 28px;
+    }
+}
+
+/* Additional hover effects */
+.infyp-usage-card {
+    transition: var(--infyp-transition-fast);
+}
+
+.infyp-usage-card:hover {
+    box-shadow: var(--infyp-shadow-md);
+    border-color: var(--infyp-primary);
+}
+
+/* Chart container specific styles */
+#infyp-usage-chart {
+    max-height: 400px;
+    width: 100%;
+}
+
+/* Status icons alignment */
+.infyp-status .dashicons {
+    font-size: var(--infyp-font-size-md);
+    width: 14px;
+    height: 14px;
+    line-height: 1;
+    vertical-align: middle;
+    margin-right: var(--infyp-spacing-xs);
+}
+/* =========================================================================
+   Responsive list tables — API Usage + REST API pages (.infyp-table-page)
+   ========================================================================= */
+
+/* Tablet-landscape / laptop: contain wide tables in their own scroll area
+   instead of squeezing 8 columns or overflowing the page. */
+.infyp-table-page .infyp-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 783px) {
+    .infyp-table-page .infyp-table-scroll .wp-list-table {
+        min-width: 720px;
+    }
+}
+
+/* Phone + tablet-portrait (aligned with core's 782px list-table breakpoint):
+   rows become label/value cards — everything readable without taps, unlike
+   core's collapse-behind-a-toggle default. */
+@media screen and (max-width: 782px) {
+    /* Core hides .tablenav .actions on small screens; the filters are the
+       whole point of these audit tables, so bring them back, wrapped. */
+    .infyp-table-page .tablenav .actions {
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: var(--infyp-spacing-xs);
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .infyp-table-page .tablenav .actions select,
+    .infyp-table-page .tablenav .actions input {
+        flex: 1 1 140px;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .infyp-table-page .tablenav .actions .button {
+        flex: 1 1 100%;
+    }
+
+    .infyp-table-page .tablenav {
+        height: auto;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        gap: var(--infyp-spacing-sm);
+        align-items: stretch;
+    }
+
+    .infyp-table-page .tablenav .tablenav-pages {
+        margin: 0;
+        text-align: start;
+    }
+
+    /* Card rows */
+    .infyp-table-page .wp-list-table thead,
+    .infyp-table-page .wp-list-table tfoot {
+        display: none;
+    }
+
+    .infyp-table-page .wp-list-table,
+    .infyp-table-page .wp-list-table tbody {
+        display: block;
+        border: 0;
+        background: transparent;
+    }
+
+    .infyp-table-page .wp-list-table tbody tr {
+        display: block;
+        margin-bottom: var(--infyp-spacing-sm);
+        border: 1px solid var(--infyp-border-light);
+        border-radius: var(--infyp-radius-md);
+        background: #ffffff;
+        padding: var(--infyp-spacing-xs) var(--infyp-spacing-md);
+    }
+
+    .infyp-table-page .wp-list-table tbody tr td,
+    .infyp-table-page .wp-list-table tbody tr th {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: var(--infyp-spacing-xs) var(--infyp-spacing-md);
+        width: auto !important;
+        padding: 7px 0;
+        border-bottom: 1px solid var(--infyp-border-lightest);
+        word-break: break-word;
+    }
+
+    .infyp-table-page .wp-list-table tbody tr td:last-child,
+    .infyp-table-page .wp-list-table tbody tr th:last-child {
+        border-bottom: 0;
+    }
+
+    /* Column label from the data-colname attribute core already renders.
+       position/width overrides beat core's absolutely-positioned mobile
+       label, which would otherwise overlap the value. */
+    .infyp-table-page .wp-list-table tbody tr:not(.no-items) td[data-colname]::before,
+    .infyp-table-page .wp-list-table tbody tr:not(.no-items) th[data-colname]::before {
+        content: attr(data-colname);
+        position: static !important;
+        width: auto !important;
+        font-weight: 600;
+        color: var(--infyp-text-secondary);
+        flex: 0 0 auto;
+    }
+
+    /* Core pairs its absolute label with a large text indent — neutralize. */
+    .infyp-table-page .wp-list-table tbody tr td,
+    .infyp-table-page .wp-list-table tbody tr th {
+        padding-left: 0 !important;
+        text-align: start !important;
+    }
+
+    /* Core's collapse affordances are replaced by the card layout. */
+    .infyp-table-page .wp-list-table .toggle-row {
+        display: none !important;
+    }
+
+    .infyp-table-page .wp-list-table tbody tr td.column-primary,
+    .infyp-table-page .wp-list-table tbody tr th.column-primary {
+        padding-right: 0;
+    }
+
+    .infyp-table-page .wp-list-table tbody tr.no-items td {
+        display: block !important;
+        border: 0;
+    }
+}

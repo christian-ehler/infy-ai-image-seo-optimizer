@@ -1,0 +1,484 @@
+/**
+ * Keyword Input and Display Styles
+ * Extracted from admin-style.css
+ * Generated: 2025-12-04 13:47:13
+ */
+
+.infyp-keywords-used {
+    color: var(--infyp-success);
+    font-size: var(--infyp-font-size-sm);
+    margin-left: var(--infyp-spacing-xs)
+}
+
+.infyp-keywords-missing {
+    color: var(--infyp-error);
+    font-size: var(--infyp-font-size-sm);
+    margin-left: var(--infyp-spacing-xs)
+}
+
+tr.infyp-row-optimizing .infyp-add-keywords-trigger,
+tr.infyp-row-optimizing .infyp-keyword-badge {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Loading states moved to loading-states.css */
+
+.infyp-keywords-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--infyp-spacing-xs);
+    align-items: flex-start;
+    min-height: 30px
+}
+
+.infyp-keyword-badge {
+    display: inline-block;
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-md);
+    font-size: var(--infyp-font-size-xs);
+    line-height: 1.4;
+    font-weight: var(--infyp-font-weight-medium);
+    border-radius: var(--infyp-radius-full);
+    background-color: var(--infyp-gradient-start);
+    color: var(--infyp-bg-white);
+    white-space: nowrap;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle
+}
+
+.infyp-keyword-badge.placeholder {
+    background-color: var(--infyp-bg-light);
+    color: var(--infyp-text-secondary);
+    border: 1px dashed var(--infyp-border-primary);
+    font-style: italic
+}
+
+.infyp-keywords-help {
+    display: inline-flex;
+    align-items: center;
+    margin-left: var(--infyp-spacing-sm);
+    position: relative
+}
+
+.infyp-keywords-help .dashicons {
+    font-size: var(--infyp-font-size-lg);
+    width: 16px;
+    height: 16px;
+    color: var(--infyp-text-lighter);
+    cursor: help;
+    transition: color 0.2s ease
+}
+
+.infyp-keywords-help .dashicons:hover {
+    color: var(--infyp-primary)
+}
+
+.infyp-keywords-help:hover .infyp-tooltip {
+    opacity: 1;
+    visibility: visible
+}
+
+.infyp-keywords-help .help-text {
+    display: none
+}
+
+.infyp-keywords-wrapper:hover .infyp-keywords-help .help-text {
+    display: none
+}
+
+@media screen and (min-width:783px) and (max-width:1400px) {
+    /* Responsive: Content columns slightly smaller */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-keywords,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-filename,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-alt_text,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-image_title,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-title {
+        width: 13%;
+        min-width: 90px
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-actions {
+        width: 11%;
+        min-width: 110px
+    }
+
+    .infyp-keywords-wrapper {
+        flex-wrap: wrap
+    }
+}
+
+.infyp-post-type-tokens .infyp-token-input {
+    min-width: 120px;
+}
+
+/* .infyp-all-token styles moved to post-type-filters.css */
+
+.infyp-keywords-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--infyp-spacing-xs);
+    align-items: center;
+}
+
+.infyp-keyword-badge {
+    transition: all var(--infyp-transition-fast);
+}
+
+.infyp-add-keywords-trigger {
+    background: transparent;
+    border: 1px dashed var(--infyp-border-primary);
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-xs);
+    cursor: pointer;
+    transition: all var(--infyp-transition-fast);
+}
+
+.infyp-keyword-badge .dashicons-edit,
+.infyp-add-keywords-trigger .dashicons-edit {
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    vertical-align: middle;
+    margin-right: var(--infyp-spacing-xxs);
+}
+
+.infyp-keyword-badge .dashicons-plus,
+.infyp-add-keywords-trigger .dashicons-plus {
+    width: 13px;
+    height: 13px;
+    font-size: var(--infyp-font-size-base);
+    vertical-align: middle;
+    margin-top: 1px;
+    margin-right: var(--infyp-spacing-xxs);
+}
+
+.infyp-add-keywords-trigger:hover {
+    background: var(--infyp-bg-light);
+    border-color: var(--infyp-primary);
+    color: var(--infyp-primary);
+}
+
+.infyp-clear-keywords-trigger {
+    background: transparent;
+    border: 1px dashed var(--infyp-border-primary);
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-xs);
+    cursor: pointer;
+    transition: all var(--infyp-transition-fast);
+    color: var(--infyp-text-secondary, #646970);
+}
+
+.infyp-clear-keywords-trigger .dashicons {
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    vertical-align: middle;
+    color: inherit;
+}
+
+.infyp-clear-keywords-trigger:hover {
+    background: var(--infyp-error-bg-lightest);
+    border-color: var(--infyp-error);
+    color: var(--infyp-error);
+}
+
+.infyp-clear-keywords-trigger:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.infyp-clear-keywords-lightbox.infyp-keywords-lightbox {
+    width: 400px;
+}
+
+.infyp-keywords-indicator {
+    margin-left: var(--infyp-spacing-xs);
+    color: var(--infyp-primary);
+}
+
+.infyp-keywords-indicator .dashicons {
+    font-size: var(--infyp-font-size-base);
+    width: 14px;
+    height: 14px;
+}
+
+/* Keywords lightbox base styles handled by modals.css unified system */
+
+.infyp-keywords-lightbox-header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--infyp-spacing-lg, 16px);
+    border-bottom: 1px solid var(--infyp-border-light, #e0e0e0);
+    background: var(--infyp-bg-lighter, #f9f9f9);
+}
+
+.infyp-keywords-lightbox-header h3 {
+    margin: 0;
+    font-size: var(--infyp-font-size-xl);
+    font-weight: 600;
+}
+
+.infyp-keywords-lightbox-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--infyp-radius-md);
+    font-size: 1.5rem;
+    color: var(--infyp-text-secondary);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.infyp-keywords-lightbox-close:hover {
+    background-color: var(--infyp-bg-light);
+    color: var(--infyp-text-primary);
+}
+
+.infyp-keywords-lightbox-content {
+    grid-area: body;
+    padding: var(--infyp-spacing-lg, 16px);
+    overflow-y: auto;
+    min-height: 0; /* Critical for grid row shrinking */
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.infyp-form-token-field {
+    margin-bottom: 10px;
+}
+
+.infyp-token-field-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--infyp-spacing-sm);
+    width: 100%;
+}
+
+.infyp-token-field-label {
+    display: inline-block;
+    font-weight: 600;
+    font-size: var(--infyp-font-size-md);
+    color: var(--infyp-text-primary);
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.infyp-token-field-input-container {
+    position: relative;
+    width: 100%;
+    background: var(--infyp-white);
+    border: 1px solid var(--infyp-text-lighter);
+    border-radius: var(--infyp-radius-sm);
+    box-shadow: 0 0 0 transparent;
+    transition: border-color 0.1s linear, box-shadow 0.1s linear;
+    min-height: 40px;
+}
+
+.infyp-token-field-input-container:focus-within {
+    border-color: var(--infyp-primary-alt);
+    box-shadow: 0 0 0 1px var(--infyp-primary-alt);
+    outline: 2px solid transparent;
+}
+
+.infyp-token-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    min-height: 32px;
+    cursor: text;
+}
+
+.infyp-keyword-token {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 var(--infyp-spacing-xs) 0 var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-base);
+    line-height: 24px;
+    background: var(--infyp-border-light);
+    color: var(--infyp-text-darker);
+    border-radius: var(--infyp-radius-sm);
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.infyp-keyword-token .infyp-token-remove {
+    background: none;
+    border: none;
+    color: var(--infyp-text-darker);
+    cursor: pointer;
+    padding: 0 var(--infyp-spacing-xs);
+    font-size: var(--infyp-font-size-2xl);
+    line-height: 1;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.6;
+    margin-left: var(--infyp-spacing-xxs);
+}
+
+.infyp-keyword-token .infyp-token-remove:hover {
+    opacity: 1;
+    color: var(--infyp-error);
+}
+
+.infyp-token-input {
+    flex: 1 1 auto;
+    min-width: 100px;
+    border: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: var(--infyp-font-size-base);
+    line-height: 24px;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    color: var(--infyp-text-darker) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.infyp-token-field-input-container input[type="text"].infyp-token-input {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.infyp-token-input:focus {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+}
+
+.infyp-token-input:disabled {
+    display: none !important;
+}
+
+.infyp-token-field-input-container input:disabled,
+.infyp-token-field-input-container input.disabled {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.infyp-token-field-help {
+    margin-top: var(--infyp-spacing-xs);
+    margin-bottom: 0;
+    font-size: var(--infyp-font-size-sm);
+    font-style: normal;
+    color: var(--infyp-text-muted);
+}
+
+.infyp-keywords-counter {
+    color: var(--infyp-text-darker);
+    font-size: var(--infyp-font-size-sm);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.infyp-token-field-header .infyp-keywords-counter {
+    margin: 0;
+    margin-left: auto;
+    text-align: right;
+}
+
+.infyp-keywords-ai-generate {
+    margin: var(--infyp-spacing-md) 0 0 0;
+}
+
+.infyp-keywords-ai-generate button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+}
+
+.infyp-keywords-ai-generate .infyp-optimize-icon {
+    font-size: var(--infyp-font-size-lg);
+    vertical-align: middle;
+}
+
+.infyp-keywords-recommendations {
+    background: var(--infyp-bg-light);
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-md);
+    padding: var(--infyp-spacing-md);
+    margin-top: var(--infyp-spacing-md);
+}
+
+.infyp-keywords-recommendations h4 {
+    margin: 0 0 10px 0;
+    font-size: var(--infyp-font-size-md);
+    font-weight: 600;
+    color: var(--infyp-text-primary);
+}
+
+.infyp-keywords-recommendations ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.infyp-keywords-recommendations li {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm);
+    margin-bottom: 5px;
+    font-size: var(--infyp-font-size-base);
+    color: var(--infyp-text-darker);
+}
+
+.infyp-keywords-recommendations .dashicons {
+    color: var(--infyp-info);
+    font-size: var(--infyp-font-size-lg);
+    width: 16px;
+    height: 16px;
+}
+
+.infyp-keywords-recommendations li {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm);
+    margin-bottom: var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-md);
+    color: var(--infyp-text-primary);
+}
+
+.infyp-keywords-recommendations li:last-child {
+    margin-bottom: 0;
+}
+
+.infyp-keywords-recommendations .dashicons {
+    color: var(--infyp-primary);
+    font-size: var(--infyp-font-size-lg);
+    width: 16px;
+    height: 16px;
+}
+
+.infyp-keywords-lightbox-footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--infyp-spacing-sm, 8px);
+    padding: var(--infyp-spacing-lg, 16px);
+    border-top: 1px solid var(--infyp-border-light, #e0e0e0);
+    background: var(--infyp-bg-lighter, #f9f9f9);
+    border-radius: 0 0 var(--infyp-radius-lg, 8px) var(--infyp-radius-lg, 8px);
+}
+
+/* Responsive styles for keywords lightbox handled by modals.css unified system */

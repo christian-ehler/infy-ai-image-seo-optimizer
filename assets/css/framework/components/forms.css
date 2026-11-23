@@ -1,0 +1,52 @@
+/**
+ * Form Component
+ * Reusable form styles for WordPress plugins
+ */
+
+.infyp-form-group {
+    margin-bottom: var(--infyp-spacing-lg, 16px);
+}
+
+.infyp-form-label {
+    display: block;
+    margin-bottom: var(--infyp-spacing-xs, 4px);
+    font-size: var(--infyp-font-size-md, 13px);
+    font-weight: 500;
+    color: var(--infyp-text-dark, #333333);
+}
+
+.infyp-form-control {
+    display: block;
+    width: 100%;
+    padding: var(--infyp-spacing-sm, 8px) var(--infyp-spacing-md, 12px);
+    font-family: inherit;
+    font-size: var(--infyp-font-size-md, 13px);
+    line-height: 1.5;
+    color: var(--infyp-text-dark, #333333);
+    background: var(--infyp-white, #ffffff);
+    border: 1px solid var(--infyp-border-medium, #cccccc);
+    border-radius: var(--infyp-radius-md, 4px);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.infyp-form-control:focus {
+    border-color: var(--infyp-primary, #3858e9);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(34, 113, 177, 0.15);
+}
+
+.infyp-form-control:disabled {
+    background: var(--infyp-bg-light, #f5f5f5);
+    cursor: not-allowed;
+}
+
+.infyp-form-control::placeholder {
+    color: var(--infyp-text-lighter, #999999);
+}
+
+/* Form Hint */
+.infyp-form-hint {
+    margin-top: var(--infyp-spacing-xs, 4px);
+    font-size: var(--infyp-font-size-sm, 12px);
+    color: var(--infyp-text-light, #888888);
+}

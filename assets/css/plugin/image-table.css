@@ -1,0 +1,369 @@
+/**
+ * Dashboard Image Table Styles
+ * Extracted from admin-style.css
+ * Generated: 2025-12-04 13:47:13
+ */
+
+.wp-list-table th {
+    font-weight: var(--infyp-font-weight-semibold)
+}
+
+.infyp-image-table,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table {
+    table-layout: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .tablenav,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table {
+    margin-right: 0
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-id {
+    width: 3%;
+    min-width: 45px
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table th.column-id,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-id {
+    text-align: left
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-thumbnail {
+    width: 4%;
+    min-width: 60px
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-usage_info {
+    width: 5%;
+    min-width: 60px
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-seo_score {
+    width: 7%;
+    min-width: 80px;
+    text-align: center
+}
+
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table th.column-thumbnail,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail {
+    padding: var(--infyp-spacing-sm) 7px
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-keywords,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-filename,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-alt_text,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-image_title,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-title {
+    width: 14%;
+    min-width: 100px
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-actions {
+    width: 10%;
+    min-width: 100px
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td input[type="text"],
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody th.column-primary input[type="text"],
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td .infyp-editable-field,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody th.column-primary .infyp-editable-field {
+    max-width: 100%;
+    box-sizing: border-box
+}
+
+/* The primary column (filename) renders as <th scope="row">, so its editable field inherits
+   the cell's bold weight and misses core's <td>-scoped input spacing. Match the <td> fields. */
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody th.column-primary .infyp-editable-field {
+    font-weight: var(--infyp-font-weight-normal, 400);
+    padding: 0 12px;
+    margin: 1px;
+}
+
+.infyp-image-id {
+    color: var(--infyp-text-secondary);
+    text-decoration: none;
+    font-weight: var(--infyp-font-weight-medium);
+    font-size: var(--infyp-font-size-base);
+    display: inline-block
+}
+
+.infyp-image-id:hover {
+    color: var(--infyp-primary);
+    text-decoration: underline
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-id,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail {
+    white-space: nowrap
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail img {
+    max-height: 100px;
+    max-width: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail.infyp-wrapper-loading {
+    position: relative;
+    min-height: 60px;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail.infyp-wrapper-loading > *:not(.infyp-field-spinner) {
+    display: none !important;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail.infyp-wrapper-loading > .infyp-field-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    float: none;
+    margin: 0;
+}
+
+.infyp-thumbnail-preview {
+    cursor: pointer;
+}
+
+.infyp-editable-field {
+    width: 100%;
+    box-sizing: border-box
+}
+
+
+tr.infyp-row-optimizing .infyp-optimizing-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+tr.infyp-row-optimizing .infyp-editable-field,
+tr.infyp-row-optimizing .infyp-alt-text-trigger,
+tr.infyp-row-optimizing .infyp-filename-trigger,
+tr.infyp-row-optimizing .infyp-title-trigger {
+    background-color: var(--infyp-bg-light) !important;
+}
+
+tr.infyp-row-optimizing .infyp-add-keywords-trigger,
+tr.infyp-row-optimizing .infyp-keyword-badge {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.infyp-field-wrapper {
+    position: relative;
+}
+
+/* Loading states moved to loading-states.css */
+
+.infyp-actions-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--infyp-spacing-sm);
+}
+
+.infyp-actions-wrapper .button {
+    min-height: 29px !important;
+    box-sizing: border-box;
+}
+
+/* Actions loading states moved to loading-states.css */
+
+
+.infyp-thumbnail {
+    max-width: 60px;
+    height: auto;
+    border-radius: var(--infyp-radius-sm);
+    box-shadow: var(--infyp-shadow-sm)
+}
+
+/* Mobile styles (< 782px) moved to image-table-responsive.css */
+
+.wp-list-table .infyp-seo-score-wrapper {
+    flex-direction: column;
+    gap: var(--infyp-spacing-xs)
+}
+
+@media screen and (min-width:783px) and (max-width:1400px) {
+    /* Responsive: Content columns slightly smaller */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-keywords,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-filename,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-alt_text,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-image_title,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-title {
+        width: 13%;
+        min-width: 90px
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-actions {
+        width: 11%;
+        min-width: 110px
+    }
+
+    .infyp-keywords-wrapper {
+        flex-wrap: wrap
+    }
+}
+
+.infyp-field-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--infyp-spacing-sm);
+}
+
+.infyp-alt-text-lightbox-header .infyp-image-id,
+.infyp-title-lightbox-header .infyp-image-id {
+    color: var(--infyp-text-muted);
+    font-weight: var(--infyp-font-weight-normal);
+    font-size: var(--infyp-font-size-base);
+    margin-left: var(--infyp-spacing-xs)
+}
+
+.infyp-table-wrapper {
+    position: relative;
+}
+
+.infyp-table-wrapper .wp-list-table {
+    display: none;
+}
+
+#infyp-image-seo-form .search-box {
+    display: none;
+}
+
+.infyp-table-wrapper.infyp-table-ready .wp-list-table {
+    display: table;
+}
+
+#infyp-image-seo-form .search-box {
+    display: none !important;
+}
+
+#infyp-image-seo-form .infyp-table-controls {
+    display: none;
+}
+
+.infyp-page-ready #infyp-image-seo-form .infyp-table-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--infyp-spacing-md);
+    margin-bottom: var(--infyp-spacing-lg);
+}
+
+@media screen and (max-width: 782px) {
+    .infyp-page-ready #infyp-image-seo-form .infyp-table-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .tablenav.top .tablenav-pages {
+    display: none !important;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .tablenav.top {
+    display: none;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .tablenav.bottom .tablenav-pages {
+    float: left;
+}
+
+/* Pagination button spacing — applies to all plugin admin pages */
+[class*="_page_"][class*="ai-image-seo-optimizer"] .tablenav-pages .pagination-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+[class*="_page_"][class*="ai-image-seo-optimizer"] .tablenav-pages .pagination-links .button {
+    min-width: 30px;
+    height: 30px;
+    padding: 0 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[class*="_page_"][class*="ai-image-seo-optimizer"] .tablenav-pages .paging-input {
+    margin: 0 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+[class*="_page_"][class*="ai-image-seo-optimizer"] .tablenav-pages .paging-input .current-page {
+    width: 50px;
+    text-align: center;
+    margin: 0 4px;
+}
+
+[class*="_page_"][class*="ai-image-seo-optimizer"] .tablenav-pages .displaying-num {
+    margin-right: 12px;
+    color: var(--infyp-text-secondary);
+}
+
+#infyp-image-seo-form .infyp-modern-search-wrapper {
+    display: none;
+}
+
+.infyp-page-ready #infyp-image-seo-form .infyp-modern-search-wrapper {
+    display: block;
+    margin-bottom: var(--infyp-spacing-lg);
+}
+
+/* Active row highlighting - persists until user clicks elsewhere */
+tr.infyp-row-active {
+    background-color: rgba(0, 124, 186, 0.08) !important;
+    box-shadow: inset 3px 0 0 var(--infyp-primary);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+tr.infyp-row-active td {
+    background-color: transparent !important;
+}
+
+/* Subtle pulse animation when row is first activated */
+@keyframes infyp-row-activate {
+    0% {
+        background-color: rgba(0, 124, 186, 0.15);
+    }
+    100% {
+        background-color: rgba(0, 124, 186, 0.08);
+    }
+}
+
+tr.infyp-row-active.infyp-row-just-activated {
+    animation: infyp-row-activate 0.4s ease-out;
+}
+
+.infyp-table-skeleton {
+    width: 100%;
+    border: 1px solid var(--infyp-border);
+    border-radius: var(--infyp-radius-md);
+    overflow: hidden;
+    background: var(--infyp-white);
+}
+
+/* Skeleton visibility moved to loading-states.css */
+
+.infyp-table-overlay {
+    background: rgba(248, 248, 248, 0.7) !important;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.infyp-table-overlay .spinner {
+    float: none;
+}

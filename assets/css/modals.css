@@ -1,0 +1,909 @@
+/**
+ * AI Image SEO - Modal Content Styles
+ * Content-specific styles for lightbox modals (inputs, recommendations, scores, etc.)
+ * Base lightbox structure is defined in framework/components/modals.css
+ */
+
+/* ==========================================================================
+   Filename Modal Content
+   ========================================================================== */
+
+.infyp-filename-input {
+    width: 100%;
+    padding: var(--infyp-spacing-sm) var(--infyp-spacing-md);
+    border: 1px solid var(--infyp-border-primary);
+    border-radius: var(--infyp-radius-md);
+    font-size: 1rem;
+}
+
+.infyp-filename-counter {
+    font-size: 0.875rem;
+    color: var(--infyp-text-secondary);
+}
+
+/* ==========================================================================
+   Alt Text Modal Content
+   ========================================================================== */
+
+.infyp-alt-text-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: var(--infyp-spacing-sm);
+    border: 1px solid var(--infyp-border-primary);
+    border-radius: var(--infyp-radius-md);
+    font-size: var(--infyp-font-size-base);
+    resize: vertical;
+}
+
+.infyp-alt-text-textarea:focus {
+    border-color: var(--infyp-primary);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--infyp-primary);
+}
+
+.infyp-alt-text-counter {
+    font-size: var(--infyp-font-size-sm);
+    color: var(--infyp-text-secondary);
+}
+
+/* ==========================================================================
+   Title Modal Content
+   ========================================================================== */
+
+.infyp-title-input {
+    width: 100%;
+    padding: var(--infyp-spacing-sm) var(--infyp-spacing-md);
+    border: 1px solid var(--infyp-border-primary);
+    border-radius: var(--infyp-radius-md);
+    font-size: 1rem;
+}
+
+.infyp-title-counter {
+    font-size: 0.875rem;
+    color: var(--infyp-text-secondary);
+}
+
+/* ==========================================================================
+   Modal Keywords Display
+   ========================================================================== */
+
+.infyp-modal-keywords-display {
+    background: var(--infyp-bg-light);
+    border-radius: var(--infyp-radius-md);
+    padding: var(--infyp-spacing-md);
+    margin-bottom: var(--infyp-spacing-md);
+    border: 1px solid var(--infyp-border-light);
+}
+
+.infyp-modal-keywords-header {
+    margin-bottom: var(--infyp-spacing-sm);
+}
+
+.infyp-modal-keywords-label {
+    font-weight: var(--infyp-font-weight-semibold);
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-base);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infyp-modal-keywords-list {
+    display: flex;
+    gap: var(--infyp-spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--infyp-spacing-sm);
+}
+
+.infyp-modal-keyword-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    background: var(--infyp-bg-white);
+    border: none;
+    border-radius: var(--infyp-radius-full);
+    font-size: var(--infyp-font-size-sm);
+    color: var(--infyp-text-primary);
+    font-weight: var(--infyp-font-weight-medium);
+    transition: all 0.2s ease;
+}
+
+.infyp-modal-keyword-badge.keyword-used {
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+    border: none;
+}
+
+.infyp-modal-keyword-badge.keyword-unused {
+    background: var(--infyp-warning-bg);
+    color: var(--infyp-warning-text);
+    border: none;
+}
+
+.infyp-modal-keyword-badge .dashicons {
+    font-size: var(--infyp-font-size-md);
+    width: 14px;
+    height: 14px;
+}
+
+
+.infyp-modal-keyword-badge.keyword-unused .dashicons {
+    color: var(--infyp-warning-text);
+}
+
+.infyp-modal-keywords-hint {
+    font-size: var(--infyp-font-size-sm);
+    color: var(--infyp-text-secondary);
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Usage Modal Content
+   ========================================================================== */
+
+.infyp-usage-details-section {
+    background: var(--infyp-bg-light);
+    border-radius: var(--infyp-radius-md);
+    padding: var(--infyp-spacing-md);
+    margin-bottom: var(--infyp-spacing-md);
+}
+
+.infyp-usage-details-section h4 {
+    margin-top: 0;
+    margin-bottom: var(--infyp-spacing-sm);
+    color: var(--infyp-text-primary);
+    font-size: 1rem;
+}
+
+.infyp-usage-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infyp-usage-details li {
+    padding: var(--infyp-spacing-sm);
+    background: var(--infyp-bg-white);
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-sm);
+    margin-bottom: var(--infyp-spacing-xs);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infyp-usage-details li:hover {
+    background: var(--infyp-bg-hover);
+    border-color: var(--infyp-primary);
+}
+
+.infyp-usage-details li a {
+    text-decoration: none;
+    color: var(--infyp-primary);
+    font-weight: 500;
+    flex: 1;
+}
+
+.infyp-usage-details li a:hover {
+    text-decoration: underline;
+}
+
+.infyp-usage-info {
+    background: var(--infyp-bg-white);
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-md);
+    padding: var(--infyp-spacing-md);
+}
+
+.infyp-usage-info h4 {
+    margin-top: 0;
+    margin-bottom: var(--infyp-spacing-sm);
+    color: var(--infyp-text-primary);
+    font-size: 1rem;
+}
+
+.infyp-usage-legend {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infyp-usage-legend li {
+    padding: var(--infyp-spacing-xs) 0;
+    color: var(--infyp-text-secondary);
+    font-size: 0.9rem;
+}
+
+.infyp-usage-badge {
+    display: inline-block;
+    padding: var(--infyp-spacing-xxs) var(--infyp-spacing-sm);
+    border-radius: var(--infyp-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: var(--infyp-spacing-xs);
+}
+
+.infyp-usage-badge.featured {
+    background: var(--infyp-badge-featured-bg);
+    color: var(--infyp-primary-dark);
+}
+
+.infyp-usage-badge.content {
+    background: var(--infyp-badge-content-bg);
+    color: var(--infyp-badge-content-text);
+}
+
+.infyp-usage-badge.builder {
+    background: var(--infyp-badge-builder-bg);
+    color: var(--infyp-badge-builder-text);
+}
+
+.infyp-refresh-usage {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+}
+
+.infyp-usage-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infyp-usage-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm);
+    flex-wrap: wrap;
+}
+
+.infyp-usage-list a {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--infyp-primary);
+}
+
+.infyp-usage-list a:hover {
+    color: var(--infyp-primary-dark);
+    text-decoration: underline;
+}
+
+.infyp-usage-list p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* ==========================================================================
+   Modal Image Preview
+   ========================================================================== */
+
+.infyp-modal-image-preview {
+    width: 100%;
+    margin-bottom: var(--infyp-spacing-lg);
+    border-radius: var(--infyp-radius-md);
+    overflow: hidden;
+    background: var(--infyp-bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+
+.infyp-modal-image-preview img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Image Preview Modal - full-size image display */
+.infyp-image-preview-lightbox .infyp-modal-image-preview {
+    margin-bottom: 0;
+}
+
+.infyp-image-preview-lightbox .infyp-modal-image-preview img {
+    max-height: 70vh;
+}
+
+.infyp-image-preview-lightbox-footer {
+    gap: var(--infyp-spacing-md);
+}
+
+/* ==========================================================================
+   Custom Prompt Modal Content
+   ========================================================================== */
+
+h4.infyp-custom-prompt-description {
+    margin: 0 0 var(--infyp-spacing-sm) 0;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-base);
+    font-weight: var(--infyp-font-weight-semibold);
+}
+
+.infyp-custom-prompt-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: var(--infyp-spacing-sm);
+    border: 1px solid var(--infyp-border-primary);
+    border-radius: var(--infyp-radius-md);
+    font-size: var(--infyp-font-size-base);
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.infyp-custom-prompt-textarea:focus {
+    border-color: var(--infyp-primary);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--infyp-primary);
+}
+
+.infyp-custom-prompt-lightbox-footer {
+    justify-content: flex-end;
+}
+
+/* ==========================================================================
+   Modal Optimize Grid
+   ========================================================================== */
+
+.infyp-modal-optimize-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--infyp-spacing-sm);
+    padding-top: var(--infyp-spacing-md);
+    margin-top: var(--infyp-spacing-sm);
+    margin-bottom: var(--infyp-spacing-sm);
+    border-top: 1px solid var(--infyp-border-light);
+}
+
+.infyp-modal-optimize-grid.infyp-optimizing {
+    grid-template-columns: 1fr 1fr;
+}
+
+.infyp-ai-disclaimer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--infyp-spacing-xs);
+    width: 100%;
+    min-height: 29px;
+    box-sizing: border-box;
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    background: var(--infyp-bg-light);
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-md);
+    font-size: var(--infyp-font-size-xs);
+    font-weight: 500;
+    color: var(--infyp-text-muted);
+    position: relative;
+    cursor: help;
+}
+
+.infyp-ai-disclaimer .dashicons {
+    font-size: var(--infyp-font-size-md);
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    color: var(--infyp-text-muted);
+}
+
+.infyp-ai-disclaimer .infyp-tooltip {
+    white-space: normal;
+    min-width: 200px;
+    text-align: center;
+}
+
+.infyp-ai-disclaimer:hover .infyp-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.infyp-modal-optimize-grid.infyp-optimizing .infyp-ai-disclaimer,
+.infyp-modal-optimize-grid.infyp-optimizing .infyp-optimize-ai {
+    display: none;
+}
+
+.infyp-modal-optimize-spinner {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-sm);
+    padding: var(--infyp-spacing-sm);
+    color: var(--infyp-primary);
+}
+
+.infyp-modal-optimize-spinner .spinner {
+    float: none;
+    margin: 0;
+}
+
+/* Status container inside modal spinner */
+.infyp-modal-optimize-spinner .infyp-optimize-status {
+    min-height: auto;
+}
+
+.infyp-modal-optimize-spinner .infyp-optimize-status .infyp-field-spinner {
+    position: static;
+    transform: none;
+    float: none;
+    margin: 0;
+}
+
+.infyp-modal-optimize-center {
+    margin-top: var(--infyp-spacing-lg);
+    text-align: center;
+}
+
+.infyp-modal-optimize-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* ==========================================================================
+   Modal Counter Badges
+
+   The parent .infyp-modal-counter-badges layout (flex column + gap) is defined
+   in plugin/seo-score-display.css. Only child styles live here.
+   ========================================================================== */
+
+.infyp-modal-counter-badges .infyp-field-feedback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--infyp-spacing-xs);
+    padding: var(--infyp-spacing-xs);
+    font-size: var(--infyp-font-size-sm);
+    border-radius: var(--infyp-radius-md);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.infyp-modal-counter-badges .infyp-field-feedback.char-count,
+.infyp-modal-counter-badges .infyp-field-feedback.word-count {
+    background: var(--infyp-bg-light);
+    border: 1px solid var(--infyp-border-light);
+}
+
+.infyp-modal-counter-badges .infyp-field-feedback .dashicons {
+    font-size: var(--infyp-font-size-md);
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Modal Header Badges
+   ========================================================================== */
+
+.infyp-modal-header-badges {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: var(--infyp-spacing-md);
+    gap: 10px;
+}
+
+/* ==========================================================================
+   Column Display Styles
+   ========================================================================== */
+
+/* Column display styles moved to plugin/image-table.css */
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+@media screen and (max-width: 782px) {
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-keywords,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-filename,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-alt_text,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-image_title,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-title {
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-keywords:before,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-filename:before,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-alt_text:before,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-image_title:before,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-title:before {
+        display: block;
+        position: static;
+        content: attr(data-colname);
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .infyp-modal-optimize-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .infyp-modal-optimize-grid .infyp-ai-disclaimer {
+        order: 2;
+    }
+
+    .infyp-modal-optimize-grid .infyp-optimize-ai {
+        order: 1;
+    }
+
+    .infyp-modal-optimize-grid .infyp-modal-optimize-spinner {
+        order: 1;
+    }
+
+}
+
+/* ==========================================================================
+   Score Display & Circle Progress Components
+   ========================================================================== */
+
+.infyp-score-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--infyp-spacing-xl);
+    background: var(--infyp-bg-light);
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-md);
+    margin-bottom: var(--infyp-spacing-md);
+    text-align: center
+}
+
+.infyp-score-header h4 {
+    margin: var(--infyp-spacing-md) 0 0 0;
+    font-size: var(--infyp-font-size-md);
+    font-weight: 600;
+    color: var(--infyp-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px
+}
+
+.infyp-score-percentage {
+    font-size: 1rem;
+    width: 100%
+}
+
+/* Points Breakdown */
+.infyp-score-points-breakdown {
+    margin-top: var(--infyp-spacing-xs);
+    font-size: var(--infyp-font-size-md);
+    color: var(--infyp-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--infyp-spacing-xs)
+}
+
+.infyp-points-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-xs);
+    font-weight: var(--infyp-font-weight-semibold);
+    border-radius: var(--infyp-radius-full);
+    background: var(--infyp-bg-light);
+    color: var(--infyp-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infyp-points-earned {
+    background: var(--infyp-bg-light);
+}
+
+.infyp-points-total {
+    background: transparent;
+    color: var(--infyp-text-muted);
+}
+
+.infyp-points-separator {
+    color: var(--infyp-text-muted);
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Circular Progress Indicator
+   ========================================================================== */
+
+.infyp-circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--infyp-spacing-sm)
+}
+
+.infyp-circle-container h4 {
+    margin: var(--infyp-spacing-sm) 0 0 0;
+    font-size: var(--infyp-font-size-base);
+    font-weight: 600;
+    color: var(--infyp-text-primary);
+}
+
+.infyp-circle-progress {
+    width: 80px;
+    height: 80px;
+    transform: rotate(-90deg)
+}
+
+.infyp-circle-bg {
+    fill: none;
+    stroke: var(--infyp-border-gray);
+    stroke-width: 8;
+    stroke-linecap: round
+}
+
+.infyp-circle-fg {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease;
+    stroke-dasharray: 326.73;
+    stroke-dashoffset: 326.73
+}
+
+.infyp-circle-text {
+    font-size: var(--infyp-font-size-2xl);
+    font-weight: 700;
+    transform: rotate(90deg);
+    transform-origin: center;
+    fill: var(--infyp-text-primary)
+}
+
+/* Circle Color Variants */
+.infyp-circle-progress.infyp-circle-success .infyp-circle-fg {
+    stroke: var(--infyp-success-secondary)
+}
+
+.infyp-circle-progress.infyp-circle-warning .infyp-circle-fg {
+    stroke: var(--infyp-warning)
+}
+
+.infyp-circle-progress.infyp-circle-error .infyp-circle-fg {
+    stroke: var(--infyp-error)
+}
+
+/* ==========================================================================
+   Score Breakdown & Metric Cards
+   ========================================================================== */
+
+.infyp-score-breakdown {
+    margin-top: var(--infyp-spacing-md);
+}
+
+.infyp-score-details {
+    display: flex;
+    flex-direction: row;
+    gap: var(--infyp-spacing-lg);
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+/* Individual Metric Card */
+.infyp-metric-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--infyp-spacing-lg) var(--infyp-spacing-md);
+    background: var(--infyp-bg-light);
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-md);
+    gap: var(--infyp-spacing-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease
+}
+
+.infyp-metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+
+/* Small Circle for Metrics */
+.infyp-metric-circle {
+    width: 60px;
+    height: 60px;
+    transform: rotate(-90deg)
+}
+
+.infyp-metric-circle-bg {
+    fill: none;
+    stroke: var(--infyp-border-gray);
+    stroke-width: 6;
+    stroke-linecap: round
+}
+
+.infyp-metric-circle-fg {
+    fill: none;
+    stroke-width: 6;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.6s ease, stroke 0.3s ease;
+    stroke-dasharray: 245.04;
+    stroke-dashoffset: 245.04
+}
+
+.infyp-metric-circle-text {
+    font-size: var(--infyp-font-size-xl);
+    font-weight: 700;
+    transform: rotate(90deg);
+    transform-origin: center;
+    fill: var(--infyp-text-primary)
+}
+
+/* Metric circle color states */
+.infyp-metric-circle.infyp-circle-success .infyp-metric-circle-fg {
+    stroke: var(--infyp-success-secondary)
+}
+
+.infyp-metric-circle.infyp-circle-warning .infyp-metric-circle-fg {
+    stroke: var(--infyp-warning)
+}
+
+.infyp-metric-circle.infyp-circle-error .infyp-metric-circle-fg {
+    stroke: var(--infyp-error)
+}
+
+.infyp-metric-label {
+    font-weight: 600;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-base);
+    text-align: center;
+    margin-top: var(--infyp-spacing-xs)
+}
+
+.infyp-metric-value {
+    font-size: var(--infyp-font-size-sm);
+    color: var(--infyp-text-secondary);
+    text-align: center;
+    line-height: 1.4
+}
+
+/* Score Hint */
+.infyp-score-hint {
+    margin-top: 15px;
+    padding: 10px;
+    background: var(--infyp-bg-secondary);
+    border-radius: var(--infyp-radius-md)
+}
+
+.infyp-score-hint:empty {
+    display: none;
+}
+
+.infyp-score-hint .count {
+    font-weight: var(--infyp-font-weight-semibold);
+    color: var(--infyp-primary);
+    padding: 0 var(--infyp-spacing-xxs);
+}
+
+/* Grid layout only for SEO score modal breakdown, not individual field modals */
+#infyp-score-modal .infyp-score-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--infyp-spacing-md);
+}
+
+/* ==========================================================================
+   Score Field Sections (SEO Score Modal Breakdown)
+   ========================================================================== */
+
+.infyp-score-breakdown-sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--infyp-spacing-md);
+}
+
+.infyp-score-display {
+    margin-top: var(--infyp-spacing-md);
+}
+
+.infyp-score-field-section {
+    background: var(--infyp-bg-white);
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-md);
+    padding: var(--infyp-spacing-md);
+}
+
+.infyp-score-field-section > h3 {
+    margin: 0 0 var(--infyp-spacing-md) 0;
+    font-size: var(--infyp-font-size-lg);
+    font-weight: var(--infyp-font-weight-semibold);
+    color: var(--infyp-text-primary);
+    padding-bottom: var(--infyp-spacing-sm);
+    border-bottom: 1px solid var(--infyp-border-light);
+}
+
+/* Override for field sections inside breakdown modal */
+.infyp-score-field-section .infyp-score-display {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 0;
+}
+
+.infyp-score-field-section .infyp-score-header {
+    margin-bottom: var(--infyp-spacing-md);
+}
+
+.infyp-score-field-section .infyp-score-breakdown {
+    padding: 0;
+}
+
+/* Adjust grid layout for field section breakdown items */
+.infyp-score-field-section .infyp-score-details {
+    display: flex;
+    gap: var(--infyp-spacing-md);
+    flex-wrap: wrap;
+    justify-content: stretch;
+}
+
+.infyp-score-field-section .infyp-metric-card {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* ==========================================================================
+   Responsive Circle Adjustments
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+    .infyp-circle-progress {
+        width: 70px;
+        height: 70px
+    }
+
+    .infyp-circle-text {
+        font-size: var(--infyp-font-size-2xl)
+    }
+
+    .infyp-score-points-breakdown {
+        font-size: var(--infyp-font-size-sm);
+        margin-top: var(--infyp-spacing-sm)
+    }
+
+    .infyp-metric-card {
+        padding: var(--infyp-spacing-md) var(--infyp-spacing-sm)
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .infyp-circle-progress {
+        width: 60px;
+        height: 60px
+    }
+
+    .infyp-circle-text {
+        font-size: var(--infyp-font-size-xl)
+    }
+
+    .infyp-circle-bg,
+    .infyp-circle-fg {
+        stroke-width: 6
+    }
+
+    .infyp-score-details {
+        flex-direction: column;
+    }
+
+    .infyp-metric-card {
+        flex: 1 1 100%;
+    }
+
+    .infyp-metric-circle {
+        width: 50px;
+        height: 50px
+    }
+
+    .infyp-metric-circle-text {
+        font-size: var(--infyp-font-size-md)
+    }
+}

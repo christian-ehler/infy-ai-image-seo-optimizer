@@ -1,0 +1,270 @@
+.wrap h1 {
+    margin-bottom: 0.8rem;
+}
+
+#infyp-post-type-settings-form p.submit {
+    margin-top: 10px
+}
+
+.infyp-model-cost-details { margin-top: var(--infyp-spacing-sm); }
+.infyp-model-cost-details summary { cursor: pointer; color: var(--infyp-primary); font-size: var(--infyp-font-size-sm); font-weight: 500; }
+.infyp-model-cost-table { width: 100%; border-collapse: collapse; margin-top: var(--infyp-spacing-sm); font-size: var(--infyp-font-size-sm); }
+.infyp-model-cost-table th, .infyp-model-cost-table td { padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm); text-align: left; border-bottom: 1px solid var(--infyp-border-light); }
+.infyp-model-cost-table th { font-weight: 600; color: var(--infyp-text-primary); }
+.infyp-model-cost-table .infyp-cost-highlight { font-weight: 600; color: var(--infyp-success-text); }
+.infyp-model-cost-details .description { margin-top: var(--infyp-spacing-sm); }
+
+/* Tools Section */
+.infyp-tools-section {
+    margin-top: var(--infyp-spacing-xl)
+}
+
+.infyp-tool-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--infyp-spacing-lg);
+    padding: var(--infyp-spacing-lg);
+    background: var(--infyp-bg-light);
+    border-radius: var(--infyp-radius-lg)
+}
+
+.infyp-tool-info {
+    flex: 1
+}
+
+.infyp-tool-info h4 {
+    margin: 0 0 var(--infyp-spacing-xs) 0;
+    font-size: var(--infyp-font-size-base);
+    font-weight: 600;
+    color: var(--infyp-text-primary)
+}
+
+.infyp-tool-info .infyp-form-description {
+    margin-bottom: var(--infyp-spacing-sm)
+}
+
+.infyp-tool-status {
+    margin: 0;
+    font-size: var(--infyp-font-size-sm);
+    color: var(--infyp-text-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs)
+}
+
+.infyp-tool-status .dashicons {
+    font-size: var(--infyp-font-size-base);
+    width: 16px;
+    height: 16px
+}
+
+.infyp-tool-action {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm);
+    flex-shrink: 0
+}
+
+.infyp-tool-action .button .dashicons {
+    margin-right: var(--infyp-spacing-xs)
+}
+
+.infyp-tool-action .spinner {
+    float: none;
+    margin: 0
+}
+
+.infyp-tool-result {
+    margin-top: var(--infyp-spacing-md);
+    padding: var(--infyp-spacing-md);
+    border-radius: var(--infyp-radius-md);
+    font-size: var(--infyp-font-size-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm)
+}
+
+.infyp-tool-result.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--infyp-success)
+}
+
+.infyp-tool-result.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--infyp-danger)
+}
+
+.infyp-tool-result .dashicons {
+    flex-shrink: 0
+}
+
+@media (max-width:782px) {
+    .infyp-tool-item {
+        flex-direction: column;
+        align-items: stretch
+    }
+
+    .infyp-tool-action {
+        justify-content: flex-start
+    }
+}
+
+/* Banner Management Section */
+.infyp-banner-intro {
+    margin-top: 0;
+}
+
+.infyp-banner-management-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--infyp-spacing-xl);
+    margin-top: var(--infyp-spacing-xl);
+}
+
+.infyp-banner-option {
+    padding: var(--infyp-spacing-xl);
+    background: var(--infyp-bg-light);
+    border: 1px solid var(--infyp-border-gray);
+    border-radius: var(--infyp-radius-md);
+    transition: all 0.3s ease;
+}
+
+.infyp-banner-option:hover {
+    border-color: var(--infyp-border);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.infyp-banner-option-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: var(--infyp-spacing-md);
+}
+
+.infyp-banner-option-header .dashicons {
+    color: var(--infyp-primary);
+}
+
+.infyp-banner-option-header h4 {
+    margin: 0;
+    font-size: var(--infyp-font-size-lg);
+    font-weight: 600;
+    color: var(--infyp-text-primary);
+}
+
+.infyp-banner-option p.description {
+    margin: 0 0 15px 0;
+    color: var(--infyp-text-secondary);
+    font-size: var(--infyp-font-size-md);
+    line-height: 1.6;
+}
+
+/* Toggle Switch Styling */
+.infyp-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.infyp-toggle-switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.infyp-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--infyp-border-medium);
+    transition: 0.4s;
+    border-radius: var(--infyp-radius-full);
+}
+
+.infyp-toggle-slider::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.infyp-toggle-switch input:checked + .infyp-toggle-slider {
+    background-color: var(--infyp-primary);
+}
+
+.infyp-toggle-switch input:checked + .infyp-toggle-slider::before {
+    transform: translateX(28px);
+}
+
+.infyp-toggle-switch input:focus + .infyp-toggle-slider {
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.3);
+}
+
+/* Toggle with label - inline layout */
+.infyp-toggle-with-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-md);
+    cursor: pointer;
+    user-select: none;
+}
+
+.infyp-toggle-label {
+    font-weight: 500;
+    color: var(--infyp-text-primary);
+}
+
+/* Action Status Messages */
+.infyp-action-status {
+    display: inline-block;
+    margin-left: var(--infyp-spacing-md);
+    padding: var(--infyp-spacing-xs) 10px;
+    border-radius: var(--infyp-radius-md);
+    font-size: var(--infyp-font-size-base);
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.infyp-action-status.show {
+    opacity: 1;
+}
+
+.infyp-action-status.success {
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+}
+
+.infyp-action-status.error {
+    background: var(--infyp-error-border);
+    color: var(--infyp-error-text-dark);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .infyp-banner-management-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .infyp-banner-option {
+        padding: 15px;
+    }
+}
+
+/* ----------------------------------------------------------------
+   Redirect Settings Card (rendered via infyp_after_settings_cards)
+   ---------------------------------------------------------------- */
+.infyp-redirect-status-msg {
+	margin-left: 10px;
+}

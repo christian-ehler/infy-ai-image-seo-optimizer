@@ -1,0 +1,1085 @@
+/**
+ * AI Image SEO - Admin Styles (Minimal)
+ * Core admin styles - page-specific styles are in plugin/*.css
+ * Refactored: 2025-12-04 13:47:13
+ */
+
+@import url('framework/variables.css');
+@import url('optimize-icon.css');
+
+.infyp-wrap {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+}
+
+.infyp-wrap h1,
+.wrap h1 {
+    margin-bottom: 0.8rem;
+}
+
+/* =============================================
+   TABLE COLUMN WIDTHS - FREE VERSION
+   Category A: Fixed Small (ID)
+   Category B: Visual Fixed (Image, Usage, SEO Score)
+   Category C: Content Editable (Keywords, Filename, Alt Text, Title)
+   Category D: Actions
+   ============================================= */
+
+/* Category A: Fixed Small */
+
+/* Category B: Visual Fixed */
+
+/* Category C: Content Editable - ALL EQUAL WIDTH */
+
+/* Category D: Actions */
+
+.infyp-score-modal-content .infyp-score-progress {
+    stroke-width: 5
+}
+
+/* Score Summary Table Styles */
+
+.infyp-quick-fix-icon {
+    color: var(--infyp-info);
+    font-size: var(--infyp-font-size-2xl);
+    flex-shrink: 0;
+    margin-top: var(--infyp-spacing-xxs)
+}
+
+.infyp-quick-fix-content {
+    flex: 1;
+    font-size: var(--infyp-font-size-md);
+    line-height: 1.5
+}
+
+.infyp-quick-fix-content strong {
+    color: var(--infyp-text-primary)
+}
+
+.infyp-optimize-from-modal {
+    min-width: 150px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm)
+}
+
+.infyp-optimize-from-modal .infyp-optimize-icon {
+    font-size: var(--infyp-font-size-lg);
+    line-height: 1
+}
+
+/* column-usage and column-actions widths defined in column width section above */
+
+tr.infyp-optimizing {
+    background: linear-gradient(135deg, var(--infyp-warning-bg) 0%, #fde68a 100%) !important;
+    animation: infyp-pulse 2s ease-in-out infinite
+}
+
+tr.infyp-optimizing td {
+    position: relative;
+    overflow: hidden
+}
+
+tr.infyp-optimizing td::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: infyp-shimmer 2s infinite
+}
+
+tr.infyp-success {
+    background-color: var(--infyp-success-bg) !important;
+    transition: background-color 0.3s ease
+}
+
+tr.infyp-success td {
+    animation: infyp-success-flash 0.5s ease
+}
+
+/* Row optimizing state - disable all inputs */
+
+/* Field loading spinner - shown while modal is loading */
+
+.infyp-field-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 !important;
+    float: none !important;
+}
+
+.infyp-field-spinner.spinner {
+    background-size: 20px 20px;
+    visibility: visible;
+}
+
+/* Keywords wrapper loading state */
+
+/* Usage details wrapper loading state */
+
+/* Actions wrapper loading state */
+
+/* Action column loading state (for bulk optimization) */
+
+/* Bulk processing row highlight */
+
+tr.infyp-error {
+    background-color: var(--infyp-error-bg) !important;
+    transition: background-color 0.3s ease
+}
+
+/* Form Styles Following WordPress Standards */
+
+.infyp-settings-form {
+    padding: 0;
+    padding-top: 5px;
+}
+
+.infyp-form-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.infyp-form-row:last-child {
+    margin-bottom: 0;
+}
+
+.infyp-form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--infyp-text-primary);
+}
+
+.infyp-form-label strong {
+    font-weight: 600;
+}
+
+.infyp-field-description {
+    margin-top: 0;
+    margin-bottom: var(--infyp-spacing-sm);
+    color: var(--infyp-text-secondary); /* WordPress description text color */
+    font-size: var(--infyp-font-size-base);
+    font-style: normal;
+}
+
+.infyp-form-row label {
+    display: block;
+    margin-bottom: var(--infyp-spacing-xs);
+    font-weight: var(--infyp-font-weight-semibold);
+    color: var(--infyp-text-primary)
+}
+
+.infyp-form-row select,
+.infyp-form-row input[type="text"],
+.infyp-form-row textarea {
+    width: 100%;
+    border: 1px solid var(--infyp-border-primary);
+    border-radius: var(--infyp-radius-md);
+    background: var(--infyp-bg-white);
+    transition: all var(--infyp-transition-fast)
+}
+
+.infyp-form-row select:focus,
+.infyp-form-row input[type="text"]:focus,
+.infyp-form-row textarea:focus {
+    border-color: var(--infyp-primary);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--infyp-primary)
+}
+
+/* Form Actions */
+
+.infyp-save-status {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: var(--infyp-font-size-base);
+    line-height: 18px; /* Align with button height */
+}
+
+/* Notice inside metabox */
+
+.infyp-model-notice {
+    margin-top: 15px !important;
+    margin-bottom: 5px !important;
+    background: white !important;
+}
+
+.infyp-status-message {
+    padding: var(--infyp-spacing-sm) var(--infyp-spacing-md);
+    border-radius: var(--infyp-radius-md);
+    margin: var(--infyp-spacing-sm) 0;
+    font-size: var(--infyp-font-size-md)
+}
+
+.infyp-status-message.success {
+    background: var(--infyp-success-bg);
+    color: var(--infyp-success-text);
+    border: 1px solid var(--infyp-success)
+}
+
+.infyp-status-message.error {
+    background: var(--infyp-error-bg);
+    color: var(--infyp-error-text);
+    border: 1px solid var(--infyp-error)
+}
+
+.screen-reader-text {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden
+}
+
+@media (prefers-contrast:high) {
+
+    .infyp-card {
+        border-width: 2px
+    }
+
+    .infyp-btn:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: 2px solid var(--infyp-primary);
+        outline-offset: 2px
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important
+    }
+}
+
+.infyp-seo-score-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm)
+}
+
+.infyp-score-circle {
+    position: relative;
+    width: 70px;
+    height: 70px
+}
+
+.infyp-score-circle.small {
+    width: 60px;
+    height: 60px
+}
+
+.infyp-score-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg)
+}
+
+.infyp-score-bg {
+    fill: none;
+    stroke: var(--infyp-bg-light);
+    stroke-width: 3.8
+}
+
+.infyp-score-progress {
+    fill: none;
+    stroke: var(--infyp-success-secondary);
+    stroke-width: 3.8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.6s ease 0s
+}
+
+.infyp-score-progress.optimized {
+    stroke: var(--infyp-success-secondary)
+}
+
+.infyp-score-progress.good {
+    stroke: var(--infyp-primary)
+}
+
+.infyp-score-progress.fair {
+    stroke: var(--infyp-warning)
+}
+
+.infyp-score-progress.poor {
+    stroke: var(--infyp-error)
+}
+
+.infyp-score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center
+}
+
+.infyp-score-number {
+    font-size: var(--infyp-font-size-sm);
+    font-weight: 600;
+    color: var(--infyp-text-dark);
+    display: block
+}
+
+.infyp-score-circle.small .infyp-score-number {
+    font-size: 0.9rem
+}
+
+.infyp-check-seo-breakdown {
+    display: block;
+    width: 100%
+}
+
+.infyp-optimize-ai {
+    display: block;
+    width: 100%;
+}
+
+/* column-seo_score width defined in column width section above */
+
+.infyp-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: var(--infyp-spacing-sm);
+    padding: var(--infyp-spacing-sm) var(--infyp-spacing-md);
+    background-color: var(--infyp-text-primary);
+    color: var(--infyp-white);
+    font-size: var(--infyp-font-size-sm);
+    line-height: 1.4;
+    white-space: nowrap;
+    border-radius: var(--infyp-radius-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 10000;
+    pointer-events: none
+}
+
+.infyp-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: var(--infyp-text-primary) transparent transparent transparent
+}
+
+/* column-keywords width defined in column width section above */
+
+button.infyp-optimize-ai {
+    width: 100%;
+}
+
+button.infyp-has-icon .dashicons {
+    font-size: var(--infyp-font-size-md);
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: text-bottom;
+    margin-right: var(--infyp-spacing-xs)
+}
+
+button.infyp-has-icon .dashicons-yes-alt {
+    color: var(--infyp-success-secondary);
+    vertical-align: sub !important;
+}
+
+.infyp-disclaimer-text {
+    line-height: 1.2;
+}
+
+.infyp-modal-image-preview {
+    width: 100%;
+    margin-bottom: var(--infyp-spacing-lg);
+    border-radius: var(--infyp-radius-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px
+}
+
+.infyp-modal-image-preview img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-md);
+    background: white;
+}
+
+/* Alt text styles moved to modals.css */
+
+.infyp-field-optimization-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--infyp-spacing-sm);
+}
+
+.infyp-optimize-button-grid {
+    display: grid;
+    gap: var(--infyp-spacing-sm);
+    width: 100%;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+}
+
+.infyp-optimize-button-grid .infyp-optimize-ai {
+    width: 100%;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 30px!important;
+}
+
+@media screen and (max-width: 480px) {
+    .infyp-optimize-button-grid {
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Title input styles moved to modals.css */
+
+.infyp-seo-guidelines {
+    background: var(--infyp-bg-light);
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-md);
+    padding: var(--infyp-spacing-md);
+    margin-top: var(--infyp-spacing-md);
+}
+
+.infyp-seo-guidelines h4 {
+    margin: 0 0 var(--infyp-spacing-sm) 0;
+    font-size: 0.875rem;
+    font-weight: 600
+}
+
+.infyp-seo-guidelines ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none
+}
+
+.infyp-seo-guidelines li {
+    font-size: 0.8125rem;
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs)
+}
+
+.infyp-seo-guidelines .dashicons {
+    font-size: var(--infyp-font-size-lg);
+    width: 16px;
+    height: 16px;
+    color: var(--infyp-primary)
+}
+
+/* Usage Modal Styles */
+
+/* Post Type Filter Styles - Inline Version */
+
+/* ============================================
+   Post Type Filter Styles - Dedicated Classes
+   ============================================ */
+
+/* Filter Wrapper */
+
+/* Filter Token List Container */
+
+/* Hide scrollbar but keep functionality */
+
+/* Individual Filter Token */
+
+/* All Token Special Styling */
+
+/* Filter Token Remove Button */
+
+/* Filter Input Field */
+
+/* Placeholder text when limit is reached */
+
+/* Table wrapper */
+
+/* Hide table, search box and filters until page is fully loaded */
+
+/* Use generic selector to work with all languages (class 'images' is translated) */
+
+/* Hide old search box during skeleton loading */
+
+/* Hide old search box - we use modern search now */
+
+/* =============================================
+   TABLE CONTROLS - Filter & Bulk Actions
+   ============================================= */
+
+/* Hide controls until page is ready */
+
+/* Responsive adjustments */
+
+/* =============================================
+   HIDE TOP PAGINATION - Keep only bottom
+   ============================================= */
+
+/* Hide empty top tablenav area */
+
+/* Modern Search Styles */
+
+/* Hide native search cancel button (we have our own clear button) */
+
+/* Search Results Dropdown */
+
+/* Search result keyboard focus */
+
+/* Search result SEO badge */
+
+/* Row highlight animation for search result click */
+
+/* Skeleton loading animation */
+
+/* Dynamic overlay positioned by JavaScript (for filtering/pagination) */
+
+/* Post Type Filter Token Styles */
+
+.infyp-post-type-tokens {
+    border: 1px solid var(--infyp-text-lighter);
+    border-radius: var(--infyp-radius-md);
+    background: var(--infyp-white);
+}
+
+.infyp-post-type-tokens:focus-within {
+    border-color: var(--infyp-primary);
+    box-shadow: 0 0 0 1px var(--infyp-primary);
+}
+
+.infyp-post-type-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: var(--infyp-spacing-xs);
+    background: var(--infyp-white);
+    border: 1px solid var(--infyp-text-lighter);
+    border-radius: var(--infyp-radius-md);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.infyp-dropdown-search {
+    padding: var(--infyp-spacing-sm);
+    border-bottom: 1px solid var(--infyp-border-light);
+}
+
+.infyp-dropdown-search-input {
+    width: 100%;
+    padding: 6px var(--infyp-spacing-sm);
+    border: 1px solid var(--infyp-text-lighter);
+    border-radius: var(--infyp-radius-md);
+    font-size: var(--infyp-font-size-base);
+}
+
+.infyp-dropdown-options {
+    overflow-y: auto;
+    max-height: 250px;
+}
+
+.infyp-dropdown-option {
+    padding: var(--infyp-spacing-sm) var(--infyp-spacing-md);
+    cursor: pointer;
+    font-size: var(--infyp-font-size-base);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infyp-dropdown-option:hover {
+    background: var(--infyp-bg-light);
+}
+
+.infyp-dropdown-option.infyp-option-selected {
+    background: var(--infyp-primary-bg);
+}
+
+.infyp-dropdown-option.infyp-option-selected:hover {
+    background: var(--infyp-info-bg-light);
+}
+
+/* Limit reached state */
+
+.infyp-dropdown-option.infyp-option-limit-reached {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.infyp-dropdown-option.infyp-option-limit-reached:hover {
+    background: transparent;
+}
+
+/* Selected check icon */
+
+.infyp-dropdown-option .infyp-selected-check {
+    margin-left: auto;
+    color: var(--infyp-success-secondary);
+    font-size: var(--infyp-font-size-xl);
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    display: none;
+}
+
+.infyp-dropdown-option.infyp-option-selected .infyp-selected-check {
+    display: inline-block !important;
+}
+
+/* Hide category badge when item is selected (check icon is shown) */
+
+.infyp-dropdown-option.infyp-option-selected .infyp-category-badge {
+    display: none !important;
+}
+
+/* Category badges for post type dropdown */
+
+.infyp-category-badge {
+    display: inline-block;
+    font-size: var(--infyp-font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 3px 6px;
+    border-radius: 3px;
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* WordPress badge */
+
+.infyp-post-type-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid var(--infyp-border-primary);
+    border-radius: var(--infyp-radius-md);
+    box-shadow: var(--infyp-shadow-md);
+    z-index: 1000;
+    margin-top: var(--infyp-spacing-xs);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Alt text recommendations styles moved to modals.css */
+
+.infyp-alt-text-trigger,
+.infyp-title-trigger {
+    background: var(--infyp-bg-white) !important;
+    cursor: pointer !important;
+    transition: all var(--infyp-transition-fast)
+}
+
+.infyp-alt-text-trigger:hover,
+.infyp-title-trigger:hover {
+    background: var(--infyp-bg-light) !important;
+    border-color: var(--infyp-primary) !important;
+    box-shadow: 0 0 0 1px var(--infyp-primary)
+}
+
+.infyp-manual-update-status {
+    display: block;
+    height: 20px;
+    margin-top: 5px
+}
+
+/* Modal optimize styles moved to modals.css */
+
+/* Notice Styles */
+
+.infyp-model-notice {
+    display: none;
+    margin-top: 15px !important;
+    margin-bottom: 5px !important;
+    background: white !important;
+}
+
+/* Status Icon Colors */
+
+.infyp-status-error {
+    color: var(--infyp-error);
+}
+
+.infyp-status-icon {
+    vertical-align: middle;
+}
+
+.infyp-status-message {
+    vertical-align: middle;
+}
+
+/* Enhanced Keywords Styles */
+
+/* Icon styling in keyword badges */
+
+/* Plus icon specific sizing */
+
+/* Clear keywords button - matches Edit Keywords button style */
+
+/* Clear Keywords Confirmation Modal - uses keywords lightbox base styles */
+
+/* Keywords Modal - WordPress Token Field Style */
+
+/* WordPress-style Token Field */
+
+/* Override WordPress admin styles for keyword modal input */
+
+/* Override WordPress disabled styles for keyword modal */
+
+/* Notification styles */
+
+.infyp-notification {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    padding: var(--infyp-spacing-md) var(--infyp-spacing-xl);
+    background: var(--infyp-bg-white);
+    border-left: 4px solid var(--infyp-primary);
+    box-shadow: var(--infyp-shadow-md);
+    border-radius: var(--infyp-radius-md);
+    font-size: var(--infyp-font-size-base);
+    z-index: 100002;
+    display: none;
+}
+
+.infyp-notification .dashicons {
+    font-size: var(--infyp-font-size-lg);
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    flex-shrink: 0;
+}
+
+.infyp-notification-text {
+    font-weight: var(--infyp-font-weight-bold);
+    font-size: var(--infyp-font-size-base);
+    line-height: 1.4;
+}
+
+.infyp-notification-success {
+    border-left-color: var(--infyp-success);
+}
+
+.infyp-notification-success .dashicons {
+    color: var(--infyp-success);
+}
+
+.infyp-notification-error {
+    border-left-color: var(--infyp-error);
+}
+
+.infyp-notification-error .dashicons {
+    color: var(--infyp-error);
+}
+
+.infyp-notification-warning {
+    border-left-color: var(--infyp-warning);
+}
+
+.infyp-notification-warning .dashicons {
+    color: var(--infyp-warning);
+}
+
+/* Modal Keywords Display - moved to modals.css */
+
+/* Save Status Display (consistent across all settings) */
+
+.infyp-save-status {
+    margin-left: 10px;
+    padding: 5px var(--infyp-spacing-md);
+    border-radius: var(--infyp-radius-md);
+    display: none;
+    align-items: center;
+    gap: 5px;
+    font-size: var(--infyp-font-size-base);
+}
+
+.infyp-save-status.success {
+    display: inline-flex;
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+    border: 1px solid var(--infyp-success-secondary-bg);
+}
+
+.infyp-save-status.error {
+    display: inline-flex;
+    background: var(--infyp-error-bg);
+    color: var(--infyp-error-text);
+    border: 1px solid var(--infyp-error-border-light);
+}
+
+.infyp-save-status .dashicons {
+    font-size: var(--infyp-font-size-lg);
+    width: 16px;
+    height: 16px;
+}
+
+/* Usage Modal Badges */
+
+/* Post Type Badges */
+
+/* Usage Type Badges */
+
+/* Specific Page Builder Badges */
+
+.infyp-check-usage {
+    min-width: 130px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* =============================================
+   AJAX TABLE LOADER - Skeleton & Loading States
+   ============================================= */
+
+/* Skeleton loader container */
+.infyp-table-skeleton {
+    display: block;
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Skeleton header row */
+.infyp-skeleton-header {
+    display: flex;
+    background: #f0f0f1;
+    border-bottom: 1px solid #c3c4c7;
+    padding: 8px 10px;
+}
+
+/* Skeleton data rows */
+.infyp-skeleton-row {
+    display: flex;
+    padding: 12px 10px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.infyp-skeleton-row:last-child {
+    border-bottom: none;
+}
+
+/* Skeleton cells */
+.infyp-skeleton-cell {
+    flex: 1;
+    padding: 4px 8px;
+}
+
+.infyp-skeleton-cell.infyp-skeleton-checkbox {
+    flex: 0 0 40px;
+    max-width: 40px;
+}
+
+.infyp-skeleton-cell.infyp-skeleton-image {
+    flex: 0 0 80px;
+    max-width: 80px;
+}
+
+.infyp-skeleton-cell.infyp-skeleton-title,
+.infyp-skeleton-cell.infyp-skeleton-field {
+    flex: 1 1 150px;
+}
+
+.infyp-skeleton-cell.infyp-skeleton-actions {
+    flex: 0 0 200px;
+    max-width: 200px;
+}
+
+/* Skeleton content placeholder */
+.infyp-skeleton-content {
+    height: 20px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: infyp-skeleton-shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+/* Table row skeleton (inside actual table) */
+tr.infyp-skeleton-row td.infyp-skeleton-cell {
+    padding: 15px 10px;
+}
+
+tr.infyp-skeleton-row td.infyp-skeleton-cell .infyp-skeleton-content {
+    height: 16px;
+    width: 80%;
+}
+
+/* Shimmer animation */
+@keyframes infyp-skeleton-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Loading overlay */
+.infyp-table-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-radius: 4px;
+}
+
+.infyp-loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.infyp-loading-spinner .spinner {
+    float: none;
+    margin: 0;
+}
+
+.infyp-loading-text {
+    color: #50575e;
+    font-size: 14px;
+}
+
+/* Table wrapper loading state */
+.infyp-table-wrapper.infyp-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Error state */
+.infyp-table-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    color: #d63638;
+}
+
+.infyp-table-error .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.infyp-table-error .infyp-retry-load {
+    margin-left: auto;
+}
+
+/* AJAX pagination buttons */
+.infyp-ajax-page {
+    cursor: pointer;
+}
+
+.infyp-ajax-page:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.infyp-page-input {
+    width: 50px;
+    text-align: center;
+}
+
+/* =============================================
+   CACHE WARMING BANNER
+   Shows during first load to inform user
+   ============================================= */
+
+.infyp-cache-warming-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: linear-gradient(90deg, #e7f3ff 0%, #f0f8ff 100%);
+    border-left: 4px solid var(--infyp-primary, #0073aa);
+    border-radius: 0 4px 4px 0;
+    margin: 16px 0;
+    animation: infyp-slide-in 0.3s ease-out;
+}
+
+.infyp-cache-warming-banner .spinner {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-size: 20px 20px;
+}
+
+.infyp-cache-warming-message {
+    color: var(--infyp-primary, #0073aa);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+@keyframes infyp-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Thumbnail styles for image table */
+.infyp-table-thumbnail {
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.infyp-no-thumbnail {
+    opacity: 0.5;
+    background: #f0f0f0;
+}
+
+/* WordPress AI model-preference hint (prompt settings metabox) */
+.infyp-wp-ai-active-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+    margin: 12px 0 0;
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    border-radius: var(--infyp-radius-sm);
+    font-size: var(--infyp-font-size-sm);
+    font-weight: var(--infyp-font-weight-medium);
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+    cursor: help;
+}

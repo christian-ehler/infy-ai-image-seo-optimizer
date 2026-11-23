@@ -1,0 +1,218 @@
+.wrap h1 {
+    margin-bottom: 0.8rem;
+}
+
+.infyp-api-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--infyp-spacing-lg)
+}
+
+.infyp-api-status-item {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-md);
+    padding: var(--infyp-spacing-md);
+    background: var(--infyp-bg-light);
+    border-radius: var(--infyp-radius-lg);
+    transition: all var(--infyp-transition-fast)
+}
+
+.infyp-api-status-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.infyp-api-status-info h4 {
+    margin: 0;
+    font-size: var(--infyp-font-size-base);
+    font-weight: var(--infyp-font-weight-semibold);
+    color: var(--infyp-text-primary)
+}
+
+.infyp-form-control {
+    width: 100%;
+    padding: var(--infyp-spacing-sm) var(--infyp-spacing-md);
+    border: 1px solid var(--infyp-border-primary);
+    border-radius: var(--infyp-radius-md);
+    font-size: var(--infyp-font-size-base);
+    transition: all var(--infyp-transition-fast)
+}
+
+.infyp-form-control:focus {
+    outline: none;
+    border-color: var(--infyp-gradient-start);
+    box-shadow: 0 0 0 2px rgba(55, 65, 81, 0.2)
+}
+
+.infyp-api-key-input {
+    font-family: monospace;
+    max-width: 50%
+}
+
+.infyp-api-key-input::placeholder {
+    color: var(--infyp-text-muted);
+    font-family: monospace;
+    font-size: var(--infyp-font-size-sm)
+}
+
+.infyp-key-hint {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+    margin-top: var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-sm);
+    color: var(--infyp-text-secondary)
+}
+
+.infyp-key-hint .dashicons {
+    font-size: var(--infyp-font-size-lg);
+    color: var(--infyp-success-secondary)
+}
+
+
+.infyp-form-description a {
+    color: var(--infyp-primary);
+    text-decoration: none;
+    margin-left: var(--infyp-spacing-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+    transition: color var(--infyp-transition-fast)
+}
+
+.infyp-form-description a:hover {
+    color: var(--infyp-primary-hover);
+    text-decoration: underline
+}
+
+.infyp-form-description a .dashicons {
+    font-size: var(--infyp-font-size-md)
+}
+
+.infyp-debug-section {
+    margin-top: var(--infyp-spacing-2xl);
+    background: var(--infyp-bg-light)
+}
+
+.infyp-debug-list {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.infyp-debug-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--infyp-spacing-sm) 0;
+    border-bottom: 1px solid var(--infyp-border-lightest)
+}
+
+.infyp-debug-list li:last-child {
+    border-bottom: none
+}
+
+.infyp-debug-label {
+    font-weight: var(--infyp-font-weight-medium);
+    color: var(--infyp-text-primary)
+}
+
+.infyp-debug-status {
+    font-weight: var(--infyp-font-weight-semibold)
+}
+
+.infyp-debug-status.success {
+    color: var(--infyp-success-secondary)
+}
+
+.infyp-debug-status.error {
+    color: var(--infyp-error)
+}
+
+.infyp-dynamic-notice {
+    margin: var(--infyp-spacing-md) 0
+}
+
+.infyp-save-individual.infyp-saving,
+#infyp-save-all-keys.infyp-saving {
+    position: relative;
+    color: transparent
+}
+
+.infyp-save-individual.infyp-saving::after,
+#infyp-save-all-keys.infyp-saving::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid var(--infyp-white);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: infyp-spin 1s linear infinite
+}
+
+@keyframes infyp-spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@media (max-width:782px) {
+    .infyp-api-status-grid {
+        grid-template-columns: 1fr
+    }
+
+    .infyp-api-key-input {
+        max-width: 100%
+    }
+
+    #infyp-save-all-keys {
+        width: 100%
+    }
+}
+
+
+/* Connection method card (WordPress AI Connectors, WP 7.0+) */
+.infyp-connection-method-card .infyp-connection-method-select {
+    max-width: 640px;
+    width: 100%
+}
+
+.infyp-connection-method-card .infyp-wp-ai-state {
+    margin: 8px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px
+}
+
+.infyp-wp-ai-provider-badge {
+    margin-right: 4px
+}
+
+.infyp-connection-method-card .infyp-wp-ai-state .dashicons {
+    vertical-align: text-bottom
+}
+
+.infyp-provider-card.infyp-deemphasized {
+    opacity: .55;
+    filter: grayscale(.4);
+    transition: opacity .2s ease, filter .2s ease
+}
+
+.infyp-provider-card.infyp-deemphasized:hover {
+    opacity: 1;
+    filter: none
+}
+
+/* Key action row: Test Key sits right of Save with clear separation. */
+.infyp-provider-card .infyp-test-key {
+    margin-inline-start: var(--infyp-spacing-lg);
+}

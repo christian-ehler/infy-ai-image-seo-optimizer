@@ -1,0 +1,115 @@
+/**
+ * Post Type Filter Token Styles
+ * Extracted from admin-style.css
+ * Generated: 2025-12-04 13:47:13
+ */
+
+.infyp-post-type-filter-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.infyp-filter-token-list {
+    display: flex;
+    flex-wrap: nowrap; /* Keep tokens in single line */
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+    padding: 0 var(--infyp-spacing-sm);
+    min-height: 40px;
+    cursor: text;
+    border: 1px solid var(--infyp-text-lighter);
+    border-radius: var(--infyp-radius-md);
+    background: var(--infyp-white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    overflow-y: hidden;
+}
+
+.infyp-filter-token-list::-webkit-scrollbar {
+    height: 0;
+}
+
+.infyp-filter-token-list {
+    scrollbar-width: none; /* Firefox */
+}
+
+.infyp-filter-token-list:focus-within {
+    border-color: var(--infyp-primary);
+    box-shadow: 0 0 0 1px var(--infyp-primary);
+}
+
+.infyp-filter-token {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 var(--infyp-spacing-xs) 0 var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-md);
+    line-height: 24px;
+    background: var(--infyp-border-light);
+    color: var(--infyp-text-darker);
+    border-radius: var(--infyp-radius-sm);
+    white-space: nowrap;
+    flex-shrink: 0; /* Prevent tokens from shrinking */
+}
+
+.infyp-filter-token.infyp-all-token {
+    background: var(--infyp-primary);
+    color: white;
+}
+
+.infyp-filter-token-remove {
+    background: none;
+    border: none;
+    color: var(--infyp-text-darker);
+    cursor: pointer;
+    padding: 0 var(--infyp-spacing-xs);
+    font-size: 19px;
+    line-height: 1;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+}
+
+.infyp-filter-token-remove:hover {
+    opacity: 1;
+    color: var(--infyp-error);
+}
+
+.infyp-all-token .infyp-filter-token-remove {
+    color: white;
+    opacity: 0.8;
+}
+
+.infyp-all-token .infyp-filter-token-remove:hover {
+    opacity: 1;
+    color: white;
+}
+
+.infyp-post-type-filter-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.infyp-filter-input {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    min-height: auto;
+    flex: 1;
+    min-width: 120px;
+}
+
+.infyp-all-token {
+    background: var(--infyp-primary);
+    color: var(--infyp-white);
+}
+
+.infyp-all-token .infyp-token-remove {
+    color: var(--infyp-white);
+}

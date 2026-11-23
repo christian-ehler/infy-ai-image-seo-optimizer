@@ -1,0 +1,447 @@
+/**
+ * Design Token System
+ * AI Image SEO WordPress Plugin
+ *
+ * This file defines all CSS custom properties (design tokens) used throughout the plugin.
+ * Organized into logical categories for easy maintenance and consistency.
+ *
+ * Token Naming Convention:
+ * --infyp-{category}-{property}-{variant}
+ *
+ * Categories:
+ * - color-*     : Color palette
+ * - text-*      : Text/typography colors
+ * - bg-*        : Background colors
+ * - border-*    : Border colors
+ * - spacing-*   : Spacing scale
+ * - radius-*    : Border radius
+ * - shadow-*    : Box shadows
+ * - font-*      : Typography
+ * - transition-*: Animations/transitions
+ * - z-*         : Z-index layers
+ */
+
+:root {
+    /* ========================================================================
+       1. COLOR PALETTE - Core Colors
+       ======================================================================== */
+
+    /* Primary - Fallback values (overridden by body block below when WP admin vars available) */
+    --infyp-primary: #3858e9;
+    --infyp-primary-hover: #2c46ba;
+    --infyp-primary-light: #42a5f5;
+    --infyp-primary-dark: #21358c;
+    --infyp-primary-bg: #f0f6fc;
+    --infyp-primary-alt: #007cba;
+
+    /* Success - Green */
+    --infyp-success: #10b981;
+    --infyp-success-hover: #059669;
+    --infyp-success-dark: #15803d;
+    --infyp-success-light: #a7f3d0;
+    --infyp-success-lighter: #86efac;
+    --infyp-success-lightest: #bbf7d0;
+    --infyp-success-bg: #d1fae5;
+    --infyp-success-bg-light: #f0fdf4;
+    --infyp-success-bg-lighter: #ecfdf5;
+    --infyp-success-text: #065f46;
+    --infyp-success-text-darker: #166534;
+    --infyp-success-hover-dark: #047857;
+    /* Secondary success (Bootstrap-like) */
+    --infyp-success-secondary: #28a745;
+    --infyp-success-secondary-bg: #d4edda;
+    --infyp-success-secondary-text: #155724;
+
+    /* Error/Danger - Red */
+    --infyp-error: #dc3232;
+    --infyp-error-hover: #b91c1c;
+    --infyp-error-dark: #dc2626;
+    --infyp-error-light: #ef4444;
+    --infyp-error-bg: #fee2e2;
+    --infyp-error-bg-lighter: #fef2f2;
+    --infyp-error-bg-lightest: #fff5f5;
+    --infyp-error-text: #991b1b;
+    --infyp-error-text-dark: #721c24;
+    --infyp-error-text-darker: #842029;
+    --infyp-error-border: #f8d7da;
+    --infyp-error-border-light: #f5c6cb;
+
+    /* Warning - Amber/Orange */
+    --infyp-warning: #f59e0b;
+    --infyp-warning-light: #fde68a;
+    --infyp-warning-yellow: #fcd34d;
+    --infyp-warning-alt: #f0ad4e;
+    --infyp-warning-cream: #ffeaa7;
+    --infyp-warning-bg: #fef3c7;
+    --infyp-warning-bg-light: #fffbeb;
+    --infyp-warning-bg-lighter: #fff8e5;
+    --infyp-warning-bg-lightest: #fffaf0;
+    --infyp-warning-text: #92400e;
+    --infyp-warning-text-dark: #856404;
+    --infyp-warning-border: #fff3cd;
+
+    /* Info - Blue */
+    --infyp-info: #0d6efd;
+    --infyp-info-dark: #1d4ed8;
+    --infyp-info-darker: #005a87;
+    --infyp-info-light: #3b82f6;
+    --infyp-info-bg: #dbeafe;
+    --infyp-info-bg-light: #e5f3ff;
+    --infyp-info-bg-lighter: #cfe2ff;
+    --infyp-info-text: #1e40af;
+    --infyp-info-text-alt: #084298;
+    --infyp-info-border: #93c5fd;
+
+    /* Neutral - Black & White */
+    --infyp-white: #ffffff;
+    --infyp-black: #000000;
+
+    /* ========================================================================
+       2. TEXT COLORS
+       ======================================================================== */
+
+    --infyp-text-primary: #23282d;      /* Main text */
+    --infyp-text-secondary: #646970;    /* Secondary text */
+    --infyp-text-muted: #6c757d;        /* Muted/disabled text */
+    --infyp-text-light: #999999;        /* Light text */
+    --infyp-text-lighter: #999999;      /* Lighter text */
+    --infyp-text-dark: #333333;         /* Dark text */
+    --infyp-text-darker: #2c3338;       /* Darker text */
+    --infyp-text-darkest: #0f172a;      /* Darkest text */
+    --infyp-text-medium: #666666;       /* Medium text */
+    /* Slate text variants */
+    --infyp-text-slate: #64748b;
+    --infyp-text-dark-slate: #334155;
+
+    /* ========================================================================
+       3. BACKGROUND COLORS
+       ======================================================================== */
+
+    --infyp-bg-white: #ffffff;
+    --infyp-bg-card: #ffffff;
+    --infyp-bg-light: #f8f9fa;
+    --infyp-bg-lighter: #fafafa;
+    --infyp-bg-secondary: #f5f5f5;
+    --infyp-bg-hover: #f0f0f1;
+    --infyp-bg-gray: #f7f7f7;
+    /* Slate backgrounds */
+    --infyp-bg-slate-light: #f8fafc;
+    --infyp-bg-slate: #f1f5f9;
+    /* Blue backgrounds */
+    --infyp-bg-blue-light: #f0f9ff;
+    --infyp-bg-blue: #e0f2fe;
+
+    /* ========================================================================
+       4. BORDER COLORS
+       ======================================================================== */
+
+    --infyp-border: #ccd0d4;
+    --infyp-border-primary: #ccd0d4;
+    --infyp-border-light: #e1e5e9;
+    --infyp-border-lighter: #e5e5e5;
+    --infyp-border-lightest: #eeeeee;
+    --infyp-border-medium: #cccccc;
+    --infyp-border-dark: #bbbbbb;
+    --infyp-border-slate: #e2e8f0;
+    --infyp-border-gray: #e0e0e0;
+
+    /* ========================================================================
+       5. SPACING SCALE (4px base)
+       ======================================================================== */
+
+    --infyp-spacing-xxs: 2px;   /* 0.5x */
+    --infyp-spacing-xs: 4px;    /* 1x   */
+    --infyp-spacing-sm: 8px;    /* 2x   */
+    --infyp-spacing-md: 16px;   /* 4x   */
+    --infyp-spacing-lg: 20px;   /* 5x   */
+    --infyp-spacing-xl: 24px;   /* 6x   */
+    --infyp-spacing-2xl: 32px;  /* 8x   */
+    --infyp-spacing-3xl: 48px;  /* 12x  */
+
+    /* ========================================================================
+       5.1 RESPONSIVE BREAKPOINTS
+       ======================================================================== */
+
+    --infyp-breakpoint-mobile: 782px;
+    --infyp-breakpoint-tablet: 1024px;
+    --infyp-breakpoint-laptop: 1400px;
+    --infyp-breakpoint-desktop: 1600px;
+
+    /* ========================================================================
+       6. BORDER RADIUS
+       ======================================================================== */
+
+    --infyp-radius-sm: 2px;
+    --infyp-radius-md: 4px;
+    --infyp-radius-lg: 8px;
+    --infyp-radius-xl: 12px;
+    --infyp-radius-full: 9999px;  /* Pill shape */
+
+    /* ========================================================================
+       7. BOX SHADOWS
+       ======================================================================== */
+
+    --infyp-shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.04);
+    --infyp-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --infyp-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --infyp-shadow-hover: 0 2px 8px rgba(34, 113, 177, 0.1);
+
+    /* ========================================================================
+       8. TYPOGRAPHY
+       ======================================================================== */
+
+    /* Font Sizes */
+    --infyp-font-size-xs: 11px;
+    --infyp-font-size-sm: 12px;
+    --infyp-font-size-md: 13px;
+    --infyp-font-size-base: 14px;
+    --infyp-font-size-lg: 16px;
+    --infyp-font-size-xl: 18px;
+    --infyp-font-size-2xl: 24px;
+    --infyp-font-size-3xl: 32px;
+
+    /* Font Weights */
+    --infyp-font-weight-normal: 400;
+    --infyp-font-weight-medium: 500;
+    --infyp-font-weight-semibold: 600;
+    --infyp-font-weight-bold: 700;
+
+    /* Line Heights */
+    --infyp-line-height-tight: 1.2;
+    --infyp-line-height-normal: 1.4;
+    --infyp-line-height-relaxed: 1.6;
+
+    /* ========================================================================
+       9. TRANSITIONS
+       ======================================================================== */
+
+    --infyp-transition-fast: 0.2s ease;
+    --infyp-transition-normal: 0.3s ease;
+    --infyp-transition-slow: 0.6s ease;
+
+    /* Motion tokens — durations and easings for animated UI (wizard panels,
+       progress rails, micro-interactions). Pair as `var(--infyp-motion-duration-*)
+       var(--infyp-ease-*)` in transition shorthands. */
+    --infyp-motion-duration-fast: 150ms;
+    --infyp-motion-duration-base: 250ms;
+    --infyp-motion-duration-slow: 450ms;
+    --infyp-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --infyp-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+    /* ========================================================================
+       10. Z-INDEX LAYERS
+       ======================================================================== */
+
+    --infyp-z-dropdown: 1000;
+    --infyp-z-sticky: 1020;
+    --infyp-z-modal-backdrop: 1040;
+    --infyp-z-modal: 1050;
+    --infyp-z-tooltip: 1060;
+    --infyp-z-toast: 1070;
+
+    /* ========================================================================
+       11. GRADIENTS
+       ======================================================================== */
+
+    --infyp-gradient-start: #374151;
+    --infyp-gradient-end: #111827;
+    --infyp-gradient-hover-start: #4b5563;
+    --infyp-gradient-hover-end: #1f2937;
+    --infyp-gradient-disabled-start: #6b7280;
+    --infyp-gradient-disabled-end: #4b5563;
+
+    /* ========================================================================
+       12. GRAY SCALE
+       ======================================================================== */
+
+    --infyp-gray-100: #f3f4f6;
+    --infyp-gray-200: #e8e8e9;
+    --infyp-gray-300: #e1e1e1;
+    --infyp-gray-500: #787c82;
+    --infyp-gray-600: #72777c;
+    --infyp-gray-700: #5a5a5a;
+
+    /* Slate Scale */
+    --infyp-slate-300: #cbd5e1;
+    --infyp-slate-400: #94a3b8;
+    --infyp-slate-600: #475569;
+
+    /* Blue Scale */
+    --infyp-blue-50: #eff6ff;
+
+    /* Amber Scale */
+    --infyp-amber-400: #fbbf24;
+    --infyp-amber-500: #ffd23f;
+
+    /* ========================================================================
+       13. COMPONENT-SPECIFIC TOKENS
+       ======================================================================== */
+
+    /* Alerts */
+    --infyp-alert-success-bg: #edfaef;
+    --infyp-alert-warning-bg: #fcf9e8;
+    --infyp-alert-warning-text: #b45309;
+
+    /* Badges - Usage Types */
+    --infyp-badge-featured-bg: #e3f2fd;
+    --infyp-badge-content-bg: #f3e5f5;
+    --infyp-badge-content-text: #7b1fa2;
+    --infyp-badge-builder-bg: #fff3e0;
+    --infyp-badge-builder-text: #ef6c00;
+
+    /* Score Circles - Success */
+    --infyp-score-success-bg: #d4f4dd;
+    --infyp-score-success-text: #00691e;
+    --infyp-score-success-stroke: #8ed9a8;
+
+    /* Score Circles - Error */
+    --infyp-score-error-bg: #fce4e4;
+    --infyp-score-error-text: #8a0000;
+    --infyp-score-error-stroke: #f0b9b9;
+
+    /* Score Circles - Warning */
+    --infyp-score-warning-text: #664d03;
+    --infyp-score-warning-stroke: #ffecb5;
+
+    /* Score Circles - Info/Good */
+    --infyp-score-info-bg: #e7f3ff;
+    --infyp-score-info-text: #0c5460;
+    --infyp-score-info-stroke: #b8daff;
+    --infyp-score-info-bg-light: #f0f8ff;
+    --infyp-score-info-border: #bfdbfe;
+
+    /* Log Entries */
+    --infyp-log-error: #dc3545;
+    --infyp-log-warning: #ffc107;
+
+    /* Dashboard */
+    --infyp-dashicon-color: #646970;
+
+    /* ========================================================================
+       14. BRAND COLORS
+       ======================================================================== */
+
+    --infyp-brand-google: #4285f4;
+    --infyp-brand-amber: #d97706;
+    --infyp-brand-openai: #10a37f;
+    --infyp-brand-openai-hover: #0d8c6b;
+    --infyp-brand-elementor: #92003b;
+    --infyp-brand-violet: #8b5cf6;
+    --infyp-brand-cyan: #4bbeff;
+    --infyp-brand-teal: #0b7cac;
+    --infyp-brand-turquoise: #20c4cb;
+    --infyp-brand-dark: #141923;
+    --infyp-brand-woo: #7f54b3;
+}
+
+/* Inherit primary color from WordPress admin theme.
+   Scoped to #wpbody-content to avoid leaking into admin bar or other WP core UI. */
+#wpbody-content {
+    --infyp-primary: var(--wp-admin-theme-color, #3858e9);
+    --infyp-primary-hover: var(--wp-admin-theme-color-darker-10, #2c46ba);
+    --infyp-primary-dark: var(--wp-admin-theme-color-darker-20, #21358c);
+}
+
+/* ==========================================================================
+   BASE COMPONENT STYLES
+   These provide sensible defaults using the design tokens above
+   ========================================================================== */
+
+/* Card Component */
+.infyp-card {
+    background: var(--infyp-bg-card);
+    border: 1px solid var(--infyp-border-primary);
+    border-radius: var(--infyp-radius-md);
+    box-shadow: var(--infyp-shadow-sm);
+    margin-bottom: var(--infyp-spacing-lg);
+    overflow: hidden;
+}
+
+.infyp-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--infyp-spacing-sm);
+    border-bottom: 1px solid var(--infyp-border-lighter);
+    padding: var(--infyp-spacing-md) var(--infyp-spacing-lg);
+    background: var(--infyp-bg-lighter);
+}
+
+.infyp-card-header h3,
+.infyp-card-title {
+    margin: 0;
+    font-size: var(--infyp-font-size-base);
+    font-weight: var(--infyp-font-weight-semibold);
+    color: var(--infyp-text-primary);
+}
+
+.infyp-card-body {
+    padding: var(--infyp-spacing-lg);
+}
+
+.infyp-card-body > p:first-child {
+    margin-top: 0;
+}
+
+.infyp-card-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm);
+    padding: var(--infyp-spacing-md) var(--infyp-spacing-lg);
+    border-top: 1px solid var(--infyp-border-lighter);
+    background: var(--infyp-bg-lighter);
+}
+
+/* Button Component */
+.infyp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm);
+    padding: var(--infyp-spacing-sm) var(--infyp-spacing-md);
+    border-radius: var(--infyp-radius-md);
+    font-weight: var(--infyp-font-weight-medium);
+    text-decoration: none;
+    transition: all var(--infyp-transition-fast);
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+/* Form Components */
+.infyp-form-group {
+    margin-bottom: var(--infyp-spacing-lg);
+}
+
+.infyp-form-label {
+    display: block;
+    margin-bottom: var(--infyp-spacing-sm);
+    font-weight: var(--infyp-font-weight-semibold);
+    color: var(--infyp-text-primary);
+}
+
+.infyp-form-description {
+    margin-bottom: var(--infyp-spacing-sm);
+    color: var(--infyp-text-secondary);
+    font-size: var(--infyp-font-size-md);
+}
+
+/* Status Components */
+.infyp-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    border-radius: var(--infyp-radius-sm);
+    font-size: var(--infyp-font-size-sm);
+    font-weight: var(--infyp-font-weight-medium);
+}
+
+.infyp-status-success {
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+}
+
+.infyp-status-error {
+    background: var(--infyp-error-bg);
+    color: var(--infyp-error-text);
+}
+

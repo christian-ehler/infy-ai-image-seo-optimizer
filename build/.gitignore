@@ -1,0 +1,8 @@
+# Ignore temporary files
+*.tmp
+*.log
+*.pyc
+__pycache__/
+
+# SVN credentials
+.env

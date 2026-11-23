@@ -1,0 +1,798 @@
+/**
+ * Responsive Table Styles
+ * AI Image SEO WordPress Plugin
+ *
+ * This file contains all responsive-specific styles for the image table,
+ * organized by breakpoint for easy maintenance.
+ *
+ * Breakpoints:
+ * - Desktop: > 1420px (full view with keyword badges, text usage button)
+ * - Laptop: 1240px - 1420px (condensed keywords, icon-only usage)
+ * - Small Laptop: 1240px - 1400px (hidden ID column, compressed columns)
+ * - Scroll View: 1024px - 1240px (horizontal scroll, min-width table)
+ * - Tablet: 782px - 1024px (hybrid card/table view)
+ * - Mobile: < 782px (full card layout)
+ */
+
+/* ==========================================================================
+   1. DEFAULT STATE - Desktop View (> 1420px)
+   Show full keyword badges, hide condensed view
+   ========================================================================== */
+
+/* Hide condensed view by default (desktop) */
+.infyp-keywords-condensed-view {
+    display: none;
+}
+
+/* Show full view by default (desktop) */
+.infyp-keywords-full-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--infyp-spacing-xs);
+    align-items: center;
+}
+
+/* Hide field condensed view by default (desktop) */
+.infyp-field-condensed-view {
+    display: none;
+}
+
+/* Show field full view by default (desktop) */
+.infyp-field-full-view {
+    display: flex;
+    flex-direction: column;
+    gap: var(--infyp-spacing-sm);
+}
+
+/* Compact button styling for condensed field view */
+.infyp-field-compact-btn {
+    padding: var(--infyp-spacing-xs) !important;
+    min-width: 32px !important;
+    width: 32px;
+    height: 32px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--infyp-radius-sm);
+}
+
+.infyp-field-compact-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    margin: 0;
+}
+
+/* Status color variants for compact buttons */
+.infyp-field-compact-btn.success {
+    background: var(--infyp-success-secondary-bg);
+    border-color: var(--infyp-success);
+    color: var(--infyp-success);
+}
+
+.infyp-field-compact-btn.success:hover {
+    background: var(--infyp-success);
+    color: var(--infyp-white);
+}
+
+.infyp-field-compact-btn.empty,
+.infyp-field-compact-btn.warning {
+    background: var(--infyp-warning-bg);
+    border-color: var(--infyp-warning);
+    color: var(--infyp-warning-text);
+}
+
+.infyp-field-compact-btn.empty:hover,
+.infyp-field-compact-btn.warning:hover {
+    background: var(--infyp-warning);
+    color: var(--infyp-white);
+}
+
+.infyp-field-compact-btn.error {
+    background: var(--infyp-error-bg-lightest);
+    border-color: var(--infyp-error);
+    color: var(--infyp-error);
+}
+
+.infyp-field-compact-btn.error:hover {
+    background: var(--infyp-error);
+    color: var(--infyp-white);
+}
+
+/* Usage button styling */
+.infyp-check-usage {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+}
+
+/* Hide icon by default (desktop), show text */
+.infyp-check-usage .infyp-usage-text {
+    display: inline;
+}
+
+.infyp-check-usage .dashicons {
+    display: none;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+/* Hide SEO breakdown icon by default (desktop), show text */
+.infyp-check-seo-breakdown .dashicons {
+    display: none;
+}
+
+/* Desktop column widths */
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-id {
+    width: 3%;
+    min-width: 40px;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-thumbnail {
+    width: 4%;
+    min-width: 55px;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-keywords {
+    width: 14%;
+    min-width: 120px;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-filename,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-alt_text,
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-title {
+    width: 14%;
+    min-width: 120px;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-usage_info {
+    width: 7%;
+    min-width: 90px;
+    text-align: center;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-actions {
+    width: 10%;
+    min-width: 100px;
+}
+
+.toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-seo_score {
+    width: 6%;
+    min-width: 70px;
+}
+
+/* ==========================================================================
+   2. CONDENSED KEYWORDS BUTTON STYLES
+   ========================================================================== */
+
+/* Condensed Keywords Button */
+.infyp-keywords-condensed-view .infyp-keywords-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-sm);
+    white-space: nowrap;
+    border-radius: var(--infyp-radius-md);
+    transition: all var(--infyp-transition-fast);
+}
+
+.infyp-keywords-btn .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.infyp-keyword-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 var(--infyp-spacing-xs);
+    background: var(--infyp-gradient-start);
+    color: var(--infyp-white);
+    border-radius: var(--infyp-radius-full);
+    font-size: var(--infyp-font-size-xs);
+    font-weight: var(--infyp-font-weight-semibold);
+    margin-left: var(--infyp-spacing-xs);
+}
+
+.infyp-keywords-btn.infyp-has-keywords {
+    background: var(--infyp-bg-light);
+    border-color: var(--infyp-border-light);
+    color: var(--infyp-text-primary);
+}
+
+.infyp-keywords-btn.infyp-has-keywords:hover {
+    background: var(--infyp-primary-bg);
+    border-color: var(--infyp-primary);
+    color: var(--infyp-primary);
+}
+
+/* ==========================================================================
+   4. ICON-ONLY USAGE BUTTON STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   5. LAPTOP VIEW (<= 1420px) - Condensed Keywords & Icon-Only Usage
+   ========================================================================== */
+
+@media screen and (max-width: 1420px) {
+    /* Switch to condensed keywords view */
+    .infyp-keywords-full-view {
+        display: none !important;
+    }
+
+    .infyp-keywords-condensed-view {
+        display: block;
+    }
+
+    /* Make usage button icon-only */
+    .infyp-check-usage {
+        padding: var(--infyp-spacing-xs) !important;
+        min-width: 32px !important;
+        width: 32px;
+        height: 32px;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .infyp-check-usage .dashicons {
+        display: block !important;
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+    }
+
+    .infyp-check-usage .infyp-usage-text {
+        display: none !important;
+    }
+
+    /* Adjust column widths for condensed view */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-keywords {
+        width: 8%;
+        min-width: 90px;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-usage_info {
+        width: 4%;
+        min-width: 45px;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-filename,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-alt_text,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-title {
+        width: 16%;
+        min-width: 110px;
+    }
+
+    /* Hide AI disclaimer at laptop view */
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-ai-disclaimer {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   5b. CARD LAYOUT VIEW (<= 1300px) - Two Column Card Grid
+   Switch from table to card layout for better readability
+   ========================================================================== */
+
+@media screen and (max-width: 1300px) {
+    /* Hide table header and footer */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table thead,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tfoot {
+        display: none;
+    }
+
+    /* Table body becomes a 2-column card grid */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--infyp-spacing-lg);
+        padding: var(--infyp-spacing-md);
+    }
+
+    /* Each row becomes a card */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tr {
+        display: block;
+        border: 1px solid var(--infyp-border-light);
+        border-radius: var(--infyp-radius-lg);
+        background: var(--infyp-white);
+        box-shadow: var(--infyp-shadow-sm);
+        overflow: visible;
+        position: relative;
+        min-width: 0; /* Prevent grid blowout */
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tr:hover {
+        box-shadow: var(--infyp-shadow-md);
+        border-color: var(--infyp-primary);
+    }
+
+    /* Hide ID column */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-id {
+        display: none !important;
+    }
+
+    /* Card cells - block layout. The primary column (filename) renders as <th scope="row">,
+       so it must be included alongside td everywhere. */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody th.column-primary {
+        display: block;
+        text-align: left;
+        border: none;
+        padding: var(--infyp-spacing-sm) var(--infyp-spacing-md);
+        width: auto !important;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        box-sizing: border-box;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td:not(:last-child),
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody th.column-primary:not(:last-child) {
+        border-bottom: 1px solid var(--infyp-border-lightest);
+    }
+
+    /* Field labels from data-colname */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td::before,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody th.column-primary::before {
+        content: attr(data-colname);
+        display: block;
+        font-size: var(--infyp-font-size-xs);
+        font-weight: var(--infyp-font-weight-semibold);
+        color: var(--infyp-text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: var(--infyp-spacing-xs);
+    }
+
+    /* Checkbox - positioned top right of card */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-cb {
+        position: absolute;
+        top: var(--infyp-spacing-md);
+        right: var(--infyp-spacing-md);
+        padding: 0;
+        width: auto !important;
+        border: none !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-cb::before {
+        display: none;
+    }
+
+    /* Thumbnail - card header */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail {
+        display: flex !important;
+        align-items: center;
+        gap: var(--infyp-spacing-md);
+        padding: var(--infyp-spacing-md);
+        margin-top: var(--infyp-spacing-sm);
+        background: var(--infyp-bg-slate-light);
+        border-top: 1px solid var(--infyp-border-light) !important;
+        border-bottom: 1px solid var(--infyp-border-light) !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail::before {
+        display: none;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail img {
+        max-height: 70px;
+        max-width: 70px;
+        border-radius: var(--infyp-radius-md);
+    }
+
+    /* Show full field view in cards (not condensed buttons) */
+    .infyp-field-full-view {
+        display: flex !important;
+    }
+
+    .infyp-field-condensed-view {
+        display: none !important;
+    }
+
+    /* Keywords - full width */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-keywords {
+        padding: var(--infyp-spacing-md);
+    }
+
+    .infyp-keywords-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .infyp-keywords-btn .infyp-btn-text {
+        display: inline;
+    }
+
+    /* Usage button - full with text */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-usage_info .infyp-check-usage {
+        width: auto;
+        min-width: auto !important;
+        height: auto;
+        padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm) !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-usage_info .infyp-check-usage .infyp-usage-text {
+        display: inline !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-usage_info .infyp-check-usage .dashicons {
+        display: none !important;
+    }
+
+    /* Actions - card footer style */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-actions {
+        background: var(--infyp-bg-lighter);
+        padding: var(--infyp-spacing-md);
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-actions::before {
+        display: none;
+    }
+
+    .infyp-actions-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--infyp-spacing-sm);
+    }
+
+    .infyp-actions-wrapper .button {
+        flex: 1;
+        justify-content: center;
+    }
+
+    /* Show button text in cards */
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-actions-wrapper .infyp-btn-text {
+        display: inline !important;
+    }
+
+    /* Hide SEO breakdown icon in cards (show text) */
+    .infyp-check-seo-breakdown .dashicons {
+        display: none !important;
+    }
+
+    /* Show AI disclaimer in cards */
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-ai-disclaimer {
+        display: inline-flex !important;
+    }
+
+    /* SEO Score - card footer style with circle */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-seo_score {
+        background: var(--infyp-bg-lighter);
+        padding: var(--infyp-spacing-md);
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: var(--infyp-spacing-md);
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-seo_score::before {
+        display: none;
+    }
+
+    /* Show full score circle in cards */
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-score-circle {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-score-svg {
+        display: block !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-score-text {
+        position: absolute !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-score-circle.small .infyp-score-number {
+        font-size: 0.8rem;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-score-label {
+        display: inline !important;
+    }
+
+}
+
+/* ==========================================================================
+   6. SMALL LAPTOP VIEW (1301px - 1400px) - Compressed Table Columns
+   Just before card layout kicks in
+   ========================================================================== */
+
+@media screen and (min-width: 1301px) and (max-width: 1400px) {
+    /* Hide ID column */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-id {
+        display: none;
+    }
+
+    /* Redistribute column widths */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-thumbnail {
+        width: 5%;
+        min-width: 55px;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-keywords {
+        width: 8%;
+        min-width: 80px;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-filename,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-alt_text,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-title {
+        width: 17%;
+        min-width: 120px;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-usage_info {
+        width: 4%;
+        min-width: 40px;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-actions {
+        width: 11%;
+        min-width: 100px;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-seo_score {
+        width: 6%;
+        min-width: 60px;
+    }
+
+    /* Hide character count badges */
+    .infyp-badge-container .char-count {
+        display: none;
+    }
+
+    /* Smaller thumbnail */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail img {
+        max-height: 50px;
+        max-width: 50px;
+    }
+
+    /* Compact action buttons */
+    .infyp-actions-wrapper {
+        gap: var(--infyp-spacing-xs);
+    }
+
+    .infyp-actions-wrapper .button {
+        font-size: var(--infyp-font-size-xs) !important;
+        padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm) !important;
+    }
+
+    /* Hide button text on smaller screens, show only icon + count */
+    .infyp-keywords-btn .infyp-btn-text {
+        display: none;
+    }
+
+    .infyp-keywords-btn {
+        padding: var(--infyp-spacing-xs);
+    }
+}
+
+/* ==========================================================================
+   7. MOBILE VIEW (< 782px) - Single Column Cards
+   Explicitly override WordPress core mobile styles to match 2-column card layout
+   ========================================================================== */
+
+@media screen and (max-width: 782px) {
+    /* Single column card grid */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody {
+        grid-template-columns: 1fr;
+        padding: var(--infyp-spacing-sm);
+        gap: var(--infyp-spacing-md);
+    }
+
+    /* Override WordPress core mobile table styles */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tr:not(.inline-edit-row):not(.no-items) td:not(.column-primary)::before {
+        display: none !important;
+    }
+
+    /* Hide WordPress toggle-row button (not needed in card layout) */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .toggle-row {
+        display: none !important;
+    }
+
+    /* Ensure card structure matches 2-column layout exactly */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tr {
+        display: block !important;
+        border: 1px solid var(--infyp-border-light) !important;
+        border-radius: var(--infyp-radius-lg) !important;
+        background: var(--infyp-white) !important;
+        box-shadow: var(--infyp-shadow-sm) !important;
+        overflow: visible !important;
+        position: relative !important;
+        min-width: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tr:hover {
+        box-shadow: var(--infyp-shadow-md) !important;
+        border-color: var(--infyp-primary) !important;
+    }
+
+    /* Card cells - block layout matching 2-column. Includes the primary-column <th> (filename). */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody th.column-primary {
+        display: block !important;
+        text-align: left !important;
+        border: none !important;
+        padding: var(--infyp-spacing-sm) var(--infyp-spacing-md) !important;
+        width: auto !important;
+        min-width: 0 !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        box-sizing: border-box !important;
+        padding-left: var(--infyp-spacing-md) !important;
+        position: static !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td:not(:last-child),
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody th.column-primary:not(:last-child) {
+        border-bottom: 1px solid var(--infyp-border-lightest) !important;
+    }
+
+    /* Field labels - matching 2-column card style */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td::before,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table tbody th.column-primary::before {
+        content: attr(data-colname) !important;
+        display: block !important;
+        position: static !important;
+        width: auto !important;
+        font-size: var(--infyp-font-size-xs) !important;
+        font-weight: var(--infyp-font-weight-semibold) !important;
+        color: var(--infyp-text-secondary) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: var(--infyp-spacing-xs) !important;
+    }
+
+    /* Hide ID column */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-id {
+        display: none !important;
+    }
+
+    /* Checkbox - positioned top right of card */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-cb {
+        position: absolute !important;
+        top: var(--infyp-spacing-md) !important;
+        right: var(--infyp-spacing-md) !important;
+        padding: 0 !important;
+        width: auto !important;
+        border: none !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-cb::before {
+        display: none !important;
+    }
+
+    /* Thumbnail - card header matching 2-column */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail {
+        display: flex !important;
+        align-items: center !important;
+        gap: var(--infyp-spacing-md) !important;
+        padding: var(--infyp-spacing-md) !important;
+        margin-top: var(--infyp-spacing-sm) !important;
+        background: var(--infyp-bg-slate-light) !important;
+        border-top: 1px solid var(--infyp-border-light) !important;
+        border-bottom: 1px solid var(--infyp-border-light) !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail::before {
+        display: none !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail img {
+        max-height: 70px !important;
+        max-width: 70px !important;
+        border-radius: var(--infyp-radius-md) !important;
+    }
+
+    /* Keywords - full width */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-keywords {
+        padding: var(--infyp-spacing-md) !important;
+    }
+
+    /* Actions - card footer style matching 2-column */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-actions {
+        background: var(--infyp-bg-lighter) !important;
+        padding: var(--infyp-spacing-md) !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-actions::before {
+        display: none !important;
+    }
+
+    /* SEO Score - card footer style matching 2-column */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-seo_score {
+        background: var(--infyp-bg-lighter) !important;
+        padding: var(--infyp-spacing-md) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: var(--infyp-spacing-md) !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-seo_score::before {
+        display: none !important;
+    }
+
+    /* Show full score circle in mobile cards */
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-score-circle {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-score-svg {
+        display: block !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-score-text {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-score-label {
+        display: inline !important;
+    }
+
+    /* Usage button - full with text */
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-usage_info .infyp-check-usage {
+        width: auto !important;
+        min-width: auto !important;
+        height: auto !important;
+        padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm) !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-usage_info .infyp-check-usage .infyp-usage-text {
+        display: inline !important;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-usage_info .infyp-check-usage .dashicons {
+        display: none !important;
+    }
+
+    /* Show AI disclaimer */
+    .toplevel_page_infy-ai-image-seo-optimizer .infyp-ai-disclaimer {
+        display: inline-flex !important;
+    }
+
+    /* Show SEO breakdown text (hide icon) */
+    .infyp-check-seo-breakdown .dashicons {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   8. PRINT STYLES
+   ========================================================================== */
+
+@media print {
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-usage_info,
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table .column-actions {
+        display: none;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table {
+        font-size: 10pt;
+    }
+
+    .toplevel_page_infy-ai-image-seo-optimizer .wp-list-table td.column-thumbnail img {
+        max-height: 40px;
+        max-width: 40px;
+    }
+}

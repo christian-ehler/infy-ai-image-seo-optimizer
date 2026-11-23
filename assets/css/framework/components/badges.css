@@ -1,0 +1,127 @@
+/**
+ * Badge Component
+ * Reusable badge/tag styles for WordPress plugins
+ *
+ * Usage:
+ * <span class="infyp-badge infyp-badge-success">Success</span>
+ * <span class="infyp-badge infyp-badge-sm">Small</span>
+ * <span class="infyp-points-badge infyp-badge-success">+5</span>
+ */
+
+/* ==========================================================================
+   Base Badge
+   ========================================================================== */
+
+.infyp-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    font-size: var(--infyp-font-size-xs);
+    font-weight: var(--infyp-font-weight-semibold);
+    line-height: 1.2;
+    border-radius: var(--infyp-radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   Badge Sizes
+   ========================================================================== */
+
+/* ==========================================================================
+   Status Badge Variants
+   ========================================================================== */
+
+.infyp-badge-success {
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+}
+
+.infyp-badge-error {
+    background: var(--infyp-error-bg-lightest);
+    color: var(--infyp-error);
+}
+
+.infyp-badge-warning {
+    background: var(--infyp-warning-border);
+    color: var(--infyp-warning-text-dark);
+}
+
+/* Badge with Dashicons */
+.infyp-badge .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    margin-right: 4px;
+}
+
+/* ==========================================================================
+   Points Badge (Score display)
+   ========================================================================== */
+
+.infyp-points-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    border-radius: var(--infyp-radius-full);
+    font-weight: var(--infyp-font-weight-semibold);
+    font-size: var(--infyp-font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infyp-points-badge-small {
+    font-size: 9px;
+    padding: 2px var(--infyp-spacing-xs);
+    letter-spacing: 0.3px;
+}
+
+.infyp-points-earned {
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+}
+
+.infyp-points-total {
+    background: var(--infyp-bg-light);
+    color: var(--infyp-text-secondary);
+}
+
+.infyp-points-total.infyp-badge-success {
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+}
+
+/* ==========================================================================
+   Usage Type Badges
+   ========================================================================== */
+
+.infyp-usage-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    border-radius: var(--infyp-radius-full);
+    font-size: var(--infyp-font-size-xs);
+    font-weight: var(--infyp-font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infyp-usage-badge.featured {
+    background: var(--infyp-badge-featured-bg);
+    color: var(--infyp-primary-dark);
+}
+
+.infyp-usage-badge.content {
+    background: var(--infyp-badge-content-bg);
+    color: var(--infyp-badge-content-text);
+}
+
+.infyp-usage-badge.builder {
+    background: var(--infyp-badge-builder-bg);
+    color: var(--infyp-badge-builder-text);
+}

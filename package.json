@@ -1,0 +1,43 @@
+{
+  "name": "infy-ai-image-seo-optimizer",
+  "version": "1.0.9",
+  "description": "AI-powered image SEO optimization for WordPress",
+  "private": true,
+  "scripts": {
+    "build:css": "npm run css:concat && npm run css:minify",
+    "build:css:dev": "npm run css:concat",
+    "css:concat": "node build/scripts/css-build.js",
+    "css:minify": "node build/scripts/css-build.js --minify",
+    "css:lint": "stylelint 'assets/css/**/*.css' --fix",
+    "css:lint:check": "stylelint 'assets/css/**/*.css'",
+    "watch:css": "node build/scripts/css-watch.js",
+    "build:js": "node build/scripts/js-build.js",
+    "build:js:dev": "node build/scripts/js-build.js --dev",
+    "build": "npm run build:css && npm run build:js",
+    "build:dev": "npm run build:css:dev && npm run build:js:dev",
+    "dev": "npm run build:css:dev && npm run watch:css"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "autoprefixer": "^10.4.16",
+    "clean-css": "^5.3.3",
+    "chokidar": "^3.5.3",
+    "postcss": "^8.4.32",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^9.3.0",
+    "rollup": "^4.9.0",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "> 1%",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

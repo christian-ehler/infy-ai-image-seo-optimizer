@@ -1,0 +1,23 @@
+.env
+.env.*
+node_modules/
+__pycache__/
+build/*.zip
+build/backups/
+.playwright-mcp/
+*.log
+shots/
+screenshots/
+test-results/
+playwright-report/
+.venv*/
+
+# Kept on the development machine only, not in this repository
+vendor/
+docs/
+changelog/
+.claude/
+CLAUDE.md
+build/docs/
+build/svn.txt
+build/languages/.claude/

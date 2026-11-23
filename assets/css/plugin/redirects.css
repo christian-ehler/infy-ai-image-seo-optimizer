@@ -1,0 +1,215 @@
+/**
+ * Redirects Monitor Page Styles
+ *
+ * Styles for the redirect list table, summary cards, status badges,
+ * and page-builder result indicators.
+ *
+ * @package IPAIS
+ * @since   1.1.0
+ */
+
+/* ================================================================
+   Column widths — percentage-based for consistent layout.
+
+   Column order:
+     cb | image | old_url | new_url | status_code | hits |
+     last_hit | created | source | page_builders | status
+
+   Desktop (11 columns = 100%):
+     3 + 4 + 21 + 21 + 7 + 5 + 8 + 7 + 7 + 10 + 7 = 100%
+
+   Tablet  (9 columns, hide last_hit + page_builders = 100%):
+     3 + 5 + 26 + 26 + 7 + 6 + 9 + 8 + 10 = 100%
+
+   Mobile  (5 columns, also hide status_code + hits + created + source = 100%):
+     5 + 7 + 36 + 36 + 16 = 100%
+   ================================================================ */
+
+/* ---- Desktop (default) ---------------------------------------- */
+.column-cb {
+	width: 3%;
+}
+
+.column-image_id {
+	width: 4%;
+	padding-right: 0 !important;
+}
+
+.column-old_url {
+	width: 21%;
+}
+
+.column-new_url {
+	width: 21%;
+}
+
+.column-status_code {
+	width: 7%;
+}
+
+.column-hit_count {
+	width: 5%;
+}
+
+.column-last_hit_at {
+	width: 8%;
+}
+
+.column-created_at {
+	width: 7%;
+}
+
+.column-source {
+	width: 7%;
+}
+
+.column-pagebuilder_results {
+	width: 10%;
+}
+
+.column-status {
+	width: 7%;
+}
+
+/* ----------------------------------------------------------------
+   Redirect thumbnail
+   ---------------------------------------------------------------- */
+.infyp-redirect-thumb {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+}
+
+/* ----------------------------------------------------------------
+   URL display
+   ---------------------------------------------------------------- */
+.infyp-redirect-url {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: help;
+}
+
+/* ----------------------------------------------------------------
+   Page builder result badges
+   ---------------------------------------------------------------- */
+.infyp-pb-results {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 8px;
+}
+
+.infyp-pb-result {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+.infyp-pb-result .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+.infyp-pb-icon-warning {
+	color: #dba617;
+}
+
+.infyp-pb-icon-success {
+	color: #00a32a;
+}
+
+.infyp-pb-icon-none {
+	color: #999;
+}
+
+/* ----------------------------------------------------------------
+   Status badges (extend framework badges)
+   ---------------------------------------------------------------- */
+.infyp-badge-muted {
+	background: #f0f0f1;
+	color: #50575e;
+}
+
+.infyp-badge-info {
+	background: #e7f0f9;
+	color: #2271b1;
+}
+
+/* ----------------------------------------------------------------
+   Summary cards — reuse API Usage layout (.infyp-api-usage-summary)
+   so no new grid needed; just minor tweaks.
+   ---------------------------------------------------------------- */
+
+/* ---- Tablet (<=1024px) ---------------------------------------- */
+@media screen and (max-width: 1024px) {
+	.column-last_hit_at,
+	.column-pagebuilder_results {
+		display: none;
+	}
+
+	.column-image_id {
+		width: 5%;
+	}
+
+	.column-old_url {
+		width: 26%;
+	}
+
+	.column-new_url {
+		width: 26%;
+	}
+
+	.column-status_code {
+		width: 7%;
+	}
+
+	.column-hit_count {
+		width: 6%;
+	}
+
+	.column-created_at {
+		width: 9%;
+	}
+
+	.column-source {
+		width: 8%;
+	}
+
+	.column-status {
+		width: 10%;
+	}
+}
+
+/* ---- Mobile (<=782px) ----------------------------------------- */
+@media screen and (max-width: 782px) {
+	.column-status_code,
+	.column-hit_count,
+	.column-created_at,
+	.column-source {
+		display: none;
+	}
+
+	.column-cb {
+		width: 5%;
+	}
+
+	.column-image_id {
+		width: 7%;
+	}
+
+	.column-old_url {
+		width: 36%;
+	}
+
+	.column-new_url {
+		width: 36%;
+	}
+
+	.column-status {
+		width: 16%;
+	}
+}

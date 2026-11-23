@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Intro Box (minimal info box)
+   ========================================================================== */
+
+.infyp-intro-box {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm);
+    padding: var(--infyp-spacing-md);
+    background: var(--infyp-bg-lighter);
+    border-radius: var(--infyp-radius-md);
+    margin-bottom: var(--infyp-spacing-lg);
+}
+
+.infyp-intro-box .dashicons {
+    color: var(--infyp-primary);
+    flex-shrink: 0;
+}
+
+.infyp-intro-box p {
+    margin: 0;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-md);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Info Grid Component
+   ========================================================================== */
+
+.infyp-info-grid {
+    display: grid;
+    gap: var(--infyp-spacing-md);
+}
+
+.infyp-info-grid.infyp-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.infyp-info-grid.infyp-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ==========================================================================
+   Info Item (card within the grid)
+   ========================================================================== */
+
+.infyp-info-item {
+    border: 1px solid var(--infyp-border-light);
+    padding: var(--infyp-spacing-md);
+    border-radius: var(--infyp-radius-md);
+    background: var(--infyp-bg-white);
+}
+
+.infyp-info-item .infyp-badge {
+    margin-bottom: var(--infyp-spacing-xs);
+}
+
+.infyp-info-item .infyp-badge .dashicons {
+    font-size: var(--infyp-font-size-sm);
+    margin-right: var(--infyp-spacing-xxs);
+}
+
+.infyp-card-header .infyp-badge .dashicons {
+    font-size: var(--infyp-font-size-sm);
+    width: 14px;
+    height: 14px;
+    margin-right: var(--infyp-spacing-xxs);
+}
+
+/* ==========================================================================
+   Typography helpers used inside info items
+   ========================================================================== */
+
+.infyp-font-semibold {
+    font-weight: var(--infyp-font-weight-semibold);
+    color: var(--infyp-text-primary);
+}
+
+.infyp-text-sm {
+    font-size: var(--infyp-font-size-sm);
+    line-height: 1.5;
+}
+
+.infyp-text-muted {
+    color: var(--infyp-text-muted, #6c757d);
+}
+
+.infyp-mb-sm {
+    margin-bottom: var(--infyp-spacing-sm);
+}
+
+.infyp-mt-xs {
+    margin-top: var(--infyp-spacing-xs);
+}
+
+.infyp-mt-lg {
+    margin-top: var(--infyp-spacing-lg);
+}
+
+/* ==========================================================================
+   Responsive grid adjustments
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .infyp-info-grid.infyp-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .infyp-info-grid.infyp-grid-3,
+    .infyp-info-grid.infyp-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}

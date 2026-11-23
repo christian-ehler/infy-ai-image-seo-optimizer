@@ -1,0 +1,515 @@
+.infyp-dashboard-container {
+    padding: 0.7rem 0.3rem 0.5rem 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* First Row: 50/50 Grid (or 33/33/33 when recommendation card is present) */
+.infyp-dashboard-row-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--infyp-spacing-lg);
+}
+
+/* Three column layout when any recommendation card is present */
+.infyp-dashboard-row-top:has(.infyp-compression-card),
+.infyp-dashboard-row-top:has(.infyp-field-optimization-card),
+.infyp-dashboard-row-top:has(.infyp-api-usage-card),
+.infyp-dashboard-row-top:has(.infyp-extension-card) {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Total Images Card - Collapsible Layout */
+.infyp-dashboard-total-card {
+    position: relative;
+    border: 2px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-lg);
+    padding: var(--infyp-spacing-xl);
+    background: var(--infyp-bg-light);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infyp-dashboard-total-card:hover {
+    border-color: var(--infyp-primary);
+    box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1)
+}
+
+/* Main info section: Circle + Total */
+.infyp-dashboard-total-info {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-lg);
+}
+
+.infyp-dashboard-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.infyp-dashboard-total-content {
+    flex: 1;
+}
+
+.infyp-dashboard-total-content h3 {
+    font-size: var(--infyp-font-size-3xl);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--infyp-text-primary);
+}
+
+.infyp-dashboard-total-content p {
+    margin: var(--infyp-spacing-xs) 0;
+    color: var(--infyp-text-secondary);
+    font-size: var(--infyp-font-size-md);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm);
+}
+
+/* Base badge - no color, variants provide colors */
+.infyp-optimized-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.infyp-dashboard-total-content small {
+    color: var(--infyp-text-secondary);
+    font-size: var(--infyp-font-size-sm);
+}
+
+/* Field stat display in total card */
+.infyp-field-stat-divider {
+    display: inline-block;
+    width: 2px;
+    height: 0.6em;
+    background: var(--infyp-border-light);
+    margin: 0 var(--infyp-spacing-sm);
+    vertical-align: middle;
+}
+
+.infyp-field-stat-optimized,
+.infyp-field-stat-total {
+    vertical-align: middle;
+}
+
+/* Stats Grid - 4 column card layout */
+.infyp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--infyp-spacing-md);
+}
+
+/* Individual stat card */
+.infyp-stats-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--infyp-spacing-md);
+    border-radius: var(--infyp-radius-md);
+    border: 1px solid var(--infyp-border-light);
+    background: var(--infyp-white);
+    transition: all 0.2s ease;
+    gap: var(--infyp-spacing-xs);
+}
+
+.infyp-stats-card:hover {
+    border-color: var(--infyp-primary);
+    box-shadow: 0 2px 6px rgba(34, 113, 177, 0.08);
+}
+
+/* Card title (field name) */
+.infyp-stats-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5px;
+    color: var(--infyp-text-primary);
+}
+
+/* Badge color variants */
+.infyp-optimized-badge.infyp-badge-good {
+    background: var(--infyp-success-secondary-bg);
+    color: var(--infyp-success-secondary-text);
+}
+
+.infyp-optimized-badge.infyp-badge-warning {
+    background: var(--infyp-warning-bg);
+    color: var(--infyp-warning-text);
+}
+
+/* Responsive: Compact view - matches table view changes at 1400px */
+@media screen and (max-width: 1400px) {
+    /* Total Card: Stack circle and content vertically */
+    .infyp-dashboard-total-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .infyp-dashboard-total-content p {
+        justify-content: center;
+    }
+
+    /* Stats Grid: 2 columns instead of 4 */
+    .infyp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Dashboard Row Top: 2 columns instead of 3 when recommendation cards present */
+    .infyp-dashboard-row-top:has(.infyp-compression-card),
+    .infyp-dashboard-row-top:has(.infyp-field-optimization-card),
+    .infyp-dashboard-row-top:has(.infyp-api-usage-card) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Responsive: Mobile - 1 column */
+@media (max-width: 600px) {
+    .infyp-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CTA Box - Right */
+.infyp-dashboard-cta-box {
+    border: 2px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-lg);
+    padding: var(--infyp-spacing-xl);
+    background: linear-gradient(135deg, var(--infyp-bg-light) 0%, var(--infyp-white) 100%);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+}
+
+.infyp-dashboard-cta-box:hover {
+    border-color: var(--infyp-primary);
+    box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1)
+}
+
+.infyp-dashboard-cta-box h4 {
+    margin: 0 0 var(--infyp-spacing-sm) 0;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-lg);
+    font-weight: 600;
+}
+
+.infyp-dashboard-cta-box p {
+    margin: 0 0 var(--infyp-spacing-md) 0;
+    color: var(--infyp-text-secondary);
+    font-size: var(--infyp-font-size-base);
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* Recommendation Cards Specific Styles */
+.infyp-compression-card,
+.infyp-api-usage-card,
+.infyp-extension-card {
+    position: relative;
+}
+
+/* Extension Card - Blue Theme */
+.infyp-extension-card {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, var(--infyp-white) 100%);
+    border-color: rgba(37, 99, 235, 0.15);
+}
+
+.infyp-extension-card:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.infyp-extension-card-actions {
+    display: flex;
+    gap: var(--infyp-spacing-sm);
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.infyp-extension-card-actions .button {
+    margin: 0;
+}
+
+/* Compression Card - Blue Theme */
+.infyp-compression-card {
+    background: linear-gradient(135deg, var(--infyp-bg-blue-light) 0%, var(--infyp-white) 100%);
+    border-color: var(--infyp-info-bg);
+}
+
+.infyp-compression-card:hover {
+    border-color: var(--infyp-primary);
+    box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1);
+}
+
+/* Field Optimization Card */
+.infyp-field-optimization-card {
+    border: 2px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-lg);
+    padding: var(--infyp-spacing-lg);
+    background: var(--infyp-bg-light);
+    transition: all 0.2s ease;
+}
+
+.infyp-field-optimization-card:hover {
+    border-color: var(--infyp-primary);
+    box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1);
+}
+
+.infyp-field-optimization-card h4 {
+    margin: 0;
+    font-size: var(--infyp-font-size-lg);
+    font-weight: 600;
+    color: var(--infyp-text-primary);
+}
+
+/* Field Optimization Header with Toggle */
+.infyp-field-optimization-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--infyp-spacing-md);
+}
+
+.infyp-toggle-fields-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: transparent;
+    border: 1px solid var(--infyp-border-light);
+    border-radius: var(--infyp-radius-sm);
+    color: var(--infyp-primary);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.infyp-toggle-fields-btn:hover {
+    background: var(--infyp-primary);
+    border-color: var(--infyp-primary);
+    color: var(--infyp-white);
+}
+
+.infyp-toggle-fields-btn .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+/* API Usage Card - Default Theme */
+.infyp-api-usage-card {
+    position: relative;
+    /* Uses default .infyp-dashboard-cta-box styling */
+}
+
+.infyp-card-dismiss {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    padding: var(--infyp-spacing-xs);
+    cursor: pointer;
+    color: var(--infyp-text-secondary);
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.infyp-card-dismiss:hover {
+    color: var(--infyp-text-primary);
+}
+
+.infyp-card-dismiss .dashicons {
+    width: 20px;
+    height: 20px;
+    font-size: var(--infyp-font-size-2xl);
+}
+
+.infyp-compression-card-actions,
+.infyp-api-usage-card-actions {
+    display: flex;
+    gap: var(--infyp-spacing-sm);
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.infyp-compression-card-actions .button,
+.infyp-api-usage-card-actions .button {
+    margin: 0;
+}
+
+.infyp-compression-card .button-success {
+    background: var(--infyp-success);
+    border-color: var(--infyp-success-hover);
+    color: var(--infyp-white);
+}
+
+.infyp-compression-card .button-success:hover {
+    background: var(--infyp-success-hover);
+    border-color: var(--infyp-success-hover-dark);
+}
+
+.infyp-score-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0
+}
+
+.infyp-score-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg)
+}
+
+.infyp-score-bg {
+    fill: none;
+    stroke: var(--infyp-border-light);
+    stroke-width: 3
+}
+
+.infyp-score-progress {
+    fill: none;
+    stroke: var(--infyp-success-secondary);
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.6s ease
+}
+
+.infyp-score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center
+}
+
+.infyp-score-number {
+    display: block;
+    font-size: var(--infyp-font-size-xl);
+    font-weight: 600;
+    color: var(--infyp-text-primary);
+    line-height: 1
+}
+
+.infyp-score-label {
+    display: block;
+    font-size: 9px;
+    color: var(--infyp-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px
+}
+
+.infyp-log-entry {
+    margin-bottom: 6px;
+    padding: var(--infyp-spacing-xs) var(--infyp-spacing-sm);
+    border-radius: var(--infyp-radius-md);
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease
+}
+
+.infyp-log-entry.success {
+    background: rgba(40, 167, 69, 0.1);
+    border-left-color: var(--infyp-success-secondary);
+    color: var(--infyp-success-secondary-text)
+}
+
+.infyp-log-entry.error {
+    background: rgba(220, 53, 69, 0.1);
+    border-left-color: var(--infyp-log-error);
+    color: var(--infyp-error-text-dark)
+}
+
+.infyp-log-entry.info {
+    background: rgba(13, 110, 253, 0.1);
+    border-left-color: var(--infyp-info);
+    color: var(--infyp-info-text-alt)
+}
+
+.infyp-log-entry.warning {
+    background: rgba(255, 193, 7, 0.1);
+    border-left-color: var(--infyp-log-warning);
+    color: var(--infyp-warning-text-dark)
+}
+
+@media (max-width:768px) {
+    .infyp-dashboard-row-top {
+        grid-template-columns: 1fr
+    }
+}
+
+@media (prefers-contrast:high) {
+    .infyp-score-progress {
+        stroke: var(--infyp-black)
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .infyp-score-progress {
+        transition: none
+    }
+}
+
+/* 50/50 Grid Layout for AI Settings */
+.infyp-form-grid-50 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--infyp-spacing-lg);
+    margin-bottom: 10px;
+}
+
+.infyp-form-grid-50 .infyp-form-row {
+    margin: 0;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 782px) {
+    .infyp-form-grid-50 {
+        grid-template-columns: 1fr;
+    }
+
+    .infyp-dashboard-row-top,
+    .infyp-dashboard-row-top:has(.infyp-compression-card),
+    .infyp-dashboard-row-top:has(.infyp-field-optimization-card),
+    .infyp-dashboard-row-top:has(.infyp-api-usage-card),
+    .infyp-dashboard-row-top:has(.infyp-extension-card) {
+        grid-template-columns: 1fr;
+    }
+
+    .infyp-dashboard-total-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .infyp-dashboard-total-content {
+        width: 100%;
+    }
+
+    .infyp-compression-card-actions,
+    .infyp-api-usage-card-actions,
+    .infyp-extension-card-actions {
+        flex-direction: column;
+    }
+
+    .infyp-compression-card-actions .button,
+    .infyp-api-usage-card-actions .button,
+    .infyp-extension-card-actions .button {
+        width: 100%;
+    }
+}

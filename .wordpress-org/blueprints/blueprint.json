@@ -1,0 +1,17 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/wp-admin/admin.php?page=infy-ai-image-seo-optimizer",
+	"login": true,
+	"features": {
+		"networking": true
+	},
+	"steps": [
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://downloads.wordpress.org/plugin/infy-ai-image-seo-optimizer.zip"
+			}
+		}
+	]
+}

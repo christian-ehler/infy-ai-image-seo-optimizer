@@ -1,0 +1,137 @@
+/**
+ * SEO Score Page - References & Best Practices Styles
+ * Uses existing infyp CSS variables for consistency
+ */
+
+/* Best Practices Grid */
+.infyp-best-practices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--infyp-spacing-lg);
+    margin: var(--infyp-spacing-lg) 0;
+}
+
+.infyp-practice-item {
+    background: var(--infyp-bg-white);
+    border: 1px solid var(--infyp-border-lighter);
+    border-radius: var(--infyp-radius-md);
+    padding: var(--infyp-spacing-lg);
+}
+
+.infyp-practice-item h4 {
+    margin: 0 0 var(--infyp-spacing-md) 0;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-base);
+    font-weight: var(--infyp-font-weight-semibold);
+    padding-bottom: var(--infyp-spacing-sm);
+    border-bottom: 1px solid var(--infyp-border-lighter);
+}
+
+.infyp-practice-item ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.infyp-practice-item li {
+    padding: var(--infyp-spacing-xs) 0;
+    color: var(--infyp-text-secondary);
+    font-size: var(--infyp-font-size-md);
+    line-height: 1.5;
+    padding-left: var(--infyp-spacing-lg);
+    position: relative;
+}
+
+.infyp-practice-item li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--infyp-primary);
+    font-weight: var(--infyp-font-weight-bold);
+}
+
+/* References Section Styles */
+.infyp-references-section {
+    margin-top: var(--infyp-spacing-lg);
+}
+
+.infyp-references-section h4 {
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-base);
+    font-weight: var(--infyp-font-weight-semibold);
+    margin: var(--infyp-spacing-lg) 0 var(--infyp-spacing-md) 0;
+    padding-bottom: var(--infyp-spacing-sm);
+    border-bottom: 1px solid var(--infyp-border-lighter);
+}
+
+.infyp-references-section h4:first-child {
+    margin-top: 0;
+}
+
+.infyp-references {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.infyp-references li {
+    margin-bottom: var(--infyp-spacing-md);
+    padding: var(--infyp-spacing-md);
+    background: var(--infyp-bg-lighter);
+}
+
+.infyp-references a {
+    text-decoration: none;
+    color: var(--infyp-text-primary);
+    font-weight: var(--infyp-font-weight-medium);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--infyp-spacing-xs);
+}
+
+.infyp-references a strong {
+    font-size: var(--infyp-font-size-base);
+}
+
+.infyp-references .dashicons-external {
+    font-size: var(--infyp-font-size-md);
+    width: 14px;
+    height: 14px;
+    color: var(--infyp-text-light);
+}
+
+.infyp-references .description {
+    margin: var(--infyp-spacing-sm) 0 0 0;
+    color: var(--infyp-text-secondary);
+    font-size: var(--infyp-font-size-md);
+    line-height: 1.5;
+}
+
+/* Notice Styles */
+.infyp-notice {
+    padding: var(--infyp-spacing-md) var(--infyp-spacing-lg);
+    border-radius: var(--infyp-radius-md);
+}
+
+.infyp-notice-info {
+    background: var(--infyp-bg-light);
+    color: var(--infyp-text-primary);
+}
+
+.infyp-notice p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: var(--infyp-font-size-md);
+}
+
+.infyp-notice strong {
+    color: var(--infyp-text-primary);
+    font-weight: var(--infyp-font-weight-semibold);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .infyp-best-practices-grid {
+        grid-template-columns: 1fr;
+    }
+}

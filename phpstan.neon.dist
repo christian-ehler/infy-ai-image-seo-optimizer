@@ -1,0 +1,26 @@
+# PHPStan configuration. Run through scripts/check.sh, which supplies PHPStan,
+# the WordPress extension and stubs from the tools directory (INFY_TOOLS_DIR).
+# Known findings live in phpstan-baseline.neon; new code must not add any.
+includes:
+	- phpstan-baseline.neon
+
+parameters:
+	level: 5
+	phpVersion:
+		min: 80000
+		max: 80599
+	bootstrapFiles:
+		- scripts/phpstan-bootstrap.php
+	paths:
+		- infy-ai-image-seo-optimizer.php
+		- uninstall.php
+		- includes
+	excludePaths:
+		analyseAndScan:
+			- vendor (?)
+			- node_modules (?)
+			- build
+	dynamicConstantNames:
+		- INFYP_CACHE_ENABLED
+		- INFYP_DEBUG_ENABLED
+		- INFYP_DEFAULT_MODEL

@@ -1,0 +1,164 @@
+# Development files
+.git
+.gitignore
+.gitattributes
+.github
+.claude
+.vscode
+.idea
+.wordpress-org
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build files
+build/
+dist/
+node_modules/
+vendor/composer/
+vendor/bin/
+
+# Test files
+tests/
+test-*.php
+phpunit.xml
+phpunit.xml.dist
+.phpunit.result.cache
+codeception.yml
+cypress/
+e2e/
+
+# Configuration files
+.env
+.env.local
+.env.example
+wp-config-example.php
+composer.json
+composer.lock
+package.json
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build tools
+Gruntfile.js
+gulpfile.js
+webpack.config.js
+rollup.config.js
+vite.config.js
+tsconfig.json
+babel.config.js
+.babelrc
+postcss.config.js
+
+# Linting and formatting
+.eslintrc
+.eslintrc.js
+.eslintrc.json
+.prettierrc
+.prettierrc.js
+.prettierignore
+.stylelintrc
+.editorconfig
+phpcs.xml
+phpcs.xml.dist
+phpstan.neon
+phpstan.neon.dist
+phpstan-baseline.neon
+psalm.xml
+
+# Documentation (development)
+README.md
+CONTRIBUTING.md
+CHANGELOG.md
+SECURITY.md
+BUILD.md
+TODO.md
+docs/
+
+# Scripts
+*.sh
+scripts/
+*.bat
+*.ps1
+build-production.py
+minify.sh
+deploy.sh
+release.sh
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+*.orig
+*.rej
+
+# Source maps
+*.map
+
+# Database files
+*.sql
+*.sqlite
+*.db
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# CI/CD
+.travis.yml
+.gitlab-ci.yml
+bitbucket-pipelines.yml
+azure-pipelines.yml
+.circleci/
+jenkins/
+.drone.yml
+
+# IDE project files
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# WordPress specific dev files
+wp-cli.yml
+wp-cli.local.yml
+phpunit-wp-config.php
+
+# License system test files
+test-license-system.php
+
+# Mockups and designs
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xd
+seo-config-mockup.html
+
+# Keep production vendor files
+!vendor/autoload.php
+!vendor/composer/

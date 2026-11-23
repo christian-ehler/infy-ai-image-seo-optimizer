@@ -1,0 +1,2174 @@
+/**
+ * AI Image SEO Setup Wizard Styles
+ */
+
+/* ==========================================================================
+   V2 Design Tokens (self-contained for wizard)
+   ========================================================================== */
+:root {
+    /* Backgrounds */
+    --wz-bg: #ffffff;
+    --wz-bg-surface: #fafafa;
+    --wz-bg-elevated: #f5f5f5;
+
+    /* Text */
+    --wz-text: #111111;
+    --wz-text-secondary: #666666;
+    --wz-text-tertiary: #888888;
+    --wz-text-inverse: #ffffff;
+
+    /* Borders */
+    --wz-border: #eaeaea;
+    --wz-border-medium: #d0d0d0;
+
+    /* Accent */
+    --wz-accent: #000000;
+    --wz-accent-hover: #333333;
+    --wz-accent-fg: #ffffff;
+
+    /* Status */
+    --wz-success: #059669;
+    --wz-success-bg: rgba(5, 150, 105, 0.05);
+    --wz-success-border: rgba(5, 150, 105, 0.2);
+    --wz-warning: #d97706;
+    --wz-warning-bg: rgba(217, 119, 6, 0.05);
+    --wz-danger: #dc2626;
+    --wz-danger-bg: rgba(220, 38, 38, 0.05);
+    --wz-info: #6366f1;
+    --wz-wp-blue: #2563eb;
+    --wz-wp-blue-bg: rgba(37, 99, 235, 0.05);
+
+    /* Spacing */
+    --wz-space-1: 4px;
+    --wz-space-2: 8px;
+    --wz-space-3: 12px;
+    --wz-space-4: 16px;
+    --wz-space-5: 20px;
+    --wz-space-6: 24px;
+    --wz-space-8: 32px;
+    --wz-space-10: 40px;
+    --wz-space-12: 48px;
+
+    /* Typography */
+    /* System stack on purpose (no 'Inter'): the wizard loads no webfont of
+       its own, so naming one would render inconsistently — only on sites
+       whose theme happens to ship it. GDPR-clean, zero requests. */
+    --wz-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --wz-font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, monospace;
+    --wz-text-xs: 0.75rem;
+    --wz-text-sm: 0.875rem;
+    --wz-text-base: 1rem;
+    --wz-text-lg: 1.125rem;
+    --wz-text-xl: 1.25rem;
+    --wz-text-2xl: 1.5rem;
+    --wz-text-3xl: 2rem;
+
+    /* Radius */
+    --wz-radius-sm: 4px;
+    --wz-radius-md: 8px;
+    --wz-radius-lg: 12px;
+    --wz-radius-xl: 16px;
+    --wz-radius-full: 9999px;
+
+    /* Shadows */
+    --wz-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --wz-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --wz-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+
+    /* Transitions */
+    /* Aliased to the shared --infyp-motion-* tokens (variables.css §9) so the
+       wizard's motion stays in sync with the rest of the admin UI. Fallbacks
+       cover the standalone-stylesheet case. */
+    --wz-transition-fast: var(--infyp-motion-duration-fast, 150ms) var(--infyp-ease-out, ease);
+    --wz-transition-base: var(--infyp-motion-duration-base, 250ms) var(--infyp-ease-out, ease);
+    --wz-transition-slow: var(--infyp-motion-duration-slow, 450ms) var(--infyp-ease-in-out, ease);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --wz-bg: #0a0a0a;
+    --wz-bg-surface: #0f0f0f;
+    --wz-bg-elevated: #1a1a1a;
+    --wz-text: #ededed;
+    --wz-text-secondary: #a0a0a0;
+    --wz-text-tertiary: #707070;
+    --wz-text-inverse: #111111;
+    --wz-border: #1e1e1e;
+    --wz-border-medium: #2e2e2e;
+    --wz-accent: #ffffff;
+    --wz-accent-hover: #d4d4d4;
+    --wz-accent-fg: #000000;
+    --wz-success-bg: rgba(5, 150, 105, 0.1);
+    --wz-success-border: rgba(5, 150, 105, 0.3);
+    --wz-warning-bg: rgba(217, 119, 6, 0.1);
+    --wz-danger-bg: rgba(220, 38, 38, 0.1);
+    --wz-wp-blue-bg: rgba(37, 99, 235, 0.1);
+    --wz-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --wz-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --wz-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset for wizard page */
+
+/* Paint the document behind the wizard body so overscroll regions match the
+   theme (replaces the removed wp_add_inline_style gradient; :has() is a
+   progressive enhancement — body covers the viewport regardless). */
+html:has(body.infyp-wizard-body) {
+    margin: 0;
+    padding: 0;
+    background: var(--wz-bg-surface);
+}
+
+/* Utility for markup that must start hidden (e.g. eye-toggle icons);
+   jQuery .show()/.toggle() overrides it with an inline display as needed. */
+.infyp-wizard-body .infyp-hidden {
+    display: none;
+}
+
+.infyp-wizard-body {
+    margin: 0;
+    padding: 0;
+    background: var(--wz-bg-surface);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--wz-font);
+    color: var(--wz-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.infyp-wizard-body,
+.infyp-wizard-body * {
+    font-family: var(--wz-font);
+}
+
+.infyp-wizard-body * {
+    box-sizing: border-box;
+}
+
+/* Theme-bleed hardening: the wizard document fires front-end wp_head, and
+   although foreign assets are allowlist-dequeued (INFYP_Setup_Wizard::
+   dequeue_foreign_assets), inline <style> printed directly into wp_head can
+   still reach us. Re-assert the primitives themes most commonly reset —
+   inside :where() so these carry element-level specificity only and every
+   wizard component rule still wins. */
+.infyp-wizard-body :where(svg) {
+    display: inline-block;
+}
+
+.infyp-wizard-body :where(a) {
+    color: inherit;
+}
+
+.infyp-wizard-body :where(button, input, select, textarea) {
+    font-family: var(--wz-font);
+    font-size: inherit;
+}
+
+/* Main Container */
+.infyp-wizard-page {
+    /* width:100% is required: as a flex item of the column-flex body with
+       cross-axis auto margins, the wrapper would otherwise shrink-to-fit and
+       resize with the widest visible panel content. */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px var(--wz-space-6);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.infyp-wizard-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding: 1rem;
+}
+
+.infyp-wizard-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--wz-space-2);
+}
+
+.infyp-wizard-logo svg,
+.infyp-wizard-logo-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    color: var(--wz-accent);
+}
+
+.infyp-wizard-logo-text {
+    font-size: var(--wz-text-lg);
+    font-weight: 700;
+    color: var(--wz-text);
+    letter-spacing: -0.02em;
+}
+
+.infyp-wizard-skip,
+.infyp-wizard-skip-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--wz-text-secondary);
+    font-size: var(--wz-text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    padding: var(--wz-space-4) var(--wz-space-8);
+    border-radius: var(--wz-radius-md);
+    transition: var(--wz-transition-base);
+}
+
+.infyp-wizard-skip:hover,
+.infyp-wizard-skip-step:hover {
+    background: var(--wz-bg-elevated);
+    color: var(--wz-text);
+}
+
+/* Progress Indicator */
+.infyp-wizard-progress {
+    margin-bottom: 40px;
+    background: var(--wz-bg);
+    border-radius: var(--wz-radius-lg);
+    padding: 1.5rem 2rem 1.25rem;
+}
+
+.infyp-wizard-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--wz-space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.infyp-wizard-step-item {
+    margin: 0;
+}
+
+/* Milestones are real buttons: visited ones are clickable, future disabled. */
+button.infyp-wizard-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--wz-space-2);
+    background: none;
+    border: 0;
+    padding: var(--wz-space-1);
+    font: inherit;
+    cursor: pointer;
+    border-radius: var(--wz-radius-md);
+}
+
+button.infyp-wizard-step:disabled {
+    cursor: default;
+}
+
+button.infyp-wizard-step:focus-visible {
+    outline: 2px solid var(--wz-accent);
+    outline-offset: 2px;
+}
+
+.infyp-step-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--wz-text-sm);
+    font-weight: 600;
+    background: var(--wz-border);
+    color: var(--wz-text-secondary);
+    transition: background var(--wz-transition-base), color var(--wz-transition-base), transform var(--wz-transition-fast);
+}
+
+button.infyp-wizard-step:not(:disabled):hover .infyp-step-dot {
+    transform: translateY(-1px);
+}
+
+.infyp-wizard-step.active .infyp-step-dot {
+    background: var(--wz-accent);
+    color: var(--wz-accent-fg);
+}
+
+.infyp-wizard-step.completed .infyp-step-dot {
+    background: var(--wz-success);
+    /* Always white: dark mode flips --wz-accent-fg to black, which would
+       render a black check on green. */
+    color: #ffffff;
+}
+
+/* The dot shows a number until completed, then the check pops in. */
+.infyp-step-check {
+    display: none;
+}
+
+.infyp-wizard-step.completed .infyp-step-check {
+    display: block;
+    animation: infyp-check-pop var(--wz-transition-base);
+}
+
+.infyp-wizard-step.completed .infyp-step-number {
+    display: none;
+}
+
+@keyframes infyp-check-pop {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.infyp-step-label {
+    font-size: var(--wz-text-sm);
+    font-weight: 500;
+    color: var(--wz-text-secondary);
+    white-space: nowrap;
+}
+
+.infyp-wizard-step.active .infyp-step-label {
+    color: var(--wz-accent);
+    font-weight: 600;
+}
+
+.infyp-wizard-step.completed .infyp-step-label {
+    color: var(--wz-success);
+}
+
+/* Continuous fill track under the milestones. */
+.infyp-progress-track {
+    height: 3px;
+    margin-top: var(--wz-space-3);
+    border-radius: 2px;
+    background: var(--wz-border);
+    overflow: hidden;
+}
+
+.infyp-progress-fill {
+    height: 100%;
+    background: var(--wz-accent);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform var(--wz-transition-slow);
+}
+
+[dir="rtl"] .infyp-progress-fill {
+    transform-origin: 100% 50%;
+}
+
+/* ==========================================================================
+   Step panels — single-page shell (Phase 2)
+   ========================================================================== */
+.infyp-wizard-panel {
+    display: none;
+}
+
+.infyp-wizard-panel.is-active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity var(--wz-transition-base), transform var(--wz-transition-base);
+}
+
+/* Entering start-states (removed one frame later so the panel animates in). */
+.infyp-wizard-panel.is-active.is-entering.dir-forward {
+    opacity: 0;
+    transform: translateX(16px);
+}
+
+.infyp-wizard-panel.is-active.is-entering.dir-back {
+    opacity: 0;
+    transform: translateX(-16px);
+}
+
+/* The leaving panel fades out in place underneath (kept simple: no overlap layout). */
+.infyp-wizard-panel.is-leaving {
+    display: none;
+}
+
+[dir="rtl"] .infyp-wizard-panel.is-active.is-entering.dir-forward {
+    transform: translateX(-16px);
+}
+
+[dir="rtl"] .infyp-wizard-panel.is-active.is-entering.dir-back {
+    transform: translateX(16px);
+}
+
+/* Headings receive programmatic focus after a panel switch (a11y); they are
+   not interactive, so the visible focus ring would only confuse. */
+.infyp-wizard-panel h1[tabindex="-1"]:focus,
+.infyp-wizard-panel h2[tabindex="-1"]:focus,
+.infyp-wizard-panel h3[tabindex="-1"]:focus {
+    outline: none;
+}
+
+/* Screen-reader-only utility (aria-live step announcements). */
+.infyp-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Content Card */
+.infyp-wizard-content {
+    background: var(--wz-bg);
+    border-radius: var(--wz-radius-xl);
+    padding: 48px;
+    flex: 1;
+    /* Pin to the page column: as a shrink-to-fit flex item the card would
+       resize with each panel/provider's content width. */
+    width: 100%;
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation */
+.infyp-wizard-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--wz-space-6);
+    padding-top: var(--wz-space-6);
+}
+
+/* Per-panel variant (Phase 2): the nav lives inside the content card now,
+   separated from the step body by a hairline. */
+.infyp-panel-nav {
+    border-top: 1px solid var(--wz-border);
+}
+
+.infyp-wizard-nav-left {
+    display: flex;
+    align-items: center;
+    gap: var(--wz-space-2);
+}
+
+.infyp-wizard-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--wz-space-2);
+    padding: var(--wz-space-4) var(--wz-space-8);
+    font-size: var(--wz-text-sm);
+    font-weight: 600;
+    border-radius: var(--wz-radius-md);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--wz-transition-base);
+    text-decoration: none;
+}
+
+.infyp-wizard-btn-primary {
+    background: var(--wz-accent);
+    color: var(--wz-accent-fg);
+    border-color: var(--wz-accent);
+}
+
+.infyp-wizard-btn-primary:hover {
+    background: var(--wz-accent-hover);
+    border-color: var(--wz-accent-hover);
+    /* Explicit: primary CTAs are <a> elements, so a leaked theme a:hover
+       color would otherwise repaint the label. */
+    color: var(--wz-accent-fg);
+    transform: translateY(-1px);
+    box-shadow: var(--wz-shadow-md);
+}
+
+.infyp-wizard-btn-secondary {
+    background: transparent;
+    color: var(--wz-text-secondary);
+    border-color: var(--wz-border);
+}
+
+.infyp-wizard-btn-secondary:hover {
+    background: var(--wz-bg-surface);
+    border-color: var(--wz-border-medium);
+    color: var(--wz-text);
+}
+
+.infyp-wizard-btn-large {
+    padding: var(--wz-space-5) var(--wz-space-12);
+    font-size: var(--wz-text-base);
+}
+
+.infyp-wizard-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ================================
+   WELCOME STEP
+   ================================ */
+.infyp-step-welcome {
+    text-align: center;
+}
+
+.infyp-welcome-title {
+    font-size: var(--wz-text-3xl);
+    font-weight: 700;
+    color: var(--wz-text);
+    margin: 0 0 var(--wz-space-4) 0;
+    letter-spacing: -0.02em;
+}
+
+.infyp-welcome-subtitle {
+    font-size: var(--wz-text-base);
+    color: var(--wz-text-secondary);
+    margin: 0 0 40px 0;
+}
+
+.infyp-welcome-features {
+    display: grid;
+    gap: var(--wz-space-4);
+    text-align: left;
+    margin: 0 auto var(--wz-space-8);
+}
+
+.infyp-feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--wz-space-4);
+    padding: var(--wz-space-5);
+    background: var(--wz-bg-surface);
+    border-radius: var(--wz-radius-lg);
+    transition: var(--wz-transition-base);
+}
+
+.infyp-feature-item:hover {
+    background: var(--wz-bg-elevated);
+}
+
+.infyp-feature-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--wz-radius-md);
+    background: var(--wz-success-bg);
+    color: var(--wz-success);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.infyp-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.infyp-feature-text strong {
+    font-size: var(--wz-text-sm);
+    font-weight: 600;
+    color: var(--wz-text);
+    line-height: 1.4;
+}
+
+.infyp-feature-text span {
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+    line-height: 1.4;
+}
+
+.infyp-welcome-note {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--wz-space-2);
+    padding: var(--wz-space-4) var(--wz-space-5);
+    background: var(--wz-bg-surface);
+    border-radius: var(--wz-radius-md);
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+}
+
+.infyp-welcome-note svg {
+    flex-shrink: 0;
+    color: var(--wz-accent);
+}
+
+/* Thank You Section */
+.infyp-welcome-thanks {
+    margin-top: var(--wz-space-8);
+    padding: var(--wz-space-6);
+    background: var(--wz-bg-surface);
+    border-radius: var(--wz-radius-lg);
+    border: 1px solid var(--wz-border);
+    text-align: center;
+}
+
+.infyp-thanks-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--wz-space-2);
+}
+
+.infyp-thanks-icon {
+    color: var(--wz-danger);
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.infyp-thanks-message {
+    font-size: var(--wz-text-base);
+    font-weight: 600;
+    color: var(--wz-text);
+    margin: 0;
+}
+
+
+/* ================================
+   API KEYS STEP
+   ================================ */
+.infyp-step-title {
+    font-size: var(--wz-text-2xl);
+    font-weight: 700;
+    color: var(--wz-text);
+    margin: 0 0 var(--wz-space-2) 0;
+    text-align: center;
+}
+
+.infyp-step-description {
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+    margin: 0 0 var(--wz-space-12) 0;
+    text-align: center;
+}
+
+.infyp-api-keys-grid {
+    display: grid;
+    gap: var(--wz-space-5);
+}
+
+.infyp-api-card {
+    border: 2px solid var(--wz-border);
+    border-radius: var(--wz-radius-lg);
+    padding: var(--wz-space-8);
+    transition: var(--wz-transition-base);
+}
+
+.infyp-api-card:hover {
+    border-color: var(--wz-border-medium);
+}
+
+.infyp-api-card.has-key {
+    border-color: var(--wz-success);
+    background: var(--wz-success-bg);
+}
+
+.infyp-api-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--wz-space-2);
+}
+
+.infyp-api-provider-info {
+    display: flex;
+    gap: var(--wz-space-2);
+    align-items: center;
+}
+
+.infyp-api-provider-info h4 {
+    font-size: var(--wz-text-base);
+    font-weight: 600;
+    color: var(--wz-text);
+    margin: 0 0 var(--wz-space-1) 0;
+}
+
+.infyp-api-badge {
+    display: inline-block;
+    padding: var(--wz-space-1) var(--wz-space-2);
+    font-size: var(--wz-text-xs);
+    font-weight: 600;
+    border-radius: var(--wz-radius-full);
+    background: var(--wz-bg-elevated);
+    color: var(--wz-text-secondary);
+}
+
+.infyp-api-badge.recommended {
+    background: var(--wz-success-bg);
+    color: var(--wz-success);
+}
+
+.infyp-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wz-space-1);
+    padding: var(--wz-space-1) 10px;
+    font-size: var(--wz-text-sm);
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+/* The shared badge rule keeps badges hidden until a .show class; key-card
+   badges are only rendered when there is a status, so show them as-is. */
+.infyp-api-status .infyp-status-badge {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.infyp-status-badge.connected {
+    background: var(--wz-success-bg);
+    color: var(--wz-success);
+}
+
+.infyp-status-badge.validating {
+    background: var(--wz-bg-elevated);
+    color: var(--wz-text-secondary);
+}
+
+.infyp-status-badge.invalid {
+    background: var(--wz-danger-bg);
+    color: var(--wz-danger);
+}
+
+/* Provider unreachable — neutral by design, never an error state. */
+.infyp-status-badge.unverified {
+    background: var(--wz-bg-elevated);
+    color: var(--wz-text-secondary);
+}
+
+/* Get-key link left, Test Key button right */
+.infyp-api-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--wz-space-4);
+    margin-top: var(--wz-space-2);
+}
+
+.infyp-wizard-test-key {
+    padding: var(--wz-space-2) var(--wz-space-4);
+    border: 1px solid var(--wz-border-medium);
+    border-radius: var(--wz-radius-md);
+    background: var(--wz-bg);
+    color: var(--wz-text);
+    font-size: var(--wz-text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color var(--wz-transition-fast), background var(--wz-transition-fast);
+}
+
+.infyp-wizard-test-key:hover {
+    border-color: var(--wz-accent);
+    background: var(--wz-bg-elevated);
+}
+
+.infyp-wizard-test-key:focus-visible {
+    outline: 2px solid var(--wz-accent);
+    outline-offset: 2px;
+}
+
+.infyp-key-keep-hint {
+    margin: var(--wz-space-2) 0 0;
+    font-size: var(--wz-text-xs);
+    color: var(--wz-text-tertiary);
+}
+
+.infyp-api-card-desc {
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+    margin: 0 0 var(--wz-space-5) 0;
+    line-height: 1.5;
+}
+
+.infyp-api-input-wrapper {
+    position: relative;
+    margin-bottom: var(--wz-space-2);
+}
+
+.infyp-api-input {
+    width: 100%;
+    padding: var(--wz-space-4) 48px var(--wz-space-4) var(--wz-space-5);
+    border: 1px solid var(--wz-border);
+    color: var(--wz-text);
+    border-radius: var(--wz-radius-md);
+    font-size: var(--wz-text-sm);
+    font-family: var(--wz-font-mono);
+    transition: var(--wz-transition-base);
+    background: var(--wz-bg);
+}
+
+.infyp-api-input:focus {
+    outline: none;
+    border-color: var(--wz-wp-blue);
+    box-shadow: 0 0 0 3px var(--wz-wp-blue-bg);
+}
+
+.infyp-api-input::placeholder {
+    color: var(--wz-text-tertiary);
+    font-family: inherit;
+}
+
+.infyp-toggle-visibility {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: var(--wz-space-1);
+    cursor: pointer;
+    color: var(--wz-text-tertiary);
+    transition: var(--wz-transition-base);
+}
+
+.infyp-toggle-visibility:hover {
+    color: var(--wz-text-secondary);
+}
+
+.infyp-get-key-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--wz-text-sm);
+    font-weight: 500;
+    color: var(--wz-accent);
+    text-decoration: none;
+    transition: var(--wz-transition-base);
+}
+
+.infyp-get-key-link:hover {
+    color: var(--wz-accent-hover);
+}
+
+.infyp-api-notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px var(--wz-space-5);
+    background: var(--wz-bg-surface);
+    border-radius: var(--wz-radius-md);
+    margin-top: var(--wz-space-6);
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+}
+
+.infyp-api-notice svg {
+    flex-shrink: 0;
+    color: var(--wz-accent);
+}
+
+.infyp-api-notice.error {
+    background: var(--wz-danger-bg);
+    color: var(--wz-danger);
+}
+
+.infyp-api-notice.error svg {
+    color: var(--wz-danger);
+}
+
+/* Key saved but the provider could not be reached: a warning, not an error. */
+.infyp-api-notice.warning {
+    background: var(--wz-warning-bg);
+    color: var(--wz-text);
+}
+
+.infyp-api-notice.warning svg {
+    color: var(--wz-warning);
+}
+
+/* ================================
+   PREFERENCES STEP
+   ================================ */
+.infyp-preferences-form {
+    margin-top: var(--wz-space-2);
+}
+
+.infyp-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--wz-space-6);
+}
+
+.infyp-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wz-space-2);
+}
+
+.infyp-form-group-full {
+    grid-column: 1 / -1;
+}
+
+.infyp-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.infyp-form-group label {
+    font-size: var(--wz-text-sm);
+    font-weight: 600;
+    color: var(--wz-text);
+}
+
+.infyp-form-group label .optional {
+    font-weight: 400;
+    color: var(--wz-text-tertiary);
+}
+
+.infyp-select {
+    width: 100%;
+    padding: var(--wz-space-4) var(--wz-space-5);
+    border: 1px solid var(--wz-border);
+    border-radius: var(--wz-radius-md);
+    font-size: var(--wz-text-sm);
+    font-family: inherit;
+    background: var(--wz-bg);
+    transition: var(--wz-transition-base);
+    color: var(--wz-text);
+}
+
+.infyp-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.infyp-select:focus {
+    outline: none;
+    border-color: var(--wz-wp-blue);
+    box-shadow: 0 0 0 3px var(--wz-wp-blue-bg);
+}
+
+.infyp-select:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23111111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.infyp-form-hint {
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+}
+
+/* Radio Cards */
+.infyp-radio-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--wz-space-2);
+}
+
+.infyp-radio-card {
+    cursor: pointer;
+}
+
+.infyp-radio-card input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.infyp-radio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--wz-space-5) var(--wz-space-4);
+    border: 2px solid var(--wz-border);
+    border-radius: var(--wz-radius-md);
+    text-align: center;
+    transition: var(--wz-transition-base);
+}
+
+.infyp-radio-card:hover .infyp-radio-content {
+    border-color: var(--wz-border-medium);
+    background: var(--wz-bg-surface);
+}
+
+.infyp-radio-card input:checked + .infyp-radio-content {
+    border-color: var(--wz-accent);
+    background: var(--wz-bg-surface);
+}
+
+.infyp-radio-label {
+    font-size: var(--wz-text-sm);
+    font-weight: 600;
+    color: var(--wz-text);
+}
+
+.infyp-radio-desc {
+    font-size: var(--wz-text-xs);
+    color: var(--wz-text-secondary);
+    margin-top: var(--wz-space-1);
+}
+
+/* Toggle Switch */
+.infyp-toggle-wrapper {
+    margin-top: var(--wz-space-4);
+}
+
+.infyp-toggle-wrapper input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.infyp-toggle-wrapper label {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+    padding: var(--wz-space-5);
+    background: var(--wz-bg);
+    border: 2px solid var(--wz-border);
+    border-radius: var(--wz-radius-md);
+    transition: var(--wz-transition-base);
+}
+
+.infyp-toggle-wrapper label:hover {
+    background: var(--wz-bg-elevated);
+    border-color: var(--wz-border-medium);
+}
+
+.infyp-toggle-wrapper input[type="checkbox"]:checked + label {
+    background: var(--wz-success-bg);
+    border-color: var(--wz-success);
+}
+
+/* Wizard-specific toggle switch - scoped to prevent conflicts with settings toggle */
+.infyp-toggle-wrapper .infyp-toggle-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--wz-border-medium);
+    border-radius: var(--wz-radius-full);
+    flex-shrink: 0;
+    transition: var(--wz-transition-base);
+}
+
+.infyp-toggle-wrapper .infyp-toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: var(--wz-shadow-sm);
+    transition: var(--wz-transition-base);
+}
+
+.infyp-toggle-wrapper input[type="checkbox"]:checked + label .infyp-toggle-switch {
+    background: var(--wz-success);
+}
+
+.infyp-toggle-wrapper input[type="checkbox"]:checked + label .infyp-toggle-switch::after {
+    transform: translateX(20px);
+}
+
+/* Wizard-specific toggle label - scoped to prevent conflicts */
+.infyp-toggle-wrapper .infyp-toggle-label {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wz-space-1);
+}
+
+.infyp-toggle-title {
+    font-size: var(--wz-text-sm);
+    font-weight: 500;
+    color: var(--wz-text);
+}
+
+.infyp-toggle-title a {
+    color: var(--wz-info);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.infyp-toggle-title a:hover {
+    text-decoration: underline;
+}
+
+.infyp-toggle-desc {
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+    line-height: 1.5;
+}
+
+.infyp-toggle-desc strong {
+    color: var(--wz-text);
+    font-weight: 600;
+}
+
+/* Newsletter Opt-in */
+.infyp-newsletter-optin {
+    background: var(--wz-bg-surface);
+    border-radius: var(--wz-radius-md);
+    padding: var(--wz-space-5);
+    border: 1px solid var(--wz-bg-elevated);
+}
+
+.infyp-toggle-newsletter label {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.infyp-toggle-newsletter label:hover {
+    background: transparent;
+    border-color: transparent;
+}
+
+.infyp-toggle-newsletter input[type="checkbox"]:checked + label {
+    background: transparent;
+    border-color: transparent;
+}
+
+/* Privacy link inside toggle description */
+.infyp-privacy-link {
+    display: inline;
+    color: var(--wz-info);
+    text-decoration: none;
+    font-size: var(--wz-text-sm);
+}
+
+.infyp-privacy-link:hover {
+    text-decoration: underline;
+}
+
+/* Data Disclosure Panel */
+.infyp-data-disclosure {
+    margin-top: var(--wz-space-5);
+    border-top: 1px solid var(--wz-border);
+    padding-top: var(--wz-space-4);
+}
+
+.infyp-disclosure-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: var(--wz-space-1) 0;
+    color: var(--wz-info);
+    font-size: var(--wz-text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--wz-transition-base);
+}
+
+.infyp-disclosure-trigger:hover {
+    opacity: 0.8;
+}
+
+.infyp-disclosure-icon {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.infyp-disclosure-trigger[aria-expanded="true"] .infyp-disclosure-icon {
+    transform: rotate(90deg);
+}
+
+.infyp-disclosure-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.infyp-disclosure-content[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+}
+
+.infyp-disclosure-inner {
+    overflow: hidden;
+}
+
+.infyp-disclosure-intro {
+    padding: var(--wz-space-4) 0 var(--wz-space-2);
+}
+
+.infyp-disclosure-intro p {
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+    line-height: 1.5;
+    margin: 0 0 var(--wz-space-1) 0;
+}
+
+.infyp-disclosure-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.infyp-disclosure-category {
+    padding: var(--wz-space-4) 0;
+    border-top: 1px solid var(--wz-border);
+}
+
+.infyp-disclosure-category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--wz-space-2);
+    margin-bottom: var(--wz-space-1);
+}
+
+.infyp-disclosure-category-title {
+    font-size: var(--wz-text-sm);
+    font-weight: 600;
+    color: var(--wz-text);
+}
+
+.infyp-disclosure-category-desc {
+    display: block;
+    font-size: var(--wz-text-xs);
+    color: var(--wz-text-secondary);
+    line-height: 1.3;
+    margin-top: var(--wz-space-2);
+}
+
+.infyp-disclosure-category:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.infyp-disclosure-badge-required {
+    display: inline-block;
+    padding: 1px var(--wz-space-2);
+    font-size: var(--wz-text-xs);
+    font-weight: 500;
+    color: var(--wz-text-secondary);
+    background: var(--wz-bg-elevated);
+    border-radius: var(--wz-radius-full);
+}
+
+/* Compact Toggle Variant */
+.infyp-toggle-compact {
+    flex-shrink: 0;
+}
+
+.infyp-toggle-compact input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.infyp-toggle-compact label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.infyp-toggle-compact .infyp-toggle-compact-switch {
+    position: relative;
+    width: 36px;
+    height: 20px;
+    background: var(--wz-border-medium);
+    border-radius: var(--wz-radius-full);
+    flex-shrink: 0;
+    transition: var(--wz-transition-base);
+}
+
+.infyp-toggle-compact .infyp-toggle-compact-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: var(--wz-shadow-sm);
+    transition: var(--wz-transition-base);
+}
+
+.infyp-toggle-compact input[type="checkbox"]:checked + label .infyp-toggle-compact-switch {
+    background: var(--wz-success);
+}
+
+.infyp-toggle-compact input[type="checkbox"]:checked + label .infyp-toggle-compact-switch::after {
+    transform: translateX(16px);
+}
+
+/* Form label above newsletter section */
+.infyp-form-group .infyp-form-label {
+    display: block;
+    font-size: var(--wz-text-sm);
+    font-weight: 500;
+    color: var(--wz-text);
+    margin-bottom: var(--wz-space-2);
+}
+
+
+/* ================================
+   COMPLETE STEP
+   ================================ */
+.infyp-step-complete {
+    text-align: center;
+}
+
+.infyp-complete-icon {
+    /* Flex-centered on purpose: themes commonly reset svg to display:block,
+       which would defeat the parent's text-align centering. */
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--wz-space-6);
+}
+
+/* Celebration: circle pops in, then the check draws itself on. Both restart
+   whenever the panel is (re-)shown because display toggles reset animations. */
+.infyp-complete-circle {
+    transform-origin: 50% 50%;
+    animation: infyp-complete-pop var(--wz-transition-slow);
+}
+
+.infyp-complete-check-path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: infyp-complete-draw 0.5s 0.35s forwards;
+    animation-timing-function: var(--infyp-ease-out, ease-out);
+}
+
+@keyframes infyp-complete-pop {
+    0% {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes infyp-complete-draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Summary rows cascade in with an 80ms stagger. */
+.infyp-summary-items .infyp-summary-item {
+    animation: fadeInUp var(--wz-transition-base) both;
+}
+
+.infyp-summary-items .infyp-summary-item:nth-child(1) { animation-delay: 0.45s; }
+.infyp-summary-items .infyp-summary-item:nth-child(2) { animation-delay: 0.53s; }
+.infyp-summary-items .infyp-summary-item:nth-child(3) { animation-delay: 0.61s; }
+.infyp-summary-items .infyp-summary-item:nth-child(4) { animation-delay: 0.69s; }
+
+.infyp-complete-title {
+    font-size: var(--wz-text-3xl);
+    font-weight: 700;
+    color: var(--wz-text);
+    margin: 0 0 var(--wz-space-4) 0;
+    letter-spacing: -0.02em;
+}
+
+.infyp-complete-subtitle {
+    font-size: var(--wz-text-base);
+    color: var(--wz-text-secondary);
+    margin: 0 0 var(--wz-space-12) 0;
+}
+
+.infyp-complete-summary {
+    background: var(--wz-bg-surface);
+    border-radius: var(--wz-radius-lg);
+    padding: var(--wz-space-8);
+    margin-bottom: var(--wz-space-8);
+    text-align: left;
+}
+
+.infyp-complete-summary h3 {
+    font-size: var(--wz-text-sm);
+    font-weight: 600;
+    color: var(--wz-text-secondary);
+    margin: 0 0 var(--wz-space-5) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.infyp-summary-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wz-space-2);
+}
+
+.infyp-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text);
+}
+
+.infyp-summary-item.success svg {
+    color: var(--wz-success);
+}
+
+.infyp-summary-item.warning svg {
+    color: var(--wz-warning);
+}
+
+.infyp-complete-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--wz-space-4);
+}
+
+/* Quiet text link under the primary CTA — deliberately not a button. */
+.infyp-complete-settings-link {
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--wz-transition-fast);
+}
+
+.infyp-complete-settings-link:hover {
+    color: var(--wz-text);
+    text-decoration: underline;
+}
+
+.infyp-complete-settings-link:focus-visible {
+    outline: 2px solid var(--wz-accent);
+    outline-offset: 2px;
+    border-radius: var(--wz-radius-sm);
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+.infyp-wizard-footer {
+    background: var(--wz-bg-elevated);
+    border-top: 1px solid var(--wz-border);
+    color: var(--wz-text);
+    padding: var(--wz-space-12) var(--wz-space-6) var(--wz-space-8);
+    margin-top: auto;
+    font-family: var(--wz-font);
+}
+
+.infyp-wizard-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--wz-space-4);
+}
+
+.infyp-wizard-footer-logo {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: var(--wz-accent);
+}
+
+.infyp-wizard-footer-brand h3 {
+    font-size: var(--wz-text-lg);
+    font-weight: 700;
+    margin: 0 0 var(--wz-space-1) 0;
+    color: var(--wz-text);
+    line-height: 1.2;
+}
+
+.infyp-wizard-footer-brand p {
+    color: var(--wz-text-secondary);
+    font-size: var(--wz-text-sm);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.infyp-wizard-footer-brand-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--wz-space-2);
+    margin-bottom: var(--wz-space-6);
+}
+
+.infyp-wizard-footer-brand-name {
+    color: var(--wz-text);
+    font-size: var(--wz-text-lg);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.infyp-wizard-footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.infyp-wizard-footer-bottom p {
+    color: var(--wz-text-tertiary);
+    font-size: var(--wz-text-sm);
+    margin: 0;
+}
+
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 768px) {
+    .infyp-wizard-page {
+        padding: var(--wz-space-6) var(--wz-space-5);
+    }
+
+    .infyp-wizard-content {
+        padding: var(--wz-space-12) var(--wz-space-8);
+    }
+
+    .infyp-wizard-steps {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 var(--wz-space-6);
+    }
+
+    .infyp-step-connector {
+        width: 30px;
+        flex-shrink: 0;
+    }
+
+    .infyp-welcome-title,
+    .infyp-complete-title {
+        font-size: var(--wz-text-2xl);
+    }
+
+    .infyp-step-title {
+        font-size: var(--wz-text-2xl);
+    }
+
+    .infyp-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .infyp-radio-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .infyp-wizard-navigation {
+        flex-direction: column-reverse;
+        gap: var(--wz-space-4);
+    }
+
+    .infyp-wizard-nav-left {
+        width: 100%;
+        flex-direction: column;
+        gap: var(--wz-space-2);
+    }
+
+    .infyp-wizard-btn {
+        width: 100%;
+    }
+
+    .infyp-wizard-skip,
+    .infyp-wizard-skip-step {
+        width: 100%;
+        order: 1;
+    }
+
+    .infyp-wizard-btn-secondary.infyp-wizard-prev {
+        order: 0;
+    }
+
+    .infyp-complete-actions .infyp-wizard-btn {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .infyp-step-label {
+        display: none;
+    }
+
+    .infyp-step-connector {
+        width: 20px;
+    }
+
+    .infyp-radio-group {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer 480px */
+    .infyp-wizard-footer {
+        padding: var(--wz-space-12) var(--wz-space-5) var(--wz-space-8);
+    }
+
+    .infyp-wizard-footer-brand h3 {
+        font-size: var(--wz-text-lg);
+    }
+
+    .infyp-wizard-footer-brand p {
+        font-size: var(--wz-text-sm);
+    }
+
+}
+
+/* Hide WordPress admin bar on wizard page */
+.infyp-wizard-body #wpadminbar {
+    display: none;
+}
+
+.infyp-wizard-body.admin-bar {
+    margin-top: 0 !important;
+}
+
+/* Loading state */
+.infyp-wizard-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.infyp-wizard-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.infyp-wizard-btn-primary.loading::after {
+    border-top-color: white;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Skip Confirmation Modal */
+.infyp-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+.infyp-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.infyp-modal {
+    background: var(--wz-bg);
+    border-radius: var(--wz-radius-xl);
+    padding: var(--wz-space-12);
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(0.95) translateY(10px);
+    transition: transform 0.2s ease;
+}
+
+.infyp-modal-overlay.active .infyp-modal {
+    transform: scale(1) translateY(0);
+}
+
+.infyp-modal-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--wz-space-6);
+    background: var(--wz-warning-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wz-warning);
+}
+
+.infyp-modal-title {
+    font-size: var(--wz-text-2xl);
+    font-weight: 600;
+    color: var(--wz-text);
+    margin: 0 0 var(--wz-space-4);
+}
+
+.infyp-modal-message {
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+    margin: 0 0 var(--wz-space-8);
+    line-height: 1.6;
+}
+
+.infyp-modal-actions {
+    display: flex;
+    gap: var(--wz-space-4);
+    justify-content: center;
+}
+
+.infyp-modal-actions .infyp-btn {
+    padding: var(--wz-space-4) var(--wz-space-8);
+    border-radius: var(--wz-radius-md);
+    font-size: var(--wz-text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.infyp-modal-actions .infyp-btn-secondary {
+    background: var(--wz-bg-elevated);
+    color: var(--wz-text);
+}
+
+.infyp-modal-actions .infyp-btn-secondary:hover {
+    background: var(--wz-border);
+}
+
+.infyp-modal-actions .infyp-btn-danger {
+    background: var(--wz-danger);
+    color: var(--wz-accent-fg);
+}
+
+.infyp-modal-actions .infyp-btn-danger:hover {
+    background: var(--wz-danger);
+}
+
+.infyp-modal-actions .infyp-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.infyp-modal-actions .infyp-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border: 2px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Prevent body scroll when modal is open */
+body.infyp-modal-open {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   DARK MODE OVERRIDES
+   ========================================================================== */
+[data-theme="dark"] .infyp-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23707070' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .infyp-select:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23ededed' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .infyp-wizard-btn-primary.loading::after {
+    border-top-color: var(--wz-accent-fg);
+}
+
+[data-theme="dark"] .infyp-modal-overlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Connection method card: breathing room between description and dropdown */
+.infyp-connection-method-card .infyp-select {
+    margin-top: var(--wz-space-3);
+}
+
+/* ==========================================================================
+   Phase 3 — Connect sub-screens: theme toggle, choice cards, provider tabs
+   ========================================================================== */
+
+/* Header light/dark switcher */
+.infyp-theme-toggle {
+    position: absolute;
+    inset-inline-end: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--wz-border);
+    border-radius: 50%;
+    background: var(--wz-bg);
+    color: var(--wz-text-secondary);
+    cursor: pointer;
+    transition: color var(--wz-transition-fast), border-color var(--wz-transition-fast), transform var(--wz-transition-fast);
+}
+
+.infyp-theme-toggle:hover {
+    color: var(--wz-text);
+    border-color: var(--wz-border-medium);
+}
+
+.infyp-theme-toggle:focus-visible {
+    outline: 2px solid var(--wz-accent);
+    outline-offset: 2px;
+}
+
+/* Moon shown in light mode (switch to dark), sun in dark mode. */
+.infyp-theme-icon-sun {
+    display: none;
+}
+
+[data-theme="dark"] .infyp-theme-icon-sun {
+    display: block;
+}
+
+[data-theme="dark"] .infyp-theme-icon-moon {
+    display: none;
+}
+
+/* Sub-screens inside a step panel */
+.infyp-subpanel {
+    display: none;
+}
+
+.infyp-subpanel.is-active {
+    display: block;
+}
+
+.infyp-subpanel.subpanel-enter-forward {
+    animation: infyp-subpanel-forward var(--wz-transition-base) both;
+}
+
+.infyp-subpanel.subpanel-enter-back {
+    animation: infyp-subpanel-back var(--wz-transition-base) both;
+}
+
+@keyframes infyp-subpanel-forward {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes infyp-subpanel-back {
+    from {
+        opacity: 0;
+        transform: translateX(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+[dir="rtl"] .infyp-subpanel.subpanel-enter-forward {
+    animation-name: infyp-subpanel-back;
+}
+
+[dir="rtl"] .infyp-subpanel.subpanel-enter-back {
+    animation-name: infyp-subpanel-forward;
+}
+
+/* Connection-method selection cards */
+.infyp-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--wz-space-4);
+    margin-top: var(--wz-space-6);
+}
+
+.infyp-choice-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wz-space-2);
+    padding: var(--wz-space-6);
+    border: 2px solid var(--wz-border);
+    border-radius: var(--wz-radius-lg);
+    background: var(--wz-bg);
+    cursor: pointer;
+    transition: border-color var(--wz-transition-fast), box-shadow var(--wz-transition-fast), transform var(--wz-transition-fast);
+}
+
+.infyp-choice-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--wz-shadow-md);
+}
+
+.infyp-choice-card.is-selected {
+    border-color: var(--wz-success);
+    background: var(--wz-success-bg);
+}
+
+/* Keyboard-only focus ring — click-selection must not add a second border. */
+.infyp-choice-card:has(input:focus-visible) {
+    outline: 2px solid var(--wz-success);
+    outline-offset: 2px;
+}
+
+.infyp-choice-icon {
+    color: var(--wz-text-secondary);
+}
+
+.infyp-choice-card.is-selected .infyp-choice-icon {
+    color: var(--wz-success);
+}
+
+.infyp-choice-title {
+    font-size: var(--wz-text-lg);
+    font-weight: 600;
+    color: var(--wz-text);
+}
+
+.infyp-choice-desc {
+    font-size: var(--wz-text-sm);
+    color: var(--wz-text-secondary);
+    line-height: 1.5;
+}
+
+.infyp-choice-badge {
+    align-self: flex-start;
+    margin-top: var(--wz-space-2);
+    padding: var(--wz-space-1) var(--wz-space-3);
+    border-radius: var(--wz-radius-md);
+    font-size: var(--wz-text-xs);
+    font-weight: 600;
+    background: var(--wz-success-bg);
+    color: var(--wz-success);
+    border: 1px solid var(--wz-success-border);
+}
+
+.infyp-choice-badge.is-detected {
+    background: var(--wz-wp-blue-bg);
+    color: var(--wz-wp-blue);
+    border-color: var(--wz-border);
+}
+
+.infyp-choice-check {
+    position: absolute;
+    top: var(--wz-space-4);
+    inset-inline-end: var(--wz-space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--wz-success);
+    color: #ffffff;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity var(--wz-transition-fast), transform var(--wz-transition-fast);
+}
+
+.infyp-choice-card.is-selected .infyp-choice-check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Provider tabs — one key pane visible at a time */
+.infyp-provider-tabs {
+    display: flex;
+    gap: var(--wz-space-2);
+    margin: var(--wz-space-6) 0 var(--wz-space-4);
+    flex-wrap: wrap;
+}
+
+.infyp-provider-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wz-space-2);
+    padding: var(--wz-space-2) var(--wz-space-4);
+    border: 1px solid var(--wz-border);
+    border-radius: var(--wz-radius-md);
+    background: var(--wz-bg);
+    color: var(--wz-text-secondary);
+    font-size: var(--wz-text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: color var(--wz-transition-fast), border-color var(--wz-transition-fast), background var(--wz-transition-fast);
+}
+
+.infyp-provider-tab:hover {
+    color: var(--wz-text);
+    border-color: var(--wz-border-medium);
+}
+
+.infyp-provider-tab.is-active {
+    background: var(--wz-accent);
+    border-color: var(--wz-accent);
+    color: var(--wz-accent-fg);
+}
+
+.infyp-provider-tab:focus-visible {
+    outline: 2px solid var(--wz-accent);
+    outline-offset: 2px;
+}
+
+.infyp-provider-tab-badge {
+    font-size: var(--wz-text-xs);
+    font-weight: 600;
+    padding: 2px var(--wz-space-2);
+    border-radius: var(--wz-radius-sm);
+    background: var(--wz-success-bg);
+    color: var(--wz-success);
+}
+
+.infyp-provider-tab.is-active .infyp-provider-tab-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--wz-accent-fg);
+}
+
+.infyp-provider-tab-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--wz-success);
+}
+
+/* Single visible pane: pin the implicit grid column to the full container
+   width so switching providers cannot change the card width (an untemplated
+   grid column is content-sized and would resize per provider). */
+.infyp-provider-panes {
+    grid-template-columns: 100%;
+}
+
+/* Compact variant for the website-type grid (Phase 4) */
+.infyp-choice-grid-compact {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--wz-space-3);
+}
+
+.infyp-choice-card-compact {
+    padding: var(--wz-space-4);
+    align-items: center;
+    text-align: center;
+}
+
+.infyp-choice-card-compact .infyp-choice-title {
+    font-size: var(--wz-text-sm);
+}
+
+.infyp-choice-card-compact .infyp-choice-check {
+    top: var(--wz-space-2);
+    inset-inline-end: var(--wz-space-2);
+    width: 20px;
+    height: 20px;
+}
+
+.infyp-provider-panes .infyp-api-card {
+    display: none;
+}
+
+.infyp-provider-panes .infyp-api-card.is-active-pane {
+    display: block;
+    animation: infyp-subpanel-forward var(--wz-transition-base) both;
+}
+
+/* ==========================================================================
+   Phase 5 — remaining micro-interactions from the motion spec
+   ========================================================================== */
+
+/* Pressed state on all wizard buttons */
+.infyp-wizard-btn:active,
+.infyp-wizard-step:not(:disabled):active,
+.infyp-theme-toggle:active {
+    transform: scale(0.98);
+}
+
+/* Invalid API key: short shake (±4px, two cycles) */
+.infyp-status-badge.invalid {
+    animation: infyp-shake var(--wz-transition-base);
+}
+
+@keyframes infyp-shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-4px);
+    }
+    50% {
+        transform: translateX(4px);
+    }
+    75% {
+        transform: translateX(-4px);
+    }
+}
+
+/* Valid key: badge pops in like the milestone checks */
+.infyp-status-badge.connected {
+    animation: infyp-check-pop var(--wz-transition-base);
+}
+
+/* ==========================================================================
+   Reduced motion — must stay the LAST rules in this file so they win the
+   cascade over every animation/transition declared above.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    .infyp-wizard-body,
+    .infyp-wizard-body *,
+    .infyp-wizard-body *::before,
+    .infyp-wizard-body *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

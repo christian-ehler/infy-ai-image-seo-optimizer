@@ -1,0 +1,145 @@
+/**
+ * REST API page.
+ *
+ * The summary cards and chart container reuse the shared components defined in
+ * api-usage.css (.infyp-usage-card, .infyp-usage-number, .infyp-usage-detail,
+ * .infyp-usage-chart-container), which this page enqueues as a dependency.
+ * Only the elements unique to this page are defined here.
+ */
+
+.infyp-rest-chart-container {
+    height: 320px;
+    position: relative;
+}
+
+.infyp-rest-chart-container h2 {
+    margin-top: 0;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-lg);
+    font-weight: var(--infyp-font-weight-semibold);
+}
+
+.infyp-rest-chart-container canvas {
+    max-height: 240px;
+}
+
+/*
+ * .infyp-rest-section is the panel container for this page. Extensions adding
+ * sections via the infyp_rest_admin_page_sections action can apply it to their
+ * own wrapper so they match the surrounding panels.
+ */
+
+.infyp-rest-section,
+.infyp-rest-activity,
+.infyp-rest-endpoints {
+    background: var(--infyp-bg-white);
+    border: 1px solid var(--infyp-border-primary);
+    padding: var(--infyp-spacing-lg);
+    margin: var(--infyp-spacing-lg) 0;
+    box-shadow: var(--infyp-shadow-sm);
+}
+
+.infyp-rest-section > h2,
+.infyp-rest-activity h2,
+.infyp-rest-endpoints h2 {
+    margin-top: 0;
+    padding-left: 0;
+    color: var(--infyp-text-primary);
+    font-size: var(--infyp-font-size-lg);
+    font-weight: var(--infyp-font-weight-semibold);
+}
+
+/* Filter row */
+
+.infyp-rest-filters select,
+.infyp-rest-filters input {
+    margin-right: var(--infyp-spacing-xs);
+}
+
+.infyp-rest-filter-image {
+    width: 7rem;
+}
+
+/*
+ * Result and mode cells reuse the .infyp-status badge from api-usage.css so
+ * both tables present statuses identically.
+ */
+
+/* Endpoint reference */
+
+.infyp-rest-endpoint-list {
+    margin: 0 0 var(--infyp-spacing-md) 0;
+    padding: 0;
+    list-style: none;
+}
+
+.infyp-rest-endpoint-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--infyp-spacing-sm);
+    padding: var(--infyp-spacing-xs) 0;
+    border-bottom: 1px solid var(--infyp-border-secondary, var(--infyp-border-primary));
+}
+
+.infyp-rest-endpoint-list li:last-child {
+    border-bottom: 0;
+}
+
+.infyp-rest-endpoint-list code {
+    background: none;
+    padding: 0;
+    word-break: break-all;
+}
+
+.infyp-rest-method {
+    display: inline-block;
+    min-width: 4.5rem;
+    text-align: center;
+    padding: 2px var(--infyp-spacing-xs);
+    border-radius: var(--infyp-radius-sm, 3px);
+    font-size: var(--infyp-font-size-sm, 11px);
+    font-weight: var(--infyp-font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.infyp-rest-method-get {
+    background: #2271b1;
+}
+
+.infyp-rest-method-post {
+    background: #00a32a;
+}
+
+.infyp-rest-method-patch,
+.infyp-rest-method-put {
+    background: #dba617;
+}
+
+.infyp-rest-method-delete {
+    background: #d63638;
+}
+
+/* Narrow screens */
+
+@media screen and (max-width: 782px) {
+    .infyp-rest-chart-container {
+        height: 260px;
+    }
+
+    .infyp-rest-chart-container canvas {
+        max-height: 180px;
+    }
+
+    .infyp-rest-endpoint-list li {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .infyp-rest-filters select,
+    .infyp-rest-filters input {
+        margin-bottom: var(--infyp-spacing-xs);
+    }
+}

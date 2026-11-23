@@ -1,0 +1,41 @@
+name: Bug report
+description: Something in the code does not work as documented.
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+      placeholder: "1.0.9"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: WordPress and PHP version
+      placeholder: "WordPress 7.0, PHP 8.3"
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: AI provider or connection method
+      description: Do not paste API keys.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Errors or log lines
+      description: PHP errors, browser console output or REST responses. Remove keys, tokens and personal data.
+      render: text

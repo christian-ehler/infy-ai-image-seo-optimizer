@@ -1,0 +1,65 @@
+.infyp-account-settings {
+    max-width: 1200px
+}
+
+.infyp-no-data {
+    text-align: center;
+    color: var(--infyp-text-slate);
+    font-style: italic;
+    margin: var(--infyp-spacing-xl) 0
+}
+
+.infyp-form-group {
+    margin-bottom: 25px
+}
+
+.infyp-form-group:last-child {
+    margin-bottom: 0
+}
+
+.infyp-toggle-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--infyp-spacing-md);
+    cursor: pointer
+}
+
+.infyp-toggle-label input[type="checkbox"] {
+    margin: 0;
+    margin-top: var(--infyp-spacing-xxs)
+}
+
+.infyp-loading {
+    opacity: 0.6;
+    pointer-events: none
+}
+
+.infyp-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--infyp-info-light);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: infyp-spin 1s linear infinite
+}
+
+@keyframes infyp-spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.infyp-success {
+    color: var(--infyp-success-hover);
+    font-weight: 500
+}
+
+.infyp-error {
+    color: var(--infyp-error-dark);
+    font-weight: 500
+}

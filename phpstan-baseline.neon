@@ -1,0 +1,1183 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Property IPAIS\\Admin\\INFYP_Admin_Notices_Manager\:\:\$allowed_notices is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Admin/INFYP_Admin_Notices_Manager.php
+
+		-
+			message: '#^Ternary operator condition is always true\.$#'
+			identifier: ternary.alwaysTrue
+			count: 1
+			path: includes/Admin/INFYP_Admin_Notices_Manager.php
+
+		-
+			message: '#^Method IPAIS\\Admin\\INFYP_Admin_Pages\:\:get_header_badge\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Admin/INFYP_Admin_Pages.php
+
+		-
+			message: '#^Property IPAIS\\Admin\\INFYP_Admin_Pages\:\:\$settings_page_screen_id is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Admin/INFYP_Admin_Pages.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between mixed~''1'' and ''1'' will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: includes/Admin/INFYP_Admin_Pages.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 17
+			path: includes/Admin/INFYP_Debug_Page.php
+
+		-
+			message: '#^Call to method get_error_message\(\) on an unknown class IPAIS\\Core\\WP_Error\.$#'
+			identifier: class.notFound
+			count: 1
+			path: includes/Ajax/INFYP_AI_Ajax.php
+
+		-
+			message: '#^Method IPAIS\\Ajax\\INFYP_AI_Ajax\:\:validate_parameters\(\) never returns void so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: includes/Ajax/INFYP_AI_Ajax.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 17
+			path: includes/Ajax/INFYP_AI_Ajax.php
+
+		-
+			message: '#^Call to function method_exists\(\) with IPAIS\\Core\\INFYP_Error_Handler and ''log_error'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Ajax/INFYP_Image_Ajax.php
+
+		-
+			message: '#^Method IPAIS\\Ajax\\INFYP_Image_Ajax\:\:validate_parameters\(\) never returns void so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: includes/Ajax/INFYP_Image_Ajax.php
+
+		-
+			message: '#^Property IPAIS\\Ajax\\INFYP_Image_Ajax\:\:\$error_handler \(IPAIS\\Core\\INFYP_Error_Handler\) in isset\(\) is not nullable\.$#'
+			identifier: isset.property
+			count: 1
+			path: includes/Ajax/INFYP_Image_Ajax.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 2
+			path: includes/Ajax/INFYP_Image_Ajax.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 8
+			path: includes/Ajax/INFYP_Notices_Ajax.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 12
+			path: includes/Ajax/INFYP_Search_Console_Ajax.php
+
+		-
+			message: '#^Call to function method_exists\(\) with IPAIS\\Core\\INFYP_Cache_Manager and ''flush_group'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 5
+			path: includes/Ajax/INFYP_Settings_Ajax.php
+
+		-
+			message: '#^Left side of && is always true\.$#'
+			identifier: booleanAnd.leftAlwaysTrue
+			count: 5
+			path: includes/Ajax/INFYP_Settings_Ajax.php
+
+		-
+			message: '#^Method IPAIS\\Ajax\\INFYP_Settings_Ajax\:\:validate_parameters\(\) never returns void so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: includes/Ajax/INFYP_Settings_Ajax.php
+
+		-
+			message: '#^Property IPAIS\\Ajax\\INFYP_Settings_Ajax\:\:\$error_handler is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Ajax/INFYP_Settings_Ajax.php
+
+		-
+			message: '#^Property IPAIS\\Ajax\\INFYP_Settings_Ajax\:\:\$security is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Ajax/INFYP_Settings_Ajax.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/Ajax/INFYP_Table_Ajax.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int\<1, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Ajax/INFYP_Table_Ajax.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int\<2, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Ajax/INFYP_Table_Ajax.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int\<2, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Ajax/INFYP_Table_Ajax.php
+
+		-
+			message: '#^Parameter \#2 \$total_pages of method IPAIS\\Ajax\\INFYP_Table_Ajax\:\:build_pagination_html\(\) expects int, float given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Ajax/INFYP_Table_Ajax.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: includes/Ajax/INFYP_Table_Ajax.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between mixed and null will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 3
+			path: includes/Core/AI/INFYP_Claude_Provider.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between mixed and null will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 3
+			path: includes/Core/AI/INFYP_Gemini_Provider.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between mixed and null will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 3
+			path: includes/Core/AI/INFYP_OpenAI_Provider.php
+
+		-
+			message: '#^Call to function is_array\(\) with non\-empty\-array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/AI/INFYP_Prompt_Builder.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/AI/INFYP_Response_Validator.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between null and mixed will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: includes/Core/AI/INFYP_WP_AI_Provider.php
+
+		-
+			message: '#^Call to function is_array\(\) with array\{name\: non\-empty\-string, description\: string, logo_url\?\: non\-empty\-string, type\: non\-empty\-string, authentication\: array\{method\: ''api_key''\|''application_password''\|''none'', credentials_url\?\: non\-empty\-string, setting_name\?\: non\-empty\-string, constant_name\?\: non\-empty\-string, env_var_name\?\: non\-empty\-string\}, plugin\: array\{file\?\: non\-empty\-string, is_active\: callable\(\)\: bool\}\} will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/AI/INFYP_WP_AI_Support.php
+
+		-
+			message: '#^Offset ''authentication'' on array\{name\: non\-falsy\-string, description\: string, logo_url\?\: non\-empty\-string, type\: ''ai_provider'', authentication\: array\{method\: ''api_key''\|''application_password''\|''none'', credentials_url\?\: non\-empty\-string, setting_name\?\: non\-empty\-string, constant_name\?\: non\-empty\-string, env_var_name\?\: non\-empty\-string\}, plugin\: array\{file\?\: non\-empty\-string, is_active\: callable\(\)\: bool\}\} in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.offset
+			count: 1
+			path: includes/Core/AI/INFYP_WP_AI_Support.php
+
+		-
+			message: '#^Offset ''method'' on array\{method\: ''api_key''\|''application_password''\|''none'', credentials_url\?\: non\-empty\-string, setting_name\?\: non\-empty\-string, constant_name\?\: non\-empty\-string, env_var_name\?\: non\-empty\-string\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: includes/Core/AI/INFYP_WP_AI_Support.php
+
+		-
+			message: '#^Offset ''type'' on array\{name\: non\-falsy\-string, description\: string, logo_url\?\: non\-empty\-string, type\: non\-empty\-string, authentication\: array\{method\: ''api_key''\|''application_password''\|''none'', credentials_url\?\: non\-empty\-string, setting_name\?\: non\-empty\-string, constant_name\?\: non\-empty\-string, env_var_name\?\: non\-empty\-string\}, plugin\: array\{file\?\: non\-empty\-string, is_active\: callable\(\)\: bool\}\} in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.offset
+			count: 1
+			path: includes/Core/AI/INFYP_WP_AI_Support.php
+
+		-
+			message: '#^Right side of && is always true\.$#'
+			identifier: booleanAnd.rightAlwaysTrue
+			count: 1
+			path: includes/Core/AI/INFYP_WP_AI_Support.php
+
+		-
+			message: '#^Call to method get_error_message\(\) on an unknown class IPAIS\\Core\\WP_Error\.$#'
+			identifier: class.notFound
+			count: 2
+			path: includes/Core/INFYP_AI_Optimizer.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_AI_Optimizer\:\:generate_keywords_only\(\) has invalid return type IPAIS\\Core\\WP_Error\.$#'
+			identifier: class.notFound
+			count: 1
+			path: includes/Core/INFYP_AI_Optimizer.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_AI_Optimizer\:\:generate_keywords_only\(\) should return array\|IPAIS\\Core\\WP_Error but returns WP_Error\.$#'
+			identifier: return.type
+			count: 3
+			path: includes/Core/INFYP_AI_Optimizer.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_AI_Optimizer\:\:generate_seo_data\(\) has invalid return type IPAIS\\Core\\WP_Error\.$#'
+			identifier: class.notFound
+			count: 1
+			path: includes/Core/INFYP_AI_Optimizer.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_AI_Optimizer\:\:generate_seo_data\(\) should return array\|IPAIS\\Core\\WP_Error but returns WP_Error\.$#'
+			identifier: return.type
+			count: 1
+			path: includes/Core/INFYP_AI_Optimizer.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_AI_Optimizer\:\:optimize_single_field\(\) has invalid return type IPAIS\\Core\\WP_Error\.$#'
+			identifier: class.notFound
+			count: 1
+			path: includes/Core/INFYP_AI_Optimizer.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_AI_Optimizer\:\:optimize_single_field\(\) should return array\|IPAIS\\Core\\WP_Error but returns WP_Error\.$#'
+			identifier: return.type
+			count: 3
+			path: includes/Core/INFYP_AI_Optimizer.php
+
+		-
+			message: '#^PHPDoc tag @throws with type IPAIS\\Core\\None is not subtype of Throwable$#'
+			identifier: throws.notThrowable
+			count: 3
+			path: includes/Core/INFYP_AI_Optimizer.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/INFYP_API_Key_Manager.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_Content_Updater\:\:run_update\(\) should return array but empty return statement found\.$#'
+			identifier: return.empty
+			count: 1
+			path: includes/Core/INFYP_Content_Updater.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/INFYP_Encryption_Service.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_Error_Handler\:\:create_error\(\) has invalid return type IPAIS\\Core\\WP_Error\.$#'
+			identifier: class.notFound
+			count: 1
+			path: includes/Core/INFYP_Error_Handler.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_Error_Handler\:\:create_error\(\) should return IPAIS\\Core\\WP_Error but returns WP_Error\.$#'
+			identifier: return.type
+			count: 1
+			path: includes/Core/INFYP_Error_Handler.php
+
+		-
+			message: '#^Static method IPAIS\\Core\\INFYP_Field_Validator\:\:has_keyword_stuffing\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Core/INFYP_Field_Validator.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_File_Renamer\:\:rename_file\(\) should return bool but returns WP_Error\.$#'
+			identifier: return.type
+			count: 1
+			path: includes/Core/INFYP_File_Renamer.php
+
+		-
+			message: '#^Right side of && is always true\.$#'
+			identifier: booleanAnd.rightAlwaysTrue
+			count: 1
+			path: includes/Core/INFYP_File_Renamer.php
+
+		-
+			message: '#^Call to function is_wp_error\(\) with array\{path\: string, url\: string, subdir\: string, basedir\: string, baseurl\: string, error\: string\|false\} will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: includes/Core/INFYP_Filename_Updater.php
+
+		-
+			message: '#^Negated boolean expression is always false\.$#'
+			identifier: booleanNot.alwaysFalse
+			count: 6
+			path: includes/Core/INFYP_Filename_Updater.php
+
+		-
+			message: '#^Property IPAIS\\Core\\INFYP_Filename_Updater\:\:\$url_cache is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Core/INFYP_Filename_Updater.php
+
+		-
+			message: '#^Right side of && is always true\.$#'
+			identifier: booleanAnd.rightAlwaysTrue
+			count: 1
+			path: includes/Core/INFYP_Filename_Updater.php
+
+		-
+			message: '#^Call to function is_array\(\) with non\-empty\-array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 2
+			path: includes/Core/INFYP_Google_OAuth_Manager.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between true and false will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: includes/Core/INFYP_Google_OAuth_Manager.php
+
+		-
+			message: '#^Offset ''file'' on array\{file\: non\-empty\-string, width\: int\<1, max\>, height\: int\<1, max\>, mime\-type\: non\-empty\-string, filesize\?\: int\<0, max\>, \.\.\.\} in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.offset
+			count: 1
+			path: includes/Core/INFYP_Image_Usage.php
+
+		-
+			message: '#^Property WP_Post_Type\:\:\$labels \(stdClass\) in isset\(\) is not nullable\.$#'
+			identifier: isset.property
+			count: 1
+			path: includes/Core/INFYP_Image_Usage.php
+
+		-
+			message: '#^Right side of && is always true\.$#'
+			identifier: booleanAnd.rightAlwaysTrue
+			count: 1
+			path: includes/Core/INFYP_Image_Usage.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/INFYP_Logger.php
+
+		-
+			message: '#^Default value of the parameter \#3 \$context \(array\) of method IPAIS\\Core\\INFYP_Logger\:\:log\(\) is incompatible with type string\.$#'
+			identifier: parameter.defaultValue
+			count: 1
+			path: includes/Core/INFYP_Logger.php
+
+		-
+			message: '#^Static property IPAIS\\Core\\INFYP_Logger\:\:\$log_file \(string\|null\) is never assigned string so it can be removed from the property type\.$#'
+			identifier: property.unusedType
+			count: 1
+			path: includes/Core/INFYP_Logger.php
+
+		-
+			message: '#^Static property IPAIS\\Core\\INFYP_Logger\:\:\$log_file is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Core/INFYP_Logger.php
+
+		-
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
+			count: 1
+			path: includes/Core/INFYP_Logger.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 27
+			path: includes/Core/INFYP_Modal_Manager.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/INFYP_Optimization_Service.php
+
+		-
+			message: '#^Call to function is_wp_error\(\) with bool will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: includes/Core/INFYP_Optimization_Service.php
+
+		-
+			message: '#^Call to function is_wp_error\(\) with true will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: includes/Core/INFYP_Optimization_Service.php
+
+		-
+			message: '#^Action callback returns array but should not return anything\.$#'
+			identifier: return.void
+			count: 1
+			path: includes/Core/INFYP_Redirect_Health.php
+
+		-
+			message: '#^Call to function is_array\(\) with non\-empty\-array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/INFYP_Redirect_Manager.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 2
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Call to function is_array\(\) with non\-empty\-array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 3
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_SEO_Score_Calculator\:\:convert_legacy_weights\(\) should return array\<string, int\> but returns array\<string, float\|int\>\.$#'
+			identifier: return.type
+			count: 1
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Right side of && is always true\.$#'
+			identifier: booleanAnd.rightAlwaysTrue
+			count: 3
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Static method IPAIS\\Core\\INFYP_SEO_Score_Calculator\:\:calculate_alt_text_score\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Static method IPAIS\\Core\\INFYP_SEO_Score_Calculator\:\:calculate_filename_score\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Static method IPAIS\\Core\\INFYP_SEO_Score_Calculator\:\:calculate_title_text_score\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between 100\|float and 0 will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between float and 100 will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Variable \$filename_params might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/Core/INFYP_SEO_Score_Calculator.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''dismiss_notice'' \(''dismiss_notice'', ''dismiss_notice''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''generic'' \(''generic'', ''generic''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''missing'' \(''missing'', ''missing''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''missing_alt_text'' \(''missing_alt_text'', ''missing_alt_text''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''optimal'' \(''optimal'', ''optimal''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''seo_score_breakdown'' \(''seo_score_breakdown'', ''seo_score_breakdown''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''slightly_outside'' \(''slightly_outside'', ''slightly_outside''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''too_long'' \(''too_long'', ''too_long''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value ''too_short'' \(''too_short'', ''too_short''\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Parameter \#1 \$string of function strlen expects string, int\<2, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int\<1, max\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int\<2, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Core/INFYP_Script_Manager.php
+
+		-
+			message: '#^Call to function is_wp_error\(\) with string\|false will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: includes/Core/INFYP_Search_Console_Client.php
+
+		-
+			message: '#^Comparison operation "\<" between int\<1, max\> and 1 is always false\.$#'
+			identifier: smaller.alwaysFalse
+			count: 1
+			path: includes/Core/INFYP_Security_Manager.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_Security_Manager\:\:validate_input_data\(\) has invalid return type IPAIS\\Core\\WP_Error\.$#'
+			identifier: class.notFound
+			count: 1
+			path: includes/Core/INFYP_Security_Manager.php
+
+		-
+			message: '#^Method IPAIS\\Core\\INFYP_Security_Manager\:\:validate_input_data\(\) should return bool\|IPAIS\\Core\\WP_Error but returns WP_Error\.$#'
+			identifier: return.type
+			count: 4
+			path: includes/Core/INFYP_Security_Manager.php
+
+		-
+			message: '#^Call to function method_exists\(\) with ''ET_Core_PageResource'' and ''do_cache_bust'' will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Divi_Adapter.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 3
+			path: includes/Core/PageBuilders/INFYP_Elementor_Adapter.php
+
+		-
+			message: '#^Call to function is_array\(\) with non\-empty\-array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Elementor_Adapter.php
+
+		-
+			message: '#^Call to function is_array\(\) with non\-empty\-list\<string\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Elementor_Adapter.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Elementor_Adapter.php
+
+		-
+			message: '#^Call to function method_exists\(\) with ''\\\\Elementor\\\\Core…'' and ''update'' will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Elementor_Adapter.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Gutenberg_Adapter.php
+
+		-
+			message: '#^Call to function is_array\(\) with array\<int\|string, array\{blockName\: string\|null, attrs\: array, innerBlocks\: array\<array\>, innerHTML\: string, innerContent\: array\}\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Gutenberg_Adapter.php
+
+		-
+			message: '#^Call to function is_array\(\) with non\-empty\-array\<int\|string, array\{blockName\: string\|null, attrs\: array, innerBlocks\: array\<array\>, innerHTML\: string, innerContent\: array\}\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Gutenberg_Adapter.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 4
+			path: includes/Core/PageBuilders/INFYP_PageBuilder_Base_Adapter.php
+
+		-
+			message: '#^Call to function is_wp_error\(\) with WP_Post will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_PageBuilder_Base_Adapter.php
+
+		-
+			message: '#^Parameter \#3 \$context of static method IPAIS\\Core\\INFYP_Logger\:\:log\(\) expects string, array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_PageBuilder_Base_Adapter.php
+
+		-
+			message: '#^Property IPAIS\\Core\\PageBuilders\\INFYP_PageBuilder_Manager\:\:\$memory_limit \(int\) does not accept float\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_PageBuilder_Manager.php
+
+		-
+			message: '#^Property IPAIS\\Core\\PageBuilders\\INFYP_PageBuilder_Manager\:\:\$stats is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_PageBuilder_Manager.php
+
+		-
+			message: '#^Return type \(void\) of method IPAIS\\Core\\PageBuilders\\INFYP_Uncode_Adapter\:\:clear_cache\(\) should be compatible with return type \(bool\) of method IPAIS\\Core\\PageBuilders\\INFYP_PageBuilder_Adapter_Interface\:\:clear_cache\(\)$#'
+			identifier: method.childReturnType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Uncode_Adapter.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 2
+			path: includes/Core/PageBuilders/INFYP_Visual_Composer_Adapter.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Visual_Composer_Adapter.php
+
+		-
+			message: '#^Parameter &\$replaced_count by\-ref type of method IPAIS\\Core\\PageBuilders\\INFYP_Visual_Composer_Adapter\:\:process_element_settings\(\) expects int, \(float\|int\) given\.$#'
+			identifier: parameterByRef.type
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Visual_Composer_Adapter.php
+
+		-
+			message: '#^Parameter &\$replaced_count by\-ref type of method IPAIS\\Core\\PageBuilders\\INFYP_Visual_Composer_Adapter\:\:process_gallery\(\) expects int, \(float\|int\) given\.$#'
+			identifier: parameterByRef.type
+			count: 1
+			path: includes/Core/PageBuilders/INFYP_Visual_Composer_Adapter.php
+
+		-
+			message: '#^Return type \(void\) of method IPAIS\\Core\\PageBuilders\\INFYP_WPBakery_Adapter\:\:clear_cache\(\) should be compatible with return type \(bool\) of method IPAIS\\Core\\PageBuilders\\INFYP_PageBuilder_Adapter_Interface\:\:clear_cache\(\)$#'
+			identifier: method.childReturnType
+			count: 2
+			path: includes/Core/PageBuilders/INFYP_WPBakery_Adapter.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between false and array will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: includes/Database/INFYP_Changelog.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 2
+			path: includes/Database/INFYP_Content_Image_Scanner.php
+
+		-
+			message: '#^Comparison operation "\>" between int\<1, max\> and 0 is always true\.$#'
+			identifier: greater.alwaysTrue
+			count: 1
+			path: includes/Dev/INFYP_GSC_Mock_Data.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Rest/INFYP_REST_Settings_Controller.php
+
+		-
+			message: '#^Constant IPAIS\\Tables\\INFYP_Changelog_Query\:\:COLUMNS is unused\.$#'
+			identifier: classConstant.unused
+			count: 1
+			path: includes/Tables/INFYP_Changelog_Query.php
+
+		-
+			message: '#^Call to function is_object\(\) with object will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Tables/INFYP_Image_Column_Renderer.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Tables/INFYP_Image_Column_Renderer.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int\<0, max\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/Tables/INFYP_Image_Column_Renderer.php
+
+		-
+			message: '#^Variable \$filename_part on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.variable
+			count: 1
+			path: includes/Tables/INFYP_Image_Column_Renderer.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int\<0, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Filters.php
+
+		-
+			message: '#^Property IPAIS\\Tables\\INFYP_Image_List_Filters\:\:\$cache is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Filters.php
+
+		-
+			message: '#^Variable \$selected_types in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Filters.php
+
+		-
+			message: '#^Method IPAIS\\Tables\\INFYP_Image_List_Table\:\:build_optimized_query_parts\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Method IPAIS\\Tables\\INFYP_Image_List_Table\:\:ensure_scores_cached\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Method IPAIS\\Tables\\INFYP_Image_List_Table\:\:get_total_for_current_view\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Method IPAIS\\Tables\\INFYP_Image_List_Table\:\:parse_post_type_filter\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Method IPAIS\\Tables\\INFYP_Image_List_Table\:\:render_post_type_filter\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Parameter \#1 \$args of method WP_List_Table\:\:set_pagination_args\(\) expects array\{total_items\?\: int, total_pages\?\: int, per_page\?\: int\}, array\{total_items\: mixed, per_page\: int, total_pages\: float\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Property IPAIS\\Tables\\INFYP_Image_List_Table\:\:\$current_exact_search is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Property IPAIS\\Tables\\INFYP_Image_List_Table\:\:\$current_search_like is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Property IPAIS\\Tables\\INFYP_Image_List_Table\:\:\$current_search_term is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Property IPAIS\\Tables\\INFYP_Image_List_Table\:\:\$error_handler is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Property IPAIS\\Tables\\INFYP_Image_List_Table\:\:\$security is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Property IPAIS\\Tables\\INFYP_Image_List_Table\:\:\$total_filtered_count is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Static method IPAIS\\Tables\\INFYP_Image_List_Table\:\:get_allowed_post_types\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: includes/Tables/INFYP_Image_List_Table.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: includes/Tables/INFYP_Image_Query_Builder.php
+
+		-
+			message: '#^Offset ''date''\|''ID''\|''modified''\|''post_date''\|''post_modified''\|''post_title''\|''seo_score''\|''title'' on array\{date\: ''p\.post_date'', post_date\: ''p\.post_date'', title\: ''p\.post_title'', post_title\: ''p\.post_title'', ID\: ''p\.ID'', modified\: ''p\.post_modified'', post_modified\: ''p\.post_modified'', seo_score\: ''sort_score''\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: includes/Tables/INFYP_Image_Query_Builder.php
+
+		-
+			message: '#^Property IPAIS\\Tables\\INFYP_Image_Query_Builder\:\:\$current_search_term is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: includes/Tables/INFYP_Image_Query_Builder.php
+
+		-
+			message: '#^Variable \$post_type_filters in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: includes/Tables/INFYP_Image_Query_Builder.php
+
+		-
+			message: '#^Variable \$type_values in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: includes/Tables/INFYP_Image_Query_Builder.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, float\|int given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/views/api-usage-page.php
+
+		-
+			message: '#^Variable \$list_table might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: includes/views/api-usage-page.php
+
+		-
+			message: '#^Variable \$stats might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: includes/views/api-usage-page.php
+
+		-
+			message: '#^Variable \$this might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: includes/views/changelog-page.php
+
+		-
+			message: '#^Left side of && is always true\.$#'
+			identifier: booleanAnd.leftAlwaysTrue
+			count: 3
+			path: includes/views/debug-page.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int\<0, max\> given\.$#'
+			identifier: argument.type
+			count: 3
+			path: includes/views/debug-page.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int\<1, max\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/views/debug-page.php
+
+		-
+			message: '#^Right side of && is always true\.$#'
+			identifier: booleanAnd.rightAlwaysTrue
+			count: 1
+			path: includes/views/debug-page.php
+
+		-
+			message: '#^Ternary operator condition is always true\.$#'
+			identifier: ternary.alwaysTrue
+			count: 3
+			path: includes/views/debug-page.php
+
+		-
+			message: '#^Variable \$this might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: includes/views/main-page.php
+
+		-
+			message: '#^Variable \$alt_percentage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$filename_percentage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$get_badge_class might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$keywords_percentage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$optimized_images might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$optimized_percentage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$show_api_usage_card might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$show_api_usage_hidden might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$show_compression_card might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$show_compression_hidden might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$show_extension_card might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$stats might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$title_percentage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$total_images might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: includes/views/metaboxes/image-stats-metabox.php
+
+		-
+			message: '#^Variable \$ai_model might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/prompt-settings-metabox.php
+
+		-
+			message: '#^Variable \$ai_models might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/prompt-settings-metabox.php
+
+		-
+			message: '#^Variable \$enable_per_image might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/prompt-settings-metabox.php
+
+		-
+			message: '#^Variable \$language might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/prompt-settings-metabox.php
+
+		-
+			message: '#^Variable \$prompt_addon might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/prompt-settings-metabox.php
+
+		-
+			message: '#^Variable \$supported_languages might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/metaboxes/prompt-settings-metabox.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/views/modals/alt-text-modal.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/views/modals/filename-modal.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/views/modals/title-modal.php
+
+		-
+			message: '#^Variable \$redirect_list_table might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: includes/views/redirects-page.php
+
+		-
+			message: '#^Variable \$summary might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: includes/views/redirects-page.php
+
+		-
+			message: '#^Variable \$list_table might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/rest-api-page.php
+
+		-
+			message: '#^Variable \$rest_base might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: includes/views/rest-api-page.php
+
+		-
+			message: '#^Variable \$stats might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: includes/views/rest-api-page.php
+
+		-
+			message: '#^Left side of && is always true\.$#'
+			identifier: booleanAnd.leftAlwaysTrue
+			count: 1
+			path: includes/views/search-console-page.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int given\.$#'
+			identifier: argument.type
+			count: 41
+			path: includes/views/seo-score-page.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int given\.$#'
+			identifier: argument.type
+			count: 15
+			path: includes/views/seo-score-page.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/views/setup-wizard/steps/step-preferences.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int\<0, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/views/setup-wizard/wizard-page.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_attr expects string, int\<0, max\>\|false given\.$#'
+			identifier: argument.type
+			count: 2
+			path: includes/views/setup-wizard/wizard-page.php
+
+		-
+			message: '#^Parameter \#1 \$text of function esc_html expects string, int\<1, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: includes/views/setup-wizard/wizard-page.php
+
+		-
+			message: '#^Action callback returns array but should not return anything\.$#'
+			identifier: return.void
+			count: 1
+			path: infy-ai-image-seo-optimizer.php
+
+		-
+			message: '#^If condition is always false\.$#'
+			identifier: if.alwaysFalse
+			count: 1
+			path: infy-ai-image-seo-optimizer.php
